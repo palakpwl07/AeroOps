@@ -1,0 +1,33 @@
+# Secrets
+.streamlit/secrets.toml
+
+# Virtual environment
+Include/
+Lib/
+Scripts/
+etc/
+share/
+pyvenv.cfg
+pyvenv
+__pycache__/
+*.pyc
+
+# Local dev artifacts
+chroma_db_v4/
+ragas_outputs/
+redundant_code/
+Evaluations/
+Resources/
+
+# Eval / notebook files (not needed for deployment)
+*.xlsx
+*.ipynb
+aeroops v1
+AeroOps_Copilot_Build_Spec
+RAGAS vs GRAPH RAG
+MaintenancePilot v1
+requirements-PalaksLP
+requirements
+run_eval.py
+tests.py
+Ragas_eval*.py
