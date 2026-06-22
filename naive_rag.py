@@ -1,35 +1,17 @@
-# src/retrieval/naive_rag.py
-#
-# Cloud-deployable conversion of aeroops_v2_generation_layer_patched.ipynb
-#
-# Changes vs notebook: ChatOllama -> Groq, ChromaDB rebuilds fresh at
-# startup instead of loading a committed binary, setup wrapped in
-# @st.cache_resource, KNOWLEDGEBASE_PATH is relative.
-#
-# Changes from today's review:
-#   - DRIVE_VIEW_URLS added; format_sources() now includes view_url
-#     so naive RAG's citation panel can link out, same as GraphRAG's.
-#   - build_context_with_sources() now tags each chunk with
-#     [CITE: filename p.N] instead of [Source N], so the model's
-#     inline citations name the actual document.
-#   - GENERATION_PROMPT_TEMPLATE rewritten: dropped the rigid
-#     "Procedure: numbered steps" framing that was forcing every
-#     answer (including simple factual ones) into a long forced
-#     step-list. Now defaults to 2-4 sentences, procedure format only
-#     when the question actually asks for steps.
+
 
 from __future__ import annotations
 
 import os
 import re
-import tempfile
+#import tempfile
 import time
 from typing import Any, Dict, List, Optional
 
 import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from rank_bm25 import BM25Okapi
 from openai import OpenAI
@@ -498,11 +480,9 @@ def _build_index():
         model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
 
-    persist_dir = tempfile.mkdtemp(prefix="aeroops_chroma_")
-    vectorstore = Chroma.from_documents(
-        documents=chunks,
-        embedding=embeddings,
-        persist_directory=persist_dir,
+    vectorstore = FAISS.from_documents(
+    documents=chunks,
+    embedding=embeddings,
     )
 
     bm25_corpus = [_tokenize(doc.page_content) for doc in chunks]
@@ -576,12 +556,14 @@ def _infer_metadata_filter(query: str) -> Optional[Dict[str, Any]]:
 
 
 def _vector_retrieve(vectorstore, query: str, metadata_filter=None, k=10, fetch_k=20):
-    search_kwargs = {"k": k, "fetch_k": fetch_k}
+    retriever = vectorstore.as_retriever(
+        search_type="mmr",
+        search_kwargs={"k": fetch_k, "fetch_k": fetch_k * 2}
+    )
+    results = retriever.invoke(query)
     if metadata_filter:
-        search_kwargs["filter"] = metadata_filter
-
-    retriever = vectorstore.as_retriever(search_type="mmr", search_kwargs=search_kwargs)
-    return retriever.invoke(query)
+        results = [doc for doc in results if _metadata_match(doc, metadata_filter)]
+    return results[:k]
 
 
 def _bm25_retrieve(bm25, chunks, query: str, metadata_filter=None, k=10):
