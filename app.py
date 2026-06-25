@@ -12,12 +12,193 @@ for key, value in st.secrets.items():
 
 from naive_rag import naive_rag, DOC_CONFIG
 from graph_rag import graph_rag
-
+import pandas as pd
 ACCENT_NAIVE = "#4FC3F7"
 ACCENT_GRAPH = "#FFB000"
 BG = "#0A0E14"
 PANEL_BG = "#131A24"
+# -----------------------------------------------------------------------
+# RAGAS EVALUATION TAB
+# Add this function to app.py, then add the tab below.
+#
+# In your tab definitions, change:
+#   tab_compare, tab_about, tab_queries = st.tabs(["Compare", "About AeroOps", "Sample Queries"])
+# to:
+#   tab_compare, tab_about, tab_queries, tab_ragas = st.tabs(["Compare", "About AeroOps", "Sample Queries", "RAGAS Evaluation"])
+#
+# Then add at the bottom:
+#   with tab_ragas:
+#       render_ragas_tab()
+# -----------------------------------------------------------------------
 
+def render_ragas_tab():
+    st.markdown("## RAGAS Evaluation")
+    st.write(
+        "Both pipelines were evaluated against a 35-question ground-truth benchmark "
+        "using RAGAS Faithfulness and Context Recall — two standard RAG evaluation "
+        "metrics. RAGAS was run offline using Groq `llama-3.1-8b-instant` as the judge LLM "
+        "against the same question set used throughout development."
+    )
+
+    # --- Headline numbers ---
+    st.markdown("### Overall scores")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(
+            f'<div class="panel-badge" style="background:{ACCENT_NAIVE}">NAIVE RAG</div>',
+            unsafe_allow_html=True,
+        )
+        m1, m2 = st.columns(2)
+        m1.metric("Faithfulness", "0.710", help="Mean across 32 scored items")
+        m2.metric("Context Recall", "0.939", help="Mean across 22 scored items")
+    with col2:
+        st.markdown(
+            f'<div class="panel-badge" style="background:{ACCENT_GRAPH}">GRAPHRAG</div>',
+            unsafe_allow_html=True,
+        )
+        m3, m4 = st.columns(2)
+        m3.metric("Faithfulness", "0.462", help="Mean across 35 scored items")
+        m4.metric("Context Recall", "0.522", help="Mean across 35 scored items")
+
+    st.divider()
+
+    # --- Per-category breakdown ---
+    st.markdown("### Per-category breakdown")
+
+    CATEGORIES = [
+        "factual_single_hop",
+        "multi_hop_causal",
+        "aggregation_fanout",
+        "cross_document",
+        "disambiguation",
+        "provenance",
+        "operational_scenario",
+    ]
+
+    # Naive RAG per-category scores
+    NAIVE_FAITH = {
+        "factual_single_hop":    0.870,
+        "multi_hop_causal":      0.717,
+        "aggregation_fanout":    0.722,
+        "cross_document":        0.800,
+        "disambiguation":        0.775,
+        "provenance":            0.579,
+        "operational_scenario":  0.451,
+    }
+    NAIVE_RECALL = {
+        "factual_single_hop":    1.000,
+        "multi_hop_causal":      0.929,
+        "aggregation_fanout":    1.000,
+        "cross_document":        0.833,
+        "disambiguation":        0.875,
+        "provenance":            1.000,
+        "operational_scenario":  None,  # rate limit — not scored
+    }
+
+    # GraphRAG per-category scores
+    GRAPH_FAITH = {
+        "factual_single_hop":    0.444,
+        "multi_hop_causal":      0.346,
+        "aggregation_fanout":    0.653,
+        "cross_document":        0.455,
+        "disambiguation":        0.500,
+        "provenance":            0.333,
+        "operational_scenario":  0.471,
+    }
+    GRAPH_RECALL = {
+        "factual_single_hop":    0.500,
+        "multi_hop_causal":      0.333,
+        "aggregation_fanout":    0.662,
+        "cross_document":        0.167,
+        "disambiguation":        0.667,
+        "provenance":            0.667,
+        "operational_scenario":  0.727,
+    }
+
+    CATEGORY_LABELS = {
+        "factual_single_hop":    "Factual single-hop",
+        "multi_hop_causal":      "Multi-hop causal",
+        "aggregation_fanout":    "Aggregation / fan-out",
+        "cross_document":        "Cross-document",
+        "disambiguation":        "Disambiguation",
+        "provenance":            "Provenance",
+        "operational_scenario":  "Operational scenario",
+    }
+
+    # Faithfulness table
+    st.markdown("**Faithfulness by category**")
+    faith_header = ["Category", "Naive RAG", "GraphRAG", "Difference"]
+    faith_rows = []
+    for cat in CATEGORIES:
+        naive_f = NAIVE_FAITH.get(cat)
+        graph_f = GRAPH_FAITH.get(cat)
+        diff = round(naive_f - graph_f, 3) if naive_f and graph_f else "—"
+        faith_rows.append([
+            CATEGORY_LABELS[cat],
+            f"{naive_f:.3f}" if naive_f else "—",
+            f"{graph_f:.3f}" if graph_f else "—",
+            f"+{diff:.3f}" if isinstance(diff, float) and diff > 0
+            else (f"{diff:.3f}" if isinstance(diff, float) else diff),
+        ])
+
+    import pandas as pd
+    faith_df = pd.DataFrame(faith_rows, columns=faith_header)
+    st.dataframe(faith_df, use_container_width=True, hide_index=True)
+
+    # Context Recall table
+    st.markdown("**Context Recall by category**")
+    recall_rows = []
+    for cat in CATEGORIES:
+        naive_r = NAIVE_RECALL.get(cat)
+        graph_r = GRAPH_RECALL.get(cat)
+        if naive_r is not None and graph_r is not None:
+            diff = round(naive_r - graph_r, 3)
+            diff_str = f"+{diff:.3f}" if diff > 0 else f"{diff:.3f}"
+        else:
+            diff_str = "—"
+        recall_rows.append([
+            CATEGORY_LABELS[cat],
+            f"{naive_r:.3f}" if naive_r is not None else "not scored*",
+            f"{graph_r:.3f}" if graph_r is not None else "—",
+            diff_str,
+        ])
+
+    recall_df = pd.DataFrame(recall_rows, columns=["Category", "Naive RAG", "GraphRAG", "Difference"])
+    st.dataframe(recall_df, use_container_width=True, hide_index=True)
+    st.caption("* Operational scenario context recall for Naive RAG not scored due to Groq rate limits during evaluation run.")
+
+    st.divider()
+
+    # --- Interpretation ---
+    st.markdown("### How to read these numbers")
+    st.write(
+        "Naive RAG scores higher overall on both RAGAS metrics. This is expected — "
+        "and it is not evidence that Naive RAG is the better system. It reflects a known "
+        "architectural mismatch between RAGAS and GraphRAG that we documented during development."
+    )
+
+    with st.expander("Why RAGAS systematically undercounts GraphRAG", expanded=False):
+        st.markdown("""
+**RAGAS was designed for flat-chunk retrieval.** It checks whether the model's answer is textually entailed by the retrieved text chunks. GraphRAG's answer generator is grounded in two channels: raw chunk text *and* structured graph facts pulled from typed edges (CAUSES, MITIGATES, LEADS_TO). The graph facts are not raw chunk text — they are structured, curated claims extracted from the documents. RAGAS has no visibility into this channel, so claims grounded in graph facts get scored as "unfaithful" even when they are graph-verified correct.
+
+**Context Recall checks concept presence, not causal correctness.** For multi-hop causal questions, RAGAS scores whether the right concepts appear anywhere in retrieved context — not whether those concepts are correctly connected in a causal chain. Naive RAG retrieving the right vocabulary scores the same as GraphRAG walking the correct causal path. This is why Naive RAG's multi-hop causal recall (0.929) looks strong despite not actually reasoning about causality.
+
+**What RAGAS does measure accurately:** whether flat retrieved text supports a flat answer. This is genuinely useful for Naive RAG. For GraphRAG, a more accurate evaluation is the manual 35-item benchmark, which scored multi-hop causal reasoning at 99% — the category where RAGAS gives GraphRAG its lowest score (0.346 faithfulness, 0.333 recall).
+
+These limitations are [documented in the AeroOps evaluation notes](https://github.com/palakpwl07/AeroOps).
+        """)
+
+    st.markdown("### Evaluation setup")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Questions", "35")
+    c2.metric("Categories", "7")
+    c3.metric("Judge model", "llama-3.1-8b-instant")
+    c4.metric("Provider", "Groq")
+    st.caption(
+        "Metrics: RAGAS Faithfulness (is the answer grounded in retrieved context?) "
+        "and Context Recall (does the retrieved context cover the ground-truth answer?). "
+        "Both measured using LLM-as-judge. Ground truth was hand-verified, not LLM-generated."
+    )
 
 def inject_css():
     st.markdown(f"""
@@ -282,7 +463,7 @@ inject_css()
 if os.path.exists("banner.jpg"):
     st.image("banner.jpg", use_container_width=True)
 
-tab_compare, tab_about, tab_queries = st.tabs(["Compare", "About AeroOps", "Sample Queries"])
+tab_compare, tab_about, tab_queries, tab_ragas = st.tabs(["Compare", "About AeroOps", "Sample Queries", "RAGAS Evaluation & Comparison"])
 
 with tab_compare:
     st.markdown("# AeroOps")
@@ -322,3 +503,6 @@ with tab_about:
 
 with tab_queries:
     render_sample_queries_tab()
+
+with tab_ragas:
+    render_ragas_tab()
