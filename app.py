@@ -185,7 +185,7 @@ def render_ragas_tab():
 
 **What RAGAS does measure accurately:** whether flat retrieved text supports a flat answer. This is genuinely useful for Naive RAG. For GraphRAG, a more accurate evaluation is the manual 35-item benchmark, which scored multi-hop causal reasoning at 99% — the category where RAGAS gives GraphRAG its lowest score (0.346 faithfulness, 0.333 recall).
 
-These limitations are [documented in the AeroOps evaluation notes](https://github.com/palakpwl07/AeroOps).
+A detailed writeup on what evaluation for GraphRAG actually looks like is coming soon on Substack.
         """)
 
     st.markdown("### Evaluation setup")
