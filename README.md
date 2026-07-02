@@ -147,6 +147,6 @@ streamlit run app.py
 
 ## Built by
 
-**Palak Porwal**. Aerospace engineering background, building applied AI systems for manufacturing and aerospace.
+**Palak Porwal**.
 
 [LinkedIn](https://www.linkedin.com/in/palakporwal) · [Substack](https://substack.com)
