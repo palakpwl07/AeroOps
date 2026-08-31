@@ -47,9 +47,14 @@ def _get_pipeline():
 
     builder = ContextBuilder()
 
+    # Routed through OpenRouter, not Groq directly -- see the routing-
+    # change note at the top of answer_generator_groq.py. Model name is
+    # unchanged (GRAPHRAG_GROQ_MODEL still holds "openai/gpt-oss-20b",
+    # which is also OpenRouter's slug for the same model), only the key
+    # and endpoint moved.
     generator = AnswerGenerator(
-        model=_get_secret("GRAPHRAG_GROQ_MODEL", "llama-3.1-8b-instant"),
-        api_key=_get_secret("GROQ_API_KEY"),
+        model=_get_secret("GRAPHRAG_GROQ_MODEL", "openai/gpt-oss-20b"),
+        api_key=_get_secret("OPENROUTER_API_KEY"),
     )
 
     return router, retriever, builder, generator
@@ -180,8 +185,6 @@ def graph_rag(query: str) -> Dict[str, Any]:
             path_nodes, path_edges = _build_star(results)
         except Exception:
             path_nodes, path_edges = [], []
-    import json
-    print("DEBUG row:", json.dumps(results[0], default=str, indent=2)[:2000] if results else "EMPTY RESULTS")
     output = {
         "query": query,
         "answer": answer,

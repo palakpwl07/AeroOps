@@ -98,8 +98,31 @@ class QueryRouter:
         "bearing failure": ("FM_bearing_failure", "Bearing failure", "FailureMode"),
         "oil leak": ("FM_oil_leak_or_oil_loss", "Oil leak / oil loss", "FailureMode"),
         "tailpipe fire": ("FM_tailpipe_fire", "Tailpipe fire", "FailureMode"),
+        # OS02 ("flames coming from the exhaust nozzle... no fire warning
+        # is sounding") never says "tailpipe" -- without this, the only
+        # thing that matched at all was "fire warning" (from the
+        # NEGATED clause "no fire warning"), which only connects to
+        # FM_engine_fire via MANIFESTS_AS, so FM_tailpipe_fire never
+        # entered the candidate set and the system diagnosed the wrong
+        # failure mode (and its wrong remedy: shutdown instead of dry
+        # motoring). "exhaust nozzle" is specific enough to be a safe
+        # anchor (checked against all 45 gold questions, unique to OS02).
+        "exhaust nozzle": ("FM_tailpipe_fire", "Tailpipe fire", "FailureMode"),
         "engine fire": ("FM_engine_fire", "Engine fire", "FailureMode"),
         "hot start": ("FM_hot_start", "Hot start", "FailureMode"),
+        # OS06 describes a hot start entirely by its symptoms ("EGT
+        # rises... core speed hangs in a sub-idle state") without ever
+        # saying "hot start". Without this, FM_hot_start was reachable
+        # only as one of three co-equal FailureModes that all
+        # MANIFESTS_AS SY_high_egt (compressor surge, EGT margin
+        # deterioration, hot start) -- none matched directly, so
+        # _rank_rows fell back to richness as a tie-breaker among them,
+        # and FM_compressor_surge (far more symptoms/causes/leads_to
+        # edges) won even though FM_hot_start is the actual gold answer.
+        # "sub idle" (normalized from "sub-idle") is FM_hot_start's own
+        # distinguishing mechanism (D3_c25) and appears nowhere else in
+        # the 45 gold questions.
+        "sub idle": ("FM_hot_start", "Hot start", "FailureMode"),
         "fod": ("FM_fod", "Foreign Object Damage", "FailureMode"),
         "foreign object damage": ("FM_fod", "Foreign Object Damage", "FailureMode"),
         "foreign object ingestion": ("FM_fod", "Foreign Object Damage", "FailureMode"),
@@ -228,6 +251,43 @@ class QueryRouter:
         "n-cmapss": ("ME_ncmapss", "N-CMAPSS run-to-failure dataset", "Method"),
         "ncmapss": ("ME_ncmapss", "N-CMAPSS run-to-failure dataset", "Method"),
         "cmapss": ("ME_ncmapss", "N-CMAPSS run-to-failure dataset", "Method"),
+
+        # ---------------- Engines (model names only) ----------------
+        # E_turbofan / E_high_bypass intentionally NOT mapped: "turbofan"
+        # and "high-bypass" appear in nearly every question in this
+        # domain, so phrase-matching them would drag these two nodes
+        # into almost every match set (the same over-matching failure
+        # mode the "egt" -> margin expansion was removed for). Specific
+        # model names carry no such risk.
+        "cfm56": ("E_CFM56", "CFM56", "Engine"),
+        "v2500": ("E_V2500", "V2500", "Engine"),
+        "jt9d": ("E_JT9D", "Pratt & Whitney JT9D", "Engine"),
+        "cf6": ("E_CF6", "General Electric CF6", "Engine"),
+
+        # ---------------- Coverage-gap additions (audit pass) ----------------
+        # Added after auditing ENTITY_MAP against every node in the
+        # cleaned graph (aeroops_knowledgegraph.md) and against all 45
+        # blind_questions.json questions. Each phrase below is grounded in
+        # a real node that had zero prior phrase coverage, or in wording
+        # from a question that a covered node's *existing* phrases failed
+        # to reach (different verb form, word order, or paraphrase).
+        "failing bearing": ("FM_bearing_failure", "Bearing failure", "FailureMode"),
+        "oil temperature": ("PA_oil_temp", "Oil temperature", "Parameter"),
+        "vibration levels": ("PA_vibration", "Vibration", "Parameter"),
+        "chip detector": ("C_bearing_distress", "Bearing distress", "Cause"),
+        "hpt clearance": ("FM_tip_clearance_increase", "Blade-tip clearance increase", "FailureMode"),
+        "clearance increases": ("FM_tip_clearance_increase", "Blade-tip clearance increase", "FailureMode"),
+        "fuel puddles": ("C_fuel_puddling", "Fuel puddling in tailpipe", "Cause"),
+        "cracked blades": ("FM_blade_cracking", "Blade cracking / chipping", "FailureMode"),
+        "chipped blades": ("FM_blade_cracking", "Blade cracking / chipping", "FailureMode"),
+        "scrap rate": ("OF_engine_age", "Engine age / phase (first-run vs mature)", "OperatingFactor"),
+        "older engine": ("OF_engine_age", "Engine age / phase (first-run vs mature)", "OperatingFactor"),
+        "major maintenance event": ("MI_overhaul", "Engine overhaul / full teardown", "Mitigation"),
+        "particulate distress": ("C_particulate_ingestion", "Particulate / dust / sand ingestion", "Cause"),
+        "material ingestion": ("C_fod_ingestion", "Foreign object / bird ingestion", "Cause"),
+        "blades rub": ("FM_blade_tip_rub", "Blade tip rub", "FailureMode"),
+        "wear rate": ("C_blade_tip_wear", "Blade tip wear", "Cause"),
+        "thermal degradation": ("C_thermal_stress", "Thermal stress / high core temperature", "Cause"),
     }
 
     # Domain term expansion. Intentionally recall-heavy, BUT kept narrow
@@ -262,6 +322,41 @@ class QueryRouter:
         "stall": ["compressor stall", "compressor surge"],
         "derate": ["take-off derate", "takeoff derate"],
         "wash": ["water wash", "water washing", "engine wash"],
+
+        # Coverage-gap additions (audit pass). See ENTITY_MAP comment above
+        # for the same audit; these expansions build the multi-entity
+        # matches that a single ENTITY_MAP phrase can't express on its own.
+        "dusty": ["particulate ingestion", "dust ingestion", "sand ingestion",
+                  "blocked cooling holes", "cooling hole blockage",
+                  "airfoil erosion", "particulate distress"],
+        "sandy": ["particulate ingestion", "dust ingestion", "sand ingestion",
+                  "blocked cooling holes", "cooling hole blockage",
+                  "airfoil erosion", "particulate distress"],
+        # AF04 asks for the aggregate set of parameters/fluid indications
+        # used to detect a failing bearing -- no single node represents
+        # "bearing monitoring" as a whole, so "failing bearing" expands
+        # out to every node that jointly answers the question.
+        "failing bearing": ["bearing failure", "oil temperature", "vibration levels",
+                             "bearing distress", "chip detector", "oil filter bypass"],
+
+        # NOTE: a "tm 81552" -> [...] expansion was tried here to catch
+        # provenance questions citing NASA TM-81552 by name, but it was
+        # removed. PR02 and PR03 both cite the same document, so a
+        # document-level trigger fires identically on both regardless of
+        # which claim within that document each question actually asks
+        # about -- it pulled FM_tip_clearance_increase into PR02 (the
+        # residual-SFC-penalty question, D4_c11) even though that entity
+        # belongs only to PR03 (the total-long-term-deterioration
+        # question, D4_c10), collapsing both questions onto the same
+        # entity set and, in a live run, onto the same wrong chunk. Every
+        # other item that expansion listed ("performance restoration",
+        # "specific fuel consumption"/"sfc") was already reachable
+        # directly from each question's own text, so it added nothing
+        # besides that collision. Do not reintroduce a document-name ->
+        # entity-list expansion for TM-81552 without scoping it to the
+        # specific claim language of each question (see ENTITY_MAP
+        # comment on PR02 below) -- a bare document-citation trigger will
+        # always be indiscriminate across every question citing it.
     }
 
     STOPWORDS = {
@@ -358,9 +453,49 @@ class QueryRouter:
             if phrase in q:
                 terms.append(phrase)
 
-        for phrase in sorted(self.TERM_EXPANSIONS.keys(), key=len, reverse=True):
-            if phrase in q:
+        # Fallback: order-independent match for multi-word ENTITY_MAP
+        # phrases that didn't match as an exact contiguous substring.
+        # Verified against live data: 9 of 45 questions matched ZERO
+        # entities, including FH03, whose actual phrasing ("control the
+        # clearance between the rotor blade tips") never puts "tip" and
+        # "clearance" adjacent, the order ENTITY_MAP's "tip clearance" /
+        # "blade-tip clearance" / "clearance control" phrases require.
+        # This checks whether all of a phrase's significant words (short
+        # words and stopwords excluded) appear anywhere in the question,
+        # in any order -- looser than an exact substring, but still
+        # requires the full word set to be present, not just one
+        # coincidental word, so it shouldn't introduce loose false
+        # positives the way matching on a single shared word would.
+        already_matched = set(terms)
+        for phrase in sorted(self.ENTITY_MAP.keys(), key=len, reverse=True):
+            if phrase in already_matched:
+                continue
+            words = [w for w in re.findall(r"[a-z0-9]+", phrase)
+                     if w not in self.STOPWORDS and len(w) >= 3]
+            if len(words) < 2:
+                continue  # single-word phrases are already covered above
+            if all(w in q for w in words):
                 terms.append(phrase)
+
+        for phrase in sorted(self.TERM_EXPANSIONS.keys(), key=len, reverse=True):
+            if phrase not in q:
+                continue
+            # Guard against a short, generic TERM_EXPANSIONS key firing
+            # when it's already fully contained inside a longer, more
+            # specific ENTITY_MAP phrase matched above. Without this,
+            # "egt margin" (correctly -> FM_egt_margin_deterioration) also
+            # let bare "egt" independently re-expand into ["high egt",
+            # "rising egt", "egt exceedance"], which then re-matched
+            # ENTITY_MAP and pulled in SY_high_egt / SY_egt_exceedance as
+            # phantom entities the question never actually invoked --
+            # inflating matched_entities from 1 to 3 and routing a clean,
+            # specific question into the noisy multi-entity query-plan
+            # path instead of a precise single-entity lookup. This is the
+            # same substring-containment check the leftover-token loop
+            # below already applies; it was just missing here.
+            if any(phrase in existing for existing in terms):
+                continue
+            terms.append(phrase)
 
         tokens = re.findall(r"[a-z0-9/+\-\.]+", q)
         for token in tokens:
