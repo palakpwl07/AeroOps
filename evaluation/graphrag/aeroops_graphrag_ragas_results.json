@@ -1,0 +1,4848 @@
+[
+  {
+    "ID": "FH01",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "If a flight crew reports hearing a very loud bang accompanied by yaw and heavy vibration, what engine failure mode has likely occurred?",
+    "Ground Truth": "The engine has likely experienced a compressor surge or stall.",
+    "Expected Chain": [],
+    "Model Answer": "The crew’s description of a very loud bang with yaw and heavy vibration indicates a **compressor surge / stall** failure mode. This symptom is directly linked to compressor surge / stall in the evidence [D3_c03].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c03",
+    "Ground Truth Nodes": [
+      "SY_loud_bang",
+      "FM_compressor_surge"
+    ],
+    "Time (s)": 9.89,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "SY_loud_bang",
+        "label": "Symptom",
+        "name": "Loud bang and yaw",
+        "edge_type": "MANIFESTS_AS",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL024",
+        "edge_confidence": 0.95,
+        "edge_chunks": [
+          "D3_c03"
+        ]
+      },
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL028",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D3_c07"
+        ]
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "label": "FailureMode",
+        "name": "Severe engine damage",
+        "edge_type": "MANIFESTS_AS",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL053",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c31"
+        ]
+      },
+      {
+        "id": "SY_high_vibration",
+        "label": "Symptom",
+        "name": "High vibration"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "SY_loud_bang",
+        "name": "Loud bang and yaw",
+        "type": "Symptom",
+        "matched_phrase": "loud bang"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "type": "Symptom",
+        "matched_phrase": "vibration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "SY_loud_bang",
+        "name": "Loud bang and yaw",
+        "label": "Symptom"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "name": "Severe engine damage",
+        "label": "FailureMode"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "label": "Symptom"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "SY_loud_bang",
+        "target": "FM_compressor_surge",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "FM_compressor_surge",
+        "target": "FM_severe_engine_damage",
+        "type": "LEADS_TO"
+      },
+      {
+        "source": "FM_severe_engine_damage",
+        "target": "SY_high_vibration",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "FH02",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "What is the recommended operational mitigation if ground crews observe a tailpipe fire during engine start-up?",
+    "Ground Truth": "The quickest way to extinguish most tailpipe fires is to dry motor the engine.",
+    "Expected Chain": [],
+    "Model Answer": "Dry‑motor the engine, which is the quickest way of extinguishing most tailpipe fires. [D3_c22]",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Fuel may puddle in the turbine casings and exhaust during start-up or shutdown, and then ignite",
+      "dry motor the engine, which is the quickest way of extinguishing most tailpipe fires",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover"
+    ],
+    "Source Chunks": "D3_c22",
+    "Ground Truth Nodes": [
+      "MI_dry_motoring",
+      "FM_tailpipe_fire"
+    ],
+    "Time (s)": 4.67,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_tailpipe_fire",
+        "name": "Tailpipe fire",
+        "type": "FailureMode",
+        "matched_phrase": "tailpipe fire"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Tailpipe fire",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel puddling in tailpipe",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Dry motoring the engine",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "FH03",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "How does the engine physically control the clearance between the rotor blade tips and the case wall during operation?",
+    "Ground Truth": "Air is extracted from the compressor and ducted onto the engine cases to cool them, which shrinks the cases and controls the clearance between the blade tips and the wall.",
+    "Expected Chain": [],
+    "Model Answer": "The engine uses active clearance control by ducting air extracted from the compressor and directing it onto the engine cases, which controls the clearance between the rotor blade tips and the case wall. [D3_c32]",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D3_c32",
+    "Ground Truth Nodes": [
+      "MI_clearance_control_bleed",
+      "FM_tip_clearance_increase"
+    ],
+    "Time (s)": 5.47,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "FM_tip_clearance_increase",
+        "label": "FailureMode",
+        "name": "Blade-tip clearance increase",
+        "edge_type": "MITIGATES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL066",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c32"
+        ]
+      },
+      {
+        "id": "MI_clearance_control_bleed",
+        "label": "Mitigation",
+        "name": "Active clearance control (case cooling bleed)"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "type": "FailureMode",
+        "matched_phrase": "blade-tip clearance"
+      },
+      {
+        "id": "MI_clearance_control_bleed",
+        "name": "Active clearance control (case cooling bleed)",
+        "type": "Mitigation",
+        "matched_phrase": "clearance control"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "MI_clearance_control_bleed",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "Mitigation"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "FM_tip_clearance_increase",
+        "target": "MI_clearance_control_bleed",
+        "type": "MITIGATES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "FH04",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "Operating a turbofan in dusty or sandy environments can cause what specific damage to the High-Pressure Turbine (HPT) components?",
+    "Ground Truth": "Particulate material from those environments can block the HPT vane and blade cooling holes.",
+    "Expected Chain": [],
+    "Model Answer": "Operating in dusty or sandy environments can cause the High‑Pressure Turbine (HPT) to suffer airfoil erosion and surface roughness, and it can also block the HPT vane/blade cooling holes. [D1_c07] [D1_c08]",
+    "Retrieved Contexts": [
+      "Engines operated in dusty, sandy and erosive-corrosive environments are exposed to higher blade distress",
+      "Particulate material due to air pollution, such as dust, sand or industry emissions can erode HPC blades",
+      "and block HPT vane/blade cooling holes",
+      "airfoil Quality (foreign object damage (FOD), erosion, and surface roughness) is significant"
+    ],
+    "Source Chunks": "D1_c08",
+    "Ground Truth Nodes": [
+      "C_particulate_ingestion",
+      "FM_blocked_cooling_holes",
+      "M_hpt"
+    ],
+    "Time (s)": 4.75,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_blocked_cooling_holes",
+        "name": "Blocked HPT cooling holes",
+        "type": "FailureMode",
+        "matched_phrase": "blocked cooling holes"
+      },
+      {
+        "id": "C_particulate_ingestion",
+        "name": "Particulate / dust / sand ingestion",
+        "type": "Cause",
+        "matched_phrase": "particulate ingestion"
+      },
+      {
+        "id": "OF_environment",
+        "name": "Operating environment (dusty / erosive / temperate)",
+        "type": "OperatingFactor",
+        "matched_phrase": "operating environment"
+      },
+      {
+        "id": "FM_airfoil_erosion",
+        "name": "Airfoil erosion / surface roughness",
+        "type": "FailureMode",
+        "matched_phrase": "airfoil erosion"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Airfoil erosion / surface roughness",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Particulate / dust / sand ingestion",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Operating environment (dusty / erosive / temperate)",
+        "label": "CAUSES"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "FH05",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "During what specific phase of an engine's operational life are the rates of blade tip wear and resulting deterioration the highest?",
+    "Ground Truth": "Deterioration rates are highest in the initial 1,000 to 2,000 engine flight cycles of operation as the new blade tips begin to wear.",
+    "Expected Chain": [],
+    "Model Answer": "The rates of blade‑tip wear and the resulting deterioration are highest during the engine’s early life, specifically within the first 1,000–2,000 flight cycles as the blade tips begin to wear [D1_c03].",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "Clearance increases resulting in efficiency losses occur ... as a result of blades rubbing their outer shrouds",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "deflections produced by aircraft induced flight loads that occur during take off rotation, flight maneuvers, landing, and thrust reversal",
+      "hot rotor reburst ... can result in high pressure turbine blade rubs due to different thermal growth rates between rotating and stationary structures",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D1_c03",
+    "Ground Truth Nodes": [
+      "C_blade_tip_wear",
+      "FM_tip_clearance_increase"
+    ],
+    "Time (s)": 3.65,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "C_blade_tip_wear",
+        "name": "Blade tip wear",
+        "type": "Cause",
+        "matched_phrase": "blade tip wear"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "FH06",
+    "Category": "factual_single_hop",
+    "Hop Count": 1,
+    "Question": "What physical evidence collected by chip detectors indicates distress inside the bearing compartment?",
+    "Ground Truth": "The collection of bearing compartment particles on the detectors.",
+    "Expected Chain": [],
+    "Model Answer": "Chip detectors collect particles from the bearing compartment, and the presence of those particles indicates distress inside the bearing compartment. [D3_c18]",
+    "Retrieved Contexts": [
+      "Chip detectors ... to collect bearing compartment particles as an indication of bearing compartment distress",
+      "If the oil filter becomes clogged with debris (either from contamination ... or debris from a bearing failure)",
+      "Bearing failures will be accompanied by an increase in oil temperature and indicated vibration"
+    ],
+    "Source Chunks": "D3_c18",
+    "Ground Truth Nodes": [
+      "C_bearing_distress"
+    ],
+    "Time (s)": 3.56,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "C_bearing_distress",
+        "name": "Bearing distress",
+        "type": "Cause",
+        "matched_phrase": "bearing distress"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Bearing failure",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Bearing distress",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High oil temperature",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "MH01",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "How can a failing bearing eventually trigger an oil filter bypass indication in the cockpit?",
+    "Ground Truth": "A distressed or failing bearing generates metal particles and debris. If this debris travels through the lubrication system, it can clog the oil filter, forcing it into a bypass state.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Bearing compartment distress produces particles collected by detectors.",
+        "source_chunk_id": "D3_c18"
+      },
+      {
+        "step": 2,
+        "fact": "Debris from a bearing failure can clog the oil filter, causing a bypass.",
+        "source_chunk_id": "D3_c20"
+      }
+    ],
+    "Model Answer": "ERROR: 'NoneType' object is not subscriptable",
+    "Retrieved Contexts": [],
+    "Source Chunks": "D3_c18, D3_c20",
+    "Ground Truth Nodes": [
+      "C_bearing_distress",
+      "FM_bearing_failure",
+      "SY_oil_filter_bypass"
+    ],
+    "Time (s)": 17.67,
+    "Retrieval Type": null,
+    "Reasoning Chain": [],
+    "Matched Entities": [],
+    "Path Nodes": [],
+    "Path Edges": [],
+    "Retrieval Error": "'NoneType' object is not subscriptable",
+    "Generation Error": null,
+    "Faithfulness": 0.0,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "MH02",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "Why does a hot rotor reburst event degrade engine efficiency?",
+    "Ground Truth": "A hot rotor reburst causes different thermal growth rates between rotating and stationary structures, leading to high-pressure turbine blade rubs. These rubs permanently increase blade tip running clearances, which causes efficiency losses.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Hot rotor reburst causes thermal growth differences that lead to high pressure turbine blade rubs.",
+        "source_chunk_id": "D4_c05"
+      },
+      {
+        "step": 2,
+        "fact": "Blades rubbing their outer shrouds increases clearances, which results in efficiency losses.",
+        "source_chunk_id": "D4_c01"
+      }
+    ],
+    "Model Answer": "Hot rotor reburst causes the turbine blades to rub against their stationary shrouds, which increases the clearance between blade tips and the case wall. The enlarged clearance reduces compressor and turbine efficiency, raising the specific fuel consumption (SFC) and lowering the engine’s overall efficiency. This mechanism is identified as a major contributor to performance deterioration, with high‑pressure turbine clearance increases accounting for over 90 % of short‑term efficiency loss and a long‑term cruise SFC rise of 2.5–3 % [D4_c05][D4_c01][D4_c03][D4_c09][D4_c10].",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "Clearance increases resulting in efficiency losses occur ... as a result of blades rubbing their outer shrouds",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "deflections produced by aircraft induced flight loads that occur during take off rotation, flight maneuvers, landing, and thrust reversal",
+      "hot rotor reburst ... can result in high pressure turbine blade rubs due to different thermal growth rates between rotating and stationary structures",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c05, D4_c01",
+    "Ground Truth Nodes": [
+      "C_hot_rotor_reburst",
+      "FM_blade_tip_rub",
+      "FM_tip_clearance_increase"
+    ],
+    "Time (s)": 7.12,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "C_hot_rotor_reburst",
+        "name": "Hot rotor reburst (thermal transient)",
+        "type": "Cause",
+        "matched_phrase": "hot rotor reburst"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.875,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "MH03",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "How could the failure of a single fuel tank boost pump potentially cause a multiple-engine flameout?",
+    "Ground Truth": "The boost pump failure can generate debris that clogs the fuel filter. Once clogged, the disrupted fuel flow or contamination bypassing the filter introduces the potential for a multiple-engine flameout.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Failure of a fuel tank boost pump can result in fuel filter clogging.",
+        "source_chunk_id": "D3_c29"
+      },
+      {
+        "step": 2,
+        "fact": "Fuel filter clogging carries the potential for multiple-engine flameout.",
+        "source_chunk_id": "D3_c30"
+      }
+    ],
+    "Model Answer": "A failure of one fuel‑tank boost pump can generate debris that clogs the fuel filter, which in turn can cause fuel starvation and lead to flameout. Because the filter feeds multiple engines, a single pump failure can precipitate a flameout in more than one engine. [D3_c29] [D3_c30] [D3_c08]",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Fuel filter clogging can result from the failure of one of the fuel tank boost pumps",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c29, D3_c30",
+    "Ground Truth Nodes": [
+      "C_boost_pump_failure",
+      "FM_fuel_filter_clogging",
+      "FM_flameout"
+    ],
+    "Time (s)": 11.53,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "C_boost_pump_failure",
+        "label": "Cause",
+        "name": "Fuel boost-pump debris",
+        "edge_type": "CAUSES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL051",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c29"
+        ]
+      },
+      {
+        "id": "FM_fuel_filter_clogging",
+        "label": "FailureMode",
+        "name": "Fuel filter clogging",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL052",
+        "edge_confidence": 0.75,
+        "edge_chunks": [
+          "D3_c30"
+        ]
+      },
+      {
+        "id": "FM_flameout",
+        "label": "FailureMode",
+        "name": "Flameout"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "C_boost_pump_failure",
+        "name": "Fuel boost-pump debris",
+        "type": "Cause",
+        "matched_phrase": "boost pump failure"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "type": "FailureMode",
+        "matched_phrase": "flameout"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "C_boost_pump_failure",
+        "name": "Fuel boost-pump debris",
+        "label": "Cause"
+      },
+      {
+        "id": "FM_fuel_filter_clogging",
+        "name": "Fuel filter clogging",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "C_boost_pump_failure",
+        "target": "FM_fuel_filter_clogging",
+        "type": "CAUSES"
+      },
+      {
+        "source": "FM_fuel_filter_clogging",
+        "target": "FM_flameout",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.0,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "MH04",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "If a compressor surge is sustained and the crew does not retard the thrust lever, what severe mechanical damage and physical symptoms can result?",
+    "Ground Truth": "Sustained surging will overheat the turbine and can cause compressor blades to fail, leading to severe engine damage that manifests as high vibration or fire warnings.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Sustained surging overheats the turbine and damages compressor blades, failing them.",
+        "source_chunk_id": "D3_c07"
+      },
+      {
+        "step": 2,
+        "fact": "Severe engine damage may be accompanied by symptoms like fire warnings and vibration.",
+        "source_chunk_id": "D3_c31"
+      }
+    ],
+    "Model Answer": "Sustained compressor surge without thrust‑reduction can cause severe engine damage and flameout. The surge can over‑heat the turbine and damage or fail compressor blades, leading to critical engine damage [D3_c07] and can also trigger flameout [D3_c09]. Physical symptoms that accompany this condition include high or rising EGT readings [D3_c05], a very loud bang accompanied by yaw and vibration [D3_c03], visible flames from the inlet and tailpipe [D3_c04], rapid EPR fluctuations [D3_c14], high vibration levels [D3_c31], and EGT red‑line exceedance [D3_c15].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c07, D3_c31",
+    "Ground Truth Nodes": [
+      "FM_compressor_surge",
+      "FM_severe_engine_damage",
+      "SY_high_vibration"
+    ],
+    "Time (s)": 9.94,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "MI_thrust_reduction",
+        "label": "Mitigation",
+        "name": "Thrust reduction (retard thrust lever)",
+        "edge_type": "MITIGATES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL027",
+        "edge_confidence": 0.9,
+        "edge_chunks": [
+          "D3_c06"
+        ]
+      },
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL028",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D3_c07"
+        ]
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "label": "FailureMode",
+        "name": "Severe engine damage"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "MI_thrust_reduction",
+        "name": "Thrust reduction (retard thrust lever)",
+        "type": "Mitigation",
+        "matched_phrase": "retard the thrust lever"
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "name": "Severe engine damage",
+        "type": "FailureMode",
+        "matched_phrase": "severe engine damage"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "type": "FailureMode",
+        "matched_phrase": "compressor surge"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "MI_thrust_reduction",
+        "name": "Thrust reduction (retard thrust lever)",
+        "label": "Mitigation"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "name": "Severe engine damage",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "MI_thrust_reduction",
+        "target": "FM_compressor_surge",
+        "type": "MITIGATES"
+      },
+      {
+        "source": "FM_compressor_surge",
+        "target": "FM_severe_engine_damage",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.6666666666666666,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "MH05",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "How does an aerodynamic stall of the compressor airfoils potentially cause an engine flameout?",
+    "Ground Truth": "When airfoils stall, the compressor can no longer compress incoming air, resulting in unstable engine operation (a compressor surge). This unstable operation can then interrupt combustion and lead to a flameout.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Airfoil stall means the compressor can no longer compress incoming air.",
+        "source_chunk_id": "D3_c01"
+      },
+      {
+        "step": 2,
+        "fact": "Unstable engine operation, such as a compressor stall, can result in a flameout.",
+        "source_chunk_id": "D3_c09"
+      }
+    ],
+    "Model Answer": "An aerodynamic stall of the compressor airfoils can cause the compressor to lose its ability to compress the incoming air, producing an unstable engine condition that can lead to flameout. The stall is described as a state where the air flowing over the compressor airfoils stalls, preventing compression [D3_c01]. This loss of compression is a form of unstable engine operation, which the failure‑mode data links directly to flameout [D3_c09]. Thus, a compressor airfoil stall can initiate a surge or stall that ultimately results in engine flameout.",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c01, D3_c09",
+    "Ground Truth Nodes": [
+      "C_compressor_airfoil_stall",
+      "FM_compressor_surge",
+      "FM_flameout"
+    ],
+    "Time (s)": 7.09,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "C_compressor_airfoil_stall",
+        "name": "Compressor airfoil aerodynamic stall",
+        "type": "Cause",
+        "matched_phrase": "compressor airfoil stall"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "type": "FailureMode",
+        "matched_phrase": "compressor stall"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "type": "FailureMode",
+        "matched_phrase": "flameout"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Flameout",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel starvation / interruption",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor surge / stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Fuel filter clogging",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Continuous ignition",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Low EPR",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Low oil pressure",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.6666666666666666,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "MH06",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "How does a bird strike lead to an unrecoverable engine surge?",
+    "Ground Truth": "Ingesting a bird can bend or fracture one or more fan blades. These fractured blades instantly disrupt airflow, triggering a compressor surge that the engine will likely not recover from.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Bird ingestion bends and distorts fan blades.",
+        "source_chunk_id": "D3_c28"
+      },
+      {
+        "step": 2,
+        "fact": "Bird ingestion resulting in fractured fan blades causes the engine to surge once and not recover.",
+        "source_chunk_id": "D3_c27"
+      }
+    ],
+    "Model Answer": "A bird strike can cause a compressor surge that cannot be recovered from.  \nBird ingestion produces foreign‑object damage (FOD) [D1_c15].  \nFOD can fracture fan blades, and a fractured fan blade can trigger a compressor surge that is unlikely to recover [D3_c27].  \nIngestion of birds is also cited as a direct cause of compressor surge [D3_c02].  \nThus, a bird strike leads to FOD, which damages the fan and initiates an unrecoverable compressor surge.",
+    "Retrieved Contexts": [
+      "FOD results from ingestion of foreign objects ... birds, ice, hail, ash, etc. as well as runway debris",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "The photo on the next page shows fan blades bent due to the ingestion of a bird"
+    ],
+    "Source Chunks": "D3_c28, D3_c27",
+    "Ground Truth Nodes": [
+      "C_fod_ingestion",
+      "P_fan_blade",
+      "FM_compressor_surge",
+      "FM_fod"
+    ],
+    "Time (s)": 9.78,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "FM_fod",
+        "label": "FailureMode",
+        "name": "Foreign Object Damage (FOD)",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL049",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c27"
+        ]
+      },
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "FM_fod",
+        "name": "Foreign Object Damage",
+        "type": "FailureMode",
+        "matched_phrase": "foreign object ingestion"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "type": "FailureMode",
+        "matched_phrase": "compressor surge"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "FM_fod",
+        "name": "Foreign Object Damage (FOD)",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "FM_fod",
+        "target": "FM_compressor_surge",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "MH07",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "If fuel puddles in the turbine casing during shutdown, what consequence occurs and what is the required maintenance intervention?",
+    "Ground Truth": "The puddled fuel can ignite into a tailpipe fire. To mitigate this, personnel must immediately dry motor the engine, which is the quickest way to extinguish it.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Fuel puddling in turbine casings and exhaust during shutdown can ignite.",
+        "source_chunk_id": "D3_c21"
+      },
+      {
+        "step": 2,
+        "fact": "Dry motoring the engine is the quickest way to extinguish tailpipe fires.",
+        "source_chunk_id": "D3_c22"
+      }
+    ],
+    "Model Answer": "Fuel puddling in the turbine casing during shutdown can ignite a tailpipe fire [D3_c21]. The required maintenance intervention is to dry‑motor the engine to extinguish the fire [D3_c22].",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "A fire in the vicinity of the engine should be annunciated to the flight crew by a fire warning in the flight deck",
+      "engine shutdown should be immediately accomplished by shutting off fuel to the engine",
+      "Fuel may puddle in the turbine casings and exhaust during start-up or shutdown, and then ignite",
+      "dry motor the engine, which is the quickest way of extinguishing most tailpipe fires",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D3_c21, D3_c22",
+    "Ground Truth Nodes": [
+      "C_fuel_puddling",
+      "FM_tailpipe_fire",
+      "MI_dry_motoring"
+    ],
+    "Time (s)": 3.55,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "C_fuel_puddling",
+        "name": "Fuel puddling in tailpipe",
+        "type": "Cause",
+        "matched_phrase": "fuel puddles"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Tailpipe fire",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel puddling in tailpipe",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Dry motoring the engine",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "MH08",
+    "Category": "multi_hop_causal",
+    "Hop Count": 2,
+    "Question": "Why does operating aircraft on shorter stage lengths result in more rapid performance deterioration?",
+    "Ground Truth": "Shorter stage lengths mean the engine is operating at high takeoff thrust more frequently per hour of flight. Higher thrust generates higher core temperatures, exposing parts to greater thermal stress that drives rapid deterioration.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Shorter stage length operation causes more rapid performance deterioration.",
+        "source_chunk_id": "D1_c18"
+      },
+      {
+        "step": 2,
+        "fact": "Higher thrust generates higher core temperatures, exposing parts to greater thermal stress.",
+        "source_chunk_id": "D1_c04"
+      }
+    ],
+    "Model Answer": "Operating aircraft on shorter stage lengths causes more rapid performance deterioration because the effect of shorter stage length operation is more rapid performance deterioration. [D1_c18]",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "A larger derate translates into lower take-off EGT and therefore enjoys a lower engine deterioration rate",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D1_c18, D1_c04",
+    "Ground Truth Nodes": [
+      "OF_flight_length",
+      "OF_thrust_rating",
+      "FM_egt_margin_deterioration"
+    ],
+    "Time (s)": 7.19,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "OF_flight_length",
+        "name": "Flight length / sector length",
+        "type": "OperatingFactor",
+        "matched_phrase": "stage length"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "CD01",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "What is the primary physical cause of engine performance deterioration, and what on-wing maintenance procedure can temporarily restore some of the lost EGT margin?",
+    "Ground Truth": "The primary cause is increased blade tip clearances. However, some performance deterioration is caused by contamination, which can be temporarily restored by regular engine water washing.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "A primary cause of engine performance deterioration is increased blade tip clearances.",
+        "source_chunk_id": "D4_c02"
+      },
+      {
+        "step": 2,
+        "fact": "Performance deterioration from contamination can be restored by regular engine wash.",
+        "source_chunk_id": "D1_c10"
+      }
+    ],
+    "Model Answer": "The primary physical cause of engine performance deterioration is the gradual increase in blade‑tip clearance between the turbine blades and the surrounding static seals or shrouds. This clearance increase degrades efficiency and raises specific fuel consumption.  \nAn on‑wing maintenance procedure that can temporarily restore some of the lost EGT margin is an engine water wash, which cleans the engine and improves compressor efficiency, thereby increasing EGT margin.",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "regular detailed measurements are taken of the engine's operating speed, temperature, pressure, fuel flow and vibration levels",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "A larger derate translates into lower take-off EGT and therefore enjoys a lower engine deterioration rate",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c02, D1_c10",
+    "Ground Truth Nodes": [
+      "FM_tip_clearance_increase",
+      "MI_water_wash",
+      "FM_egt_margin_deterioration"
+    ],
+    "Time (s)": 5.17,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_egt_margin_deterioration",
+        "name": "EGT margin deterioration",
+        "type": "FailureMode",
+        "matched_phrase": "egt margin deterioration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "EGT margin deterioration",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade-tip clearance increase",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Flight length / sector length",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Outside air temperature (OAT)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_3",
+        "name": "Thrust rating",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Engine water washing",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MITIGATED_BY_1",
+        "name": "Take-off derate",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High / rising EGT",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_3",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_1",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.7142857142857143,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "CD02",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "When an engine ingests a bird, what form of damage occurs, and what aerodynamic failure mode does it trigger?",
+    "Ground Truth": "Ingesting a bird is classified as Foreign Object Damage (FOD). This FOD can fracture the fan blades, which instantly triggers an unrecoverable compressor surge.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "FOD results from the ingestion of foreign objects like birds.",
+        "source_chunk_id": "D1_c15"
+      },
+      {
+        "step": 2,
+        "fact": "Bird ingestion fractures fan blades, causing the engine to surge.",
+        "source_chunk_id": "D3_c27"
+      }
+    ],
+    "Model Answer": "Bird ingestion produces foreign‑object damage, such as fracture or distortion of fan blades [D1_c15, D3_c27, D3_c26]. This damage can trigger a compressor surge or stall [D3_c02].",
+    "Retrieved Contexts": [
+      "FOD results from ingestion of foreign objects ... birds, ice, hail, ash, etc. as well as runway debris",
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "The photo on the next page shows fan blades bent due to the ingestion of a bird",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "fan blade material loss due to ingested material, or fan blade distortion due to foreign object damage"
+    ],
+    "Source Chunks": "D1_c15, D3_c27",
+    "Ground Truth Nodes": [
+      "C_fod_ingestion",
+      "FM_fod",
+      "FM_compressor_surge"
+    ],
+    "Time (s)": 5.42,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_fod",
+        "name": "Foreign Object Damage",
+        "type": "FailureMode",
+        "matched_phrase": "foreign object ingestion"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Foreign Object Damage (FOD)",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Foreign object / bird ingestion",
+        "label": "CAUSES"
+      },
+      {
+        "id": "LEADS_TO_0",
+        "name": "Compressor surge / stall",
+        "label": "LEADS_TO"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "LEADS_TO_0",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 0.6666666666666666
+  },
+  {
+    "ID": "CD03",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "If an older engine is experiencing high scrap rates due to cracked and chipped blades, what major maintenance event is required to rectify this?",
+    "Ground Truth": "An engine overhaul, where the engine core is completely dismantled to formally inspect, repair, and replace those worn parts.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Hardware deterioration in older engines shows up as blade distress, cracking, and chipping.",
+        "source_chunk_id": "D1_c14"
+      },
+      {
+        "step": 2,
+        "fact": "The major purpose of an overhaul is to inspect, repair, and replace worn engine parts.",
+        "source_chunk_id": "D7_c01"
+      }
+    ],
+    "Model Answer": "An older engine with high scrap rates from cracked and chipped blades requires an engine overhaul or full teardown. The overhaul involves dismantling the core module, inspecting, balancing, repairing or replacing the airfoils (rotors and stators) as necessary [D1_c11, D7_c01].",
+    "Retrieved Contexts": [
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "used to inspect the internal parts of the engine for defects such as cracks, stress fractures and corrosion",
+      "blade distress (particularly on HPT blades), parts cracking and chipping, and in extreme situations, part failures",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "predict the current health state, the eventual failing component(s), and the remaining useful life",
+      "The major purpose of overhaul is to inspect, repair, and replace worn engine parts",
+      "non-destructive testing (NDT) inspection"
+    ],
+    "Source Chunks": "D1_c14, D7_c01",
+    "Ground Truth Nodes": [
+      "FM_hardware_deterioration",
+      "MI_overhaul"
+    ],
+    "Time (s)": 4.26,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "MI_overhaul",
+        "name": "Engine overhaul / full teardown",
+        "type": "Mitigation",
+        "matched_phrase": "major maintenance event"
+      },
+      {
+        "id": "FM_blade_cracking",
+        "name": "Blade cracking / chipping",
+        "type": "FailureMode",
+        "matched_phrase": "cracked blades"
+      },
+      {
+        "id": "OF_engine_age",
+        "name": "Engine age / phase (first-run vs mature)",
+        "type": "OperatingFactor",
+        "matched_phrase": "older engine"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade cracking / chipping",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.8333333333333334,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "CD04",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "What inspection method is used on-wing to find internal blade cracks, and what distinct inspection process is used to find them during a shop overhaul?",
+    "Ground Truth": "On-wing, borescope monitoring is used to inspect internal parts for cracks. During a shop overhaul, Non-Destructive Testing (NDT) inspection is utilized.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "On-condition monitoring uses borescopes to inspect internal parts for cracks.",
+        "source_chunk_id": "D1_c12"
+      },
+      {
+        "step": 2,
+        "fact": "The overhaul process utilizes non-destructive testing (NDT) inspection.",
+        "source_chunk_id": "D7_c02"
+      }
+    ],
+    "Model Answer": "On‑wing, internal blade cracks are detected with the ANN‑Flux custom‑loss neural‑network system.  \nDuring a shop overhaul, the core module is dismantled and the airfoils (rotors and stators) are inspected, balanced, and repaired or replaced as necessary.",
+    "Retrieved Contexts": [
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "blade distress (particularly on HPT blades), parts cracking and chipping, and in extreme situations, part failures",
+      "FOD results from ingestion of foreign objects ... birds, ice, hail, ash, etc. as well as runway debris",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "predict the current health state, the eventual failing component(s), and the remaining useful life",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The photo on the next page shows fan blades bent due to the ingestion of a bird",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC",
+      "The major purpose of overhaul is to inspect, repair, and replace worn engine parts"
+    ],
+    "Source Chunks": "D1_c12, D7_c02",
+    "Ground Truth Nodes": [
+      "MI_borescope_inspection",
+      "MI_ndt",
+      "FM_blade_cracking"
+    ],
+    "Time (s)": 7.0,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "MI_overhaul",
+        "name": "Engine overhaul / full teardown",
+        "type": "Mitigation",
+        "matched_phrase": "overhaul"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Hardware deterioration / blade distress",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Engine age / phase (first-run vs mature)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Performance restoration shop visit",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MITIGATED_BY_1",
+        "name": "Engine overhaul / full teardown",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_1",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.8,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "CD05",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "How does the widening of clearances between turbine blade tips and static seals affect the two main operational efficiency metrics monitored by airlines?",
+    "Ground Truth": "It reduces engine efficiency, which erodes the EGT margin and negatively affects the cruise specific fuel consumption (SFC).",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Gradual increase in clearance between blade tips and seals reduces efficiency and raises specific fuel consumption, eroding EGT margin.",
+        "source_chunk_id": "D1_c01"
+      },
+      {
+        "step": 2,
+        "fact": "Clearance increases affect the cruise specific fuel consumption (SFC).",
+        "source_chunk_id": "D4_c03"
+      }
+    ],
+    "Model Answer": "Widening the clearance between turbine blade tips and the static seals reduces overall engine efficiency. It raises the specific fuel consumption (SFC), leading to higher fuel burn during cruise [D1_c02, D4_c03]. At the same time, it lowers the EGT margin, diminishing the engine’s ability to maintain high exhaust gas temperatures and thus shortening on‑wing life [D1_c01].",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "A larger derate translates into lower take-off EGT and therefore enjoys a lower engine deterioration rate",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D1_c01, D4_c03",
+    "Ground Truth Nodes": [
+      "FM_tip_clearance_increase",
+      "PA_egt_margin",
+      "PA_sfc"
+    ],
+    "Time (s)": 5.93,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "type": "FailureMode",
+        "matched_phrase": "blade-tip clearance"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "CD06",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "When rotor blades rub their outer shrouds, what happens to the clearances, and during what specific phase of the engine's lifecycle is this wear rate the highest?",
+    "Ground Truth": "Rubbing the outer shrouds causes the clearances to increase resulting in efficiency losses. This rate of deterioration is highest during the initial 1,000 to 2,000 engine flight cycles.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Clearance increases occur as a result of blades rubbing their outer shrouds.",
+        "source_chunk_id": "D4_c01"
+      },
+      {
+        "step": 2,
+        "fact": "Rates of deterioration are highest in the initial 1,000-2,000 flight cycles as blade tips begin to wear.",
+        "source_chunk_id": "D1_c03"
+      }
+    ],
+    "Model Answer": "Rotor blades rubbing their outer shrouds cause the blade‑tip clearances to increase [D4_c01]. The wear rate that drives this clearance increase is greatest during the first 1,000–2,000 engine flight cycles of operation, when blade tips begin to wear [D1_c03].",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "Clearance increases resulting in efficiency losses occur ... as a result of blades rubbing their outer shrouds",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "deflections produced by aircraft induced flight loads that occur during take off rotation, flight maneuvers, landing, and thrust reversal",
+      "hot rotor reburst ... can result in high pressure turbine blade rubs due to different thermal growth rates between rotating and stationary structures",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c01, D1_c03",
+    "Ground Truth Nodes": [
+      "FM_blade_tip_rub",
+      "FM_tip_clearance_increase",
+      "C_blade_tip_wear"
+    ],
+    "Time (s)": 6.0,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "FM_blade_tip_rub",
+        "label": "FailureMode",
+        "name": "Blade tip rub",
+        "edge_type": "CAUSES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL056",
+        "edge_confidence": 0.9,
+        "edge_chunks": [
+          "D4_c02"
+        ]
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "label": "FailureMode",
+        "name": "Blade-tip clearance increase",
+        "edge_type": "CAUSES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL003",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D1_c03"
+        ]
+      },
+      {
+        "id": "C_blade_tip_wear",
+        "label": "Cause",
+        "name": "Blade tip wear"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "FM_blade_tip_rub",
+        "name": "Blade tip rub",
+        "type": "FailureMode",
+        "matched_phrase": "blades rub"
+      },
+      {
+        "id": "C_blade_tip_wear",
+        "name": "Blade tip wear",
+        "type": "Cause",
+        "matched_phrase": "wear rate"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "FM_blade_tip_rub",
+        "name": "Blade tip rub",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "C_blade_tip_wear",
+        "name": "Blade tip wear",
+        "label": "Cause"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "FM_blade_tip_rub",
+        "target": "FM_tip_clearance_increase",
+        "type": "CAUSES"
+      },
+      {
+        "source": "FM_tip_clearance_increase",
+        "target": "C_blade_tip_wear",
+        "type": "CAUSES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "CD07",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "While high EGT is generally an indication of gradual performance degradation, it is also a key acute indicator of what specific malfunctions?",
+    "Ground Truth": "Excessive EGT acutely indicates an engine stall, difficulty in engine starting, or a major bleed air leak.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "High EGT can be an indication of degraded engine performance.",
+        "source_chunk_id": "D1_c21"
+      },
+      {
+        "step": 2,
+        "fact": "Excessive EGT is a key indicator of engine stall, start difficulty, or a bleed air leak.",
+        "source_chunk_id": "D3_c15"
+      }
+    ],
+    "Model Answer": "High / rising EGT is an acute indicator of a compressor surge or stall, which is manifested by high EGT together with other symptoms such as a loud bang and yaw [D3_c05].  \nHigh / rising EGT is also an acute indicator of a hot start, where the engine begins operation at an abnormally high core temperature [D3_c25].",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover"
+    ],
+    "Source Chunks": "D1_c21, D3_c15",
+    "Ground Truth Nodes": [
+      "SY_high_egt",
+      "FM_egt_margin_deterioration",
+      "FM_compressor_surge"
+    ],
+    "Time (s)": 4.99,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_high_egt",
+        "name": "High / rising EGT",
+        "type": "Symptom",
+        "matched_phrase": "high egt"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Foreign object / bird ingestion",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor airfoil aerodynamic stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Foreign Object Damage (FOD)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Thrust reduction (retard thrust lever)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High / rising EGT",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Loud bang and yaw",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_2",
+        "name": "Visible flame from inlet / tailpipe",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "LEADS_TO_0",
+        "name": "Flameout",
+        "label": "LEADS_TO"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_2",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "LEADS_TO_0",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.2857142857142857,
+    "Context Recall": 0.3333333333333333
+  },
+  {
+    "ID": "CD08",
+    "Category": "cross_document",
+    "Hop Count": 2,
+    "Question": "What specific environmental variable accelerates thermal degradation, and what external operational forces cause structural deflections that lead to blade tip rubs?",
+    "Ground Truth": "High ambient temperatures (OAT) accelerate thermal performance degradation. Aircraft-induced flight loads during takeoff rotation, maneuvers, landing, and thrust reversal cause the structural deflections that lead to tip rubs.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "High ambient temperatures lead to greater performance degradation.",
+        "source_chunk_id": "D1_c19"
+      },
+      {
+        "step": 2,
+        "fact": "Deflections producing rubs are induced by aircraft flight loads during rotation, maneuvers, landing, and thrust reversal.",
+        "source_chunk_id": "D4_c04"
+      }
+    ],
+    "Model Answer": "High core temperature (thermal stress) accelerates thermal degradation of the turbine blades [D4_c07, D4_c08].  \nAircraft‑induced flight loads—such as those experienced during take‑off rotation, flight maneuvers, landing, and thrust reversal—produce structural deflections that lead to blade‑tip rubs [D4_c04, D4_c01].",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "Clearance increases resulting in efficiency losses occur ... as a result of blades rubbing their outer shrouds",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "thermal distortion is one of the predominant deterioration mechanisms causing ... warpage or distortion of vanes",
+      "deflections produced by aircraft induced flight loads that occur during take off rotation, flight maneuvers, landing, and thrust reversal",
+      "hot rotor reburst ... can result in high pressure turbine blade rubs due to different thermal growth rates between rotating and stationary structures",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "High and low pressure turbine thermal distortion is also a contributing source to the long-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D1_c19, D4_c04",
+    "Ground Truth Nodes": [
+      "OF_oat",
+      "FM_egt_margin_deterioration",
+      "C_flight_loads",
+      "FM_blade_tip_rub"
+    ],
+    "Time (s)": 7.32,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "C_thermal_stress",
+        "label": "Cause",
+        "name": "Thermal stress / high core temperature",
+        "edge_type": "CAUSES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL061",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D4_c07"
+        ]
+      },
+      {
+        "id": "FM_thermal_distortion",
+        "label": "FailureMode",
+        "name": "Thermal distortion / vane warpage",
+        "edge_type": "DEGRADES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL062",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D4_c08"
+        ]
+      },
+      {
+        "id": "PA_sfc",
+        "label": "Parameter",
+        "name": "Specific Fuel Consumption (SFC)",
+        "edge_type": "DEGRADES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL057",
+        "edge_confidence": 0.9,
+        "edge_chunks": [
+          "D4_c03"
+        ]
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "label": "FailureMode",
+        "name": "Blade-tip clearance increase",
+        "edge_type": "CAUSES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL056",
+        "edge_confidence": 0.9,
+        "edge_chunks": [
+          "D4_c02"
+        ]
+      },
+      {
+        "id": "FM_blade_tip_rub",
+        "label": "FailureMode",
+        "name": "Blade tip rub"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "C_thermal_stress",
+        "name": "Thermal stress / high core temperature",
+        "type": "Cause",
+        "matched_phrase": "thermal degradation"
+      },
+      {
+        "id": "FM_blade_tip_rub",
+        "name": "Blade tip rub",
+        "type": "FailureMode",
+        "matched_phrase": "blade tip rub"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "C_thermal_stress",
+        "name": "Thermal stress / high core temperature",
+        "label": "Cause"
+      },
+      {
+        "id": "FM_thermal_distortion",
+        "name": "Thermal distortion / vane warpage",
+        "label": "FailureMode"
+      },
+      {
+        "id": "PA_sfc",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "Parameter"
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_blade_tip_rub",
+        "name": "Blade tip rub",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "C_thermal_stress",
+        "target": "FM_thermal_distortion",
+        "type": "CAUSES"
+      },
+      {
+        "source": "FM_thermal_distortion",
+        "target": "PA_sfc",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "PA_sfc",
+        "target": "FM_tip_clearance_increase",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "FM_tip_clearance_increase",
+        "target": "FM_blade_tip_rub",
+        "type": "CAUSES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.8571428571428571,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "AF01",
+    "Category": "aggregation_fanout",
+    "Hop Count": 2,
+    "Question": "When troubleshooting high engine vibration on the shop floor, what primary mechanical and operational faults should a technician investigate?",
+    "Ground Truth": "A technician should check for fan unbalance (at assembly or due to FOD), bearing failure, excessive fan rotor tip clearances, or severe engine damage resulting from a sustained compressor surge.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Vibration can be caused by fan unbalance, bird ingestion, bearing failure, or excessive tip clearances.",
+        "source_chunk_id": "D3_c16"
+      },
+      {
+        "step": 2,
+        "fact": "Severe engine damage (which causes surge/vibration) manifests as high vibration.",
+        "source_chunk_id": "D3_c31"
+      }
+    ],
+    "Model Answer": "High vibration on the shop floor should prompt a technician to examine the following faults:\n\n- **Bearing failure** – bearing distress can raise oil temperature and produce vibration [D3_c17].\n- **Fan unbalance** – a foreign‑object or bird ingestion can unbalance the fan and cause vibration [D3_c16].\n- **Compressor surge or stall** – surge events are accompanied by vibration, loud bangs, yaw, and rapid EPR fluctuations [D3_c03], [D3_c14].\n- **Severe engine damage** – sustained surging can lead to severe engine damage, which is also associated with high vibration [D3_c31].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Chip detectors ... to collect bearing compartment particles as an indication of bearing compartment distress",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "If the oil filter becomes clogged with debris (either from contamination ... or debris from a bearing failure)",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "Bearing failures will be accompanied by an increase in oil temperature and indicated vibration"
+    ],
+    "Source Chunks": "D3_c16, D3_c31",
+    "Ground Truth Nodes": [
+      "SY_high_vibration",
+      "FM_fan_unbalance",
+      "FM_bearing_failure",
+      "FM_severe_engine_damage"
+    ],
+    "Time (s)": 9.69,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "type": "Symptom",
+        "matched_phrase": "high vibration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Severe engine damage",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Compressor surge / stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Predictive maintenance (RUL / PHM)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High vibration",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.6,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "AF02",
+    "Category": "aggregation_fanout",
+    "Hop Count": 3,
+    "Question": "What are all the combined sensory, visual, and instrument indications that an engine is experiencing a compressor surge?",
+    "Ground Truth": "Indications include a very loud bang, yaw, vibration, visible flames out the inlet and tailpipe, high EGT, and fluctuations in EPR or rotor speed.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Surge produces a loud bang, yaw, and vibration.",
+        "source_chunk_id": "D3_c03"
+      },
+      {
+        "step": 2,
+        "fact": "Surge produces visible flames forward and rearward.",
+        "source_chunk_id": "D3_c04"
+      },
+      {
+        "step": 3,
+        "fact": "Surge instruments show high EGT, EPR, or rotor speed changes.",
+        "source_chunk_id": "D3_c05"
+      }
+    ],
+    "Model Answer": "A compressor surge can be identified by the following sensory, visual, and instrument indications:  \n- Instruments may show high or rising EGT and EPR, or changes in rotor speed [D3_c05].  \n- Rapid fluctuations in EPR can occur during surge [D3_c14].  \n- The crew will hear a very loud bang accompanied by yaw and vibration [D3_c03].  \n- Visible flames may appear forward out the inlet and rearward out the tailpipe [D3_c04].",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c03, D3_c04, D3_c05",
+    "Ground Truth Nodes": [
+      "FM_compressor_surge",
+      "SY_loud_bang",
+      "SY_visible_flame",
+      "SY_high_egt"
+    ],
+    "Time (s)": 8.53,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "type": "FailureMode",
+        "matched_phrase": "compressor surge"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Foreign object / bird ingestion",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor airfoil aerodynamic stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Foreign Object Damage (FOD)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Thrust reduction (retard thrust lever)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High / rising EGT",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Loud bang and yaw",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_2",
+        "name": "Visible flame from inlet / tailpipe",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "LEADS_TO_0",
+        "name": "Flameout",
+        "label": "LEADS_TO"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_2",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "LEADS_TO_0",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "AF03",
+    "Category": "aggregation_fanout",
+    "Hop Count": 2,
+    "Question": "What are the distinctly identified root causes that can result in an engine flameout?",
+    "Ground Truth": "An engine flameout can be caused by fuel starvation (running out of fuel), a control system malfunction, unstable engine operation such as a compressor stall, or severe fuel filter clogging.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Flameout may result from running out of fuel, a control system malfunction, or unstable operation.",
+        "source_chunk_id": "D3_c08"
+      },
+      {
+        "step": 2,
+        "fact": "Fuel filter clogging carries the potential for multiple-engine flameout.",
+        "source_chunk_id": "D3_c30"
+      }
+    ],
+    "Model Answer": "The graph identifies three distinct root causes that can lead to an engine flameout:  \n- Fuel starvation or interruption [D3_c08]  \n- Compressor surge or stall [D3_c09]  \n- Fuel filter clogging [D3_c30]",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c08, D3_c30",
+    "Ground Truth Nodes": [
+      "FM_flameout",
+      "C_fuel_starvation",
+      "FM_fuel_filter_clogging"
+    ],
+    "Time (s)": 4.46,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "type": "FailureMode",
+        "matched_phrase": "flameout"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Flameout",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel starvation / interruption",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor surge / stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Fuel filter clogging",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Continuous ignition",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Low EPR",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Low oil pressure",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.0,
+    "Context Recall": 0.75
+  },
+  {
+    "ID": "AF04",
+    "Category": "aggregation_fanout",
+    "Hop Count": 3,
+    "Question": "What specific engine parameters and fluid indications are monitored to detect a failing bearing?",
+    "Ground Truth": "Technicians monitor for increases in oil temperature, elevated indicated vibration, metal particles collected on chip detectors, and an oil filter bypass indication caused by debris.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "Bearing failures accompany an increase in oil temperature and vibration.",
+        "source_chunk_id": "D3_c17"
+      },
+      {
+        "step": 2,
+        "fact": "Chip detectors collect bearing compartment particles.",
+        "source_chunk_id": "D3_c18"
+      },
+      {
+        "step": 3,
+        "fact": "Debris from a bearing failure clogs the oil filter causing bypass.",
+        "source_chunk_id": "D3_c20"
+      }
+    ],
+    "Model Answer": "High oil temperature is a key indicator of bearing failure.  \nHigh vibration is also associated with bearing failure.  \nAn oil filter bypass indication signals a bearing failure.  \nChip detectors that collect bearing‑compartment particles are used to detect bearing distress.  \n\nThese parameters and fluid indications are monitored to detect a failing bearing.",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Chip detectors ... to collect bearing compartment particles as an indication of bearing compartment distress",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "If the oil filter becomes clogged with debris (either from contamination ... or debris from a bearing failure)",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "Bearing failures will be accompanied by an increase in oil temperature and indicated vibration",
+      "Fan unbalance at assembly ... Bird ingestion/FOD ... Bearing failure ... Excessive fan rotor system tip clearances",
+      "fan blade material loss due to ingested material, or fan blade distortion due to foreign object damage"
+    ],
+    "Source Chunks": "D3_c17, D3_c18, D3_c20",
+    "Ground Truth Nodes": [
+      "FM_bearing_failure",
+      "SY_high_oil_temp",
+      "SY_high_vibration",
+      "SY_oil_filter_bypass",
+      "C_bearing_distress"
+    ],
+    "Time (s)": 4.43,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "SY_oil_filter_bypass",
+        "label": "Symptom",
+        "name": "Oil filter bypass indication",
+        "edge_type": "INDICATES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL042",
+        "edge_confidence": 0.75,
+        "edge_chunks": [
+          "D3_c20"
+        ]
+      },
+      {
+        "id": "FM_bearing_failure",
+        "label": "FailureMode",
+        "name": "Bearing failure",
+        "edge_type": "CAUSES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL040",
+        "edge_confidence": 0.75,
+        "edge_chunks": [
+          "D3_c18"
+        ]
+      },
+      {
+        "id": "C_bearing_distress",
+        "label": "Cause",
+        "name": "Bearing distress"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "SY_oil_filter_bypass",
+        "name": "Oil filter bypass indication",
+        "type": "Symptom",
+        "matched_phrase": "oil filter bypass"
+      },
+      {
+        "id": "C_bearing_distress",
+        "name": "Bearing distress",
+        "type": "Cause",
+        "matched_phrase": "bearing distress"
+      },
+      {
+        "id": "PA_vibration",
+        "name": "Vibration",
+        "type": "Parameter",
+        "matched_phrase": "vibration levels"
+      },
+      {
+        "id": "FM_bearing_failure",
+        "name": "Bearing failure",
+        "type": "FailureMode",
+        "matched_phrase": "bearing failure"
+      },
+      {
+        "id": "PA_oil_temp",
+        "name": "Oil temperature",
+        "type": "Parameter",
+        "matched_phrase": "oil temperature"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "type": "Symptom",
+        "matched_phrase": "vibration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "SY_oil_filter_bypass",
+        "name": "Oil filter bypass indication",
+        "label": "Symptom"
+      },
+      {
+        "id": "FM_bearing_failure",
+        "name": "Bearing failure",
+        "label": "FailureMode"
+      },
+      {
+        "id": "C_bearing_distress",
+        "name": "Bearing distress",
+        "label": "Cause"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "SY_oil_filter_bypass",
+        "target": "FM_bearing_failure",
+        "type": "INDICATES"
+      },
+      {
+        "source": "FM_bearing_failure",
+        "target": "C_bearing_distress",
+        "type": "CAUSES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.6,
+    "Context Recall": 0.75
+  },
+  {
+    "ID": "AF05",
+    "Category": "aggregation_fanout",
+    "Hop Count": 3,
+    "Question": "What operational and environmental factors accelerate the rate of engine EGT margin deterioration?",
+    "Ground Truth": "High takeoff thrust ratings (or low derates), operation on short stage lengths, exposure to high ambient temperatures, and operating in dusty, sandy, or erosive environments.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "A larger derate (thrust reduction) means a lower deterioration rate.",
+        "source_chunk_id": "D1_c05"
+      },
+      {
+        "step": 2,
+        "fact": "Shorter stage length operation causes more rapid performance deterioration.",
+        "source_chunk_id": "D1_c18"
+      },
+      {
+        "step": 3,
+        "fact": "High ambient temperatures lead to greater performance degradation.",
+        "source_chunk_id": "D1_c19"
+      }
+    ],
+    "Model Answer": "Higher thrust ratings accelerate EGT margin deterioration by raising core temperatures and increasing thermal stress on engine components [D1_c04].  \nShorter flight or sector lengths accelerate deterioration because the effect of shorter stage length operation is more rapid performance loss [D1_c18].  \nHigher outside air temperatures (OAT) reduce available EGT margin and increase performance degradation [D1_c19].  \nAn increase in blade‑tip clearance, which reduces engine efficiency and raises specific fuel consumption, also accelerates EGT margin deterioration [D1_c01, D1_c02].",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "regular detailed measurements are taken of the engine's operating speed, temperature, pressure, fuel flow and vibration levels",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "A larger derate translates into lower take-off EGT and therefore enjoys a lower engine deterioration rate",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D1_c05, D1_c18, D1_c19",
+    "Ground Truth Nodes": [
+      "OF_thrust_rating",
+      "OF_flight_length",
+      "OF_oat",
+      "FM_egt_margin_deterioration"
+    ],
+    "Time (s)": 10.46,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_egt_margin_deterioration",
+        "name": "EGT margin deterioration",
+        "type": "FailureMode",
+        "matched_phrase": "egt margin deterioration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "EGT margin deterioration",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade-tip clearance increase",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Flight length / sector length",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Outside air temperature (OAT)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_3",
+        "name": "Thrust rating",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Engine water washing",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MITIGATED_BY_1",
+        "name": "Take-off derate",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High / rising EGT",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_3",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_1",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.6666666666666666,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "AF06",
+    "Category": "aggregation_fanout",
+    "Hop Count": 2,
+    "Question": "What types of materials ingested by the engine constitute Foreign Object Damage (FOD) or particulate distress?",
+    "Ground Truth": "Ingested materials include birds, ice, hail, volcanic ash, runway debris, and airborne particulates such as dust, sand, or industrial emissions.",
+    "Expected Chain": [
+      {
+        "step": 1,
+        "fact": "FOD results from birds, ice, hail, ash, and runway debris.",
+        "source_chunk_id": "D1_c15"
+      },
+      {
+        "step": 2,
+        "fact": "Particulate material includes dust, sand, or industry emissions.",
+        "source_chunk_id": "D1_c07"
+      }
+    ],
+    "Model Answer": "Foreign Object Damage (FOD) or particulate distress can be caused by ingesting materials such as birds, ice, hail, ash, runway debris, dust, sand, and other particulate matter from air pollution or industry emissions. [D1_c15] [D1_c07]",
+    "Retrieved Contexts": [
+      "FOD results from ingestion of foreign objects ... birds, ice, hail, ash, etc. as well as runway debris",
+      "Engines operated in dusty, sandy and erosive-corrosive environments are exposed to higher blade distress",
+      "Particulate material due to air pollution, such as dust, sand or industry emissions can erode HPC blades",
+      "and block HPT vane/blade cooling holes",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "The photo on the next page shows fan blades bent due to the ingestion of a bird",
+      "airfoil Quality (foreign object damage (FOD), erosion, and surface roughness) is significant"
+    ],
+    "Source Chunks": "D1_c15, D1_c07",
+    "Ground Truth Nodes": [
+      "C_fod_ingestion",
+      "FM_fod",
+      "C_particulate_ingestion"
+    ],
+    "Time (s)": 3.81,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_fod",
+        "name": "Foreign Object Damage",
+        "type": "FailureMode",
+        "matched_phrase": "foreign object damage"
+      },
+      {
+        "id": "C_particulate_ingestion",
+        "name": "Particulate / dust / sand ingestion",
+        "type": "Cause",
+        "matched_phrase": "particulate distress"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Foreign Object Damage (FOD)",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Foreign object / bird ingestion",
+        "label": "CAUSES"
+      },
+      {
+        "id": "LEADS_TO_0",
+        "name": "Compressor surge / stall",
+        "label": "LEADS_TO"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "LEADS_TO_0",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "DA01",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "Both a compressor surge and a flameout cause abnormal Engine Pressure Ratio (EPR) indications. How do you distinguish between the two based solely on EPR?",
+    "Ground Truth": "A flameout causes a sustained low EPR reading, whereas a surge causes rapid EPR fluctuations.",
+    "Expected Chain": [],
+    "Model Answer": "A compressor surge produces rapid, often high‑EPR fluctuations, whereas a flameout produces a low‑EPR reading.  \n- Surge: rapid EPR fluctuation [D3_c14] and can show high or rising EPR [D3_c05].  \n- Flameout: low EPR [D3_c13] and a drop in EPR [D3_c10].",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c13, D3_c14",
+    "Ground Truth Nodes": [
+      "SY_low_epr",
+      "SY_epr_fluctuation",
+      "FM_flameout",
+      "FM_compressor_surge"
+    ],
+    "Time (s)": 5.84,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL030",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c09"
+        ]
+      },
+      {
+        "id": "FM_flameout",
+        "label": "FailureMode",
+        "name": "Flameout"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "type": "FailureMode",
+        "matched_phrase": "compressor surge"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "type": "FailureMode",
+        "matched_phrase": "flameout"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "FM_compressor_surge",
+        "target": "FM_flameout",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "DA02",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "How do you distinguish whether an oil filter bypass is caused by generic fluid contamination or by a catastrophic mechanical failure?",
+    "Ground Truth": "If the bypass is accompanied by an increase in oil temperature, high indicated vibration, and particles on the chip detectors, it is due to debris from a bearing failure. Otherwise, it may be standard contamination.",
+    "Expected Chain": [],
+    "Model Answer": "Oil‑filter bypass can arise from either generic fluid contamination or from a bearing failure.  \nThe graph shows that a bearing failure produces **high oil temperature** and **high vibration** in addition to the bypass indication [D3_c17]. It also shows that a bearing failure can be detected by **chip detectors** indicating bearing compartment distress [D3_c18].  \nTherefore, if an oil‑filter bypass is accompanied by high oil temperature, high vibration, or chip‑detector evidence of bearing distress, the bypass is likely caused by a catastrophic bearing failure.  \nIf the bypass occurs without those additional bearing‑failure symptoms, it is more likely due to generic fluid contamination.",
+    "Retrieved Contexts": [
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "blade distress (particularly on HPT blades), parts cracking and chipping, and in extreme situations, part failures",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "predict the current health state, the eventual failing component(s), and the remaining useful life",
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Chip detectors ... to collect bearing compartment particles as an indication of bearing compartment distress",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "If the oil filter becomes clogged with debris (either from contamination ... or debris from a bearing failure)",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "Bearing failures will be accompanied by an increase in oil temperature and indicated vibration",
+      "Fan unbalance at assembly ... Bird ingestion/FOD ... Bearing failure ... Excessive fan rotor system tip clearances",
+      "fan blade material loss due to ingested material, or fan blade distortion due to foreign object damage",
+      "The major purpose of overhaul is to inspect, repair, and replace worn engine parts"
+    ],
+    "Source Chunks": "D3_c20, D3_c17",
+    "Ground Truth Nodes": [
+      "SY_oil_filter_bypass",
+      "FM_bearing_failure"
+    ],
+    "Time (s)": 6.62,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_oil_filter_bypass",
+        "name": "Oil filter bypass indication",
+        "type": "Symptom",
+        "matched_phrase": "oil filter bypass"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Bearing failure",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Bearing distress",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High oil temperature",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "DA03",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "How does the Exhaust Gas Temperature (EGT) indication behave differently between a flameout and a hot start?",
+    "Ground Truth": "A flameout is accompanied by a distinct drop in EGT, while a hot start exhibits relatively high, rising turbine temperatures (EGT) due to ineffective sub-idle cooling.",
+    "Expected Chain": [],
+    "Model Answer": "A flameout causes the EGT to fall, while a hot start causes the EGT to rise. The graph notes that a flameout is accompanied by a drop in EGT [D3_c10], whereas a hot start is characterized by high or rising EGT [D3_c25].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Normal engine cooling flows will not be effective during sub-idle operation, and turbine temperatures may appear relatively high",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c10, D3_c25",
+    "Ground Truth Nodes": [
+      "FM_flameout",
+      "FM_hot_start",
+      "SY_high_egt"
+    ],
+    "Time (s)": 7.54,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_high_egt",
+        "name": "High / rising EGT",
+        "type": "Symptom",
+        "matched_phrase": "exhaust gas temperature"
+      },
+      {
+        "id": "SY_egt_exceedance",
+        "name": "EGT redline exceedance",
+        "type": "Symptom",
+        "matched_phrase": "egt exceedance"
+      },
+      {
+        "id": "FM_hot_start",
+        "name": "Hot start",
+        "type": "FailureMode",
+        "matched_phrase": "hot start"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "type": "FailureMode",
+        "matched_phrase": "flameout"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Flameout",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel starvation / interruption",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor surge / stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Fuel filter clogging",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Continuous ignition",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Low EPR",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Low oil pressure",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.25,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "DA04",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "Maintenance crews must respond to engine nacelle fires and tailpipe fires differently. What is the immediate procedural difference?",
+    "Ground Truth": "For an engine (nacelle) fire, immediately shut off fuel to the engine. For a tailpipe fire, the quickest mitigation is to dry motor the engine.",
+    "Expected Chain": [],
+    "Model Answer": "For a tailpipe fire the crew should immediately dry‑motor the engine, which is the quickest way to extinguish most tailpipe fires [D3_c22]. The graph does not provide an immediate procedural step for engine nacelle fires.",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Fuel may puddle in the turbine casings and exhaust during start-up or shutdown, and then ignite",
+      "dry motor the engine, which is the quickest way of extinguishing most tailpipe fires",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c24, D3_c22",
+    "Ground Truth Nodes": [
+      "FM_engine_fire",
+      "FM_tailpipe_fire",
+      "MI_engine_shutdown",
+      "MI_dry_motoring"
+    ],
+    "Time (s)": 5.35,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_tailpipe_fire",
+        "name": "Tailpipe fire",
+        "type": "FailureMode",
+        "matched_phrase": "tailpipe fire"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Tailpipe fire",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel puddling in tailpipe",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Dry motoring the engine",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.3333333333333333,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "DA05",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "How do the actions and goals of on-condition monitoring differ from those of a shop maintenance overhaul?",
+    "Ground Truth": "On-condition monitoring involves taking regular measurements (speed, temp, pressure, vibration) and performing borescope inspections on-wing to track engine health. An overhaul requires taking the engine to a shop and completely dismantling the core to physically inspect, repair, and replace worn parts.",
+    "Expected Chain": [],
+    "Model Answer": "On‑condition monitoring monitors engine parameters, such as EGT margin, to detect deterioration trends and provide early warning of performance loss [D1_c13]. Its goal is to identify problems before they become critical, allowing timely corrective actions.  \nA shop maintenance overhaul, by contrast, involves physically dismantling the core module, inspecting, balancing, repairing or replacing worn parts, and restoring engine performance [D1_c11, D7_c01]. Its goal is to restore or improve performance and extend the engine’s life through comprehensive inspection and repair.",
+    "Retrieved Contexts": [
+      "High EGT can be an indication of degraded engine performance",
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "Such leakage reduces overall engine efficiency hence raising the total specific fuel consumption",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "this contamination leads to performance deterioration which can be restored by regular engine wash",
+      "blade distress (particularly on HPT blades), parts cracking and chipping, and in extreme situations, part failures",
+      "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress",
+      "the effect of shorter stage length operation is more rapid performance deterioration",
+      "A larger derate translates into lower take-off EGT and therefore enjoys a lower engine deterioration rate",
+      "an engine exposed to high ambient temperatures will experience lower available EGT margin and greater performance degradation",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC",
+      "The major purpose of overhaul is to inspect, repair, and replace worn engine parts"
+    ],
+    "Source Chunks": "D1_c13, D7_c01",
+    "Ground Truth Nodes": [
+      "MI_on_condition_monitoring",
+      "MI_overhaul"
+    ],
+    "Time (s)": 10.72,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "MI_on_condition_monitoring",
+        "name": "On-condition / trend monitoring",
+        "type": "Mitigation",
+        "matched_phrase": "on-condition monitoring"
+      },
+      {
+        "id": "MI_overhaul",
+        "name": "Engine overhaul / full teardown",
+        "type": "Mitigation",
+        "matched_phrase": "overhaul"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Hardware deterioration / blade distress",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Engine age / phase (first-run vs mature)",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Performance restoration shop visit",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MITIGATED_BY_1",
+        "name": "Engine overhaul / full teardown",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_1",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.4,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "DA06",
+    "Category": "disambiguation",
+    "Hop Count": 1,
+    "Question": "Short-haul operations degrade an engine through two distinct mechanisms. What is the difference between LLP expiry and performance deterioration?",
+    "Ground Truth": "LLP expiry is a hard cyclic limit where rotating parts reach their structural stub-life and must be replaced. Performance deterioration is the gradual loss of thermodynamic efficiency (EGT margin) caused by the engine spending a disproportionate amount of time at high-stress takeoff thrust.",
+    "Expected Chain": [],
+    "Model Answer": "LLP expiry is a scheduled degradation that occurs when short‑haul/high‑cycle operation causes an engine part to reach its life‑limit, requiring replacement before further use [D1_c16, D1_c17]. The graph does not provide any information about performance deterioration.",
+    "Retrieved Contexts": [
+      "the parts must be replaced and not used again",
+      "these engines are operating on short-to-medium haul networks and accumulate enough flight cycles to bump-up against a LLPs stub-life"
+    ],
+    "Source Chunks": "D1_c16, D1_c18",
+    "Ground Truth Nodes": [
+      "OF_short_haul",
+      "FM_llp_expiry",
+      "FM_egt_margin_deterioration"
+    ],
+    "Time (s)": 3.46,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "FM_llp_expiry",
+        "label": "FailureMode",
+        "name": "Life-Limited Part (LLP) expiry",
+        "edge_type": "INFLUENCES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL016",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D1_c16"
+        ]
+      },
+      {
+        "id": "OF_short_haul",
+        "label": "OperatingFactor",
+        "name": "Short-haul / high-cycle operation"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "FM_llp_expiry",
+        "name": "Life-Limited Part (LLP) expiry",
+        "type": "FailureMode",
+        "matched_phrase": "llp expiry"
+      },
+      {
+        "id": "OF_short_haul",
+        "name": "Short-haul / high-cycle operation",
+        "type": "OperatingFactor",
+        "matched_phrase": "short-haul"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "FM_llp_expiry",
+        "name": "Life-Limited Part (LLP) expiry",
+        "label": "FailureMode"
+      },
+      {
+        "id": "OF_short_haul",
+        "name": "Short-haul / high-cycle operation",
+        "label": "OperatingFactor"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "FM_llp_expiry",
+        "target": "OF_short_haul",
+        "type": "INFLUENCES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.25,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "OS01",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "A pilot reports a loud bang and heavy vibration during takeoff, but notes the engine recovered immediately after they pulled back the thrust lever. What fault happened and what corrected it?",
+    "Ground Truth": "The engine experienced a compressor surge, and the pilot's action of retarding the thrust lever allowed the engine to recover airflow stability.",
+    "Expected Chain": [],
+    "Model Answer": "The fault was a compressor surge / stall, which manifested as a loud bang and heavy vibration [D3_c03]. The engine recovered when the pilot retarded the thrust lever, which is the prescribed mitigation for a compressor surge [D3_c06].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c03, D3_c06",
+    "Ground Truth Nodes": [
+      "FM_compressor_surge",
+      "MI_thrust_reduction",
+      "SY_loud_bang"
+    ],
+    "Time (s)": 4.13,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "SY_loud_bang",
+        "label": "Symptom",
+        "name": "Loud bang and yaw",
+        "edge_type": "MANIFESTS_AS",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL024",
+        "edge_confidence": 0.95,
+        "edge_chunks": [
+          "D3_c03"
+        ]
+      },
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL028",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D3_c07"
+        ]
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "label": "FailureMode",
+        "name": "Severe engine damage",
+        "edge_type": "MANIFESTS_AS",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL053",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c31"
+        ]
+      },
+      {
+        "id": "SY_high_vibration",
+        "label": "Symptom",
+        "name": "High vibration"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "SY_loud_bang",
+        "name": "Loud bang and yaw",
+        "type": "Symptom",
+        "matched_phrase": "loud bang"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "type": "Symptom",
+        "matched_phrase": "vibration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "SY_loud_bang",
+        "name": "Loud bang and yaw",
+        "label": "Symptom"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_severe_engine_damage",
+        "name": "Severe engine damage",
+        "label": "FailureMode"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "label": "Symptom"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "SY_loud_bang",
+        "target": "FM_compressor_surge",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "FM_compressor_surge",
+        "target": "FM_severe_engine_damage",
+        "type": "LEADS_TO"
+      },
+      {
+        "source": "FM_severe_engine_damage",
+        "target": "SY_high_vibration",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.25,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "OS02",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "Following a normal shutdown, ground crews notice flames coming from the exhaust nozzle, but no fire warning is sounding in the flight deck. What is the cause and the immediate remedy?",
+    "Ground Truth": "Fuel has puddled in the turbine casings/exhaust and ignited, creating a tailpipe fire. The crew should perform a dry motoring run to blow it out.",
+    "Expected Chain": [],
+    "Model Answer": "The flames are from a tailpipe fire caused by fuel puddling in the exhaust [D3_c21]. The immediate remedy is to dry‑motor the engine, which is the quickest way to extinguish a tailpipe fire [D3_c22].",
+    "Retrieved Contexts": [
+      "A fire in the vicinity of the engine should be annunciated to the flight crew by a fire warning in the flight deck",
+      "engine shutdown should be immediately accomplished by shutting off fuel to the engine",
+      "Fuel may puddle in the turbine casings and exhaust during start-up or shutdown, and then ignite",
+      "dry motor the engine, which is the quickest way of extinguishing most tailpipe fires"
+    ],
+    "Source Chunks": "D3_c21, D3_c22",
+    "Ground Truth Nodes": [
+      "FM_tailpipe_fire",
+      "MI_dry_motoring",
+      "C_fuel_puddling"
+    ],
+    "Time (s)": 6.47,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_tailpipe_fire",
+        "name": "Tailpipe fire",
+        "type": "FailureMode",
+        "matched_phrase": "exhaust nozzle"
+      },
+      {
+        "id": "SY_fire_warning",
+        "name": "Fire warning",
+        "type": "Symptom",
+        "matched_phrase": "fire warning"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Tailpipe fire",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel puddling in tailpipe",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Dry motoring the engine",
+        "label": "MITIGATED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.25,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "OS03",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "During a climb, the engine oil quantity steadily decreases to zero, though oil temperature and pressure remain temporarily normal without vibration. What failure mode does this indicate?",
+    "Ground Truth": "It indicates an external oil leak, which produces a sustained reduction in quantity down to zero without immediately generating the heat or debris associated with a bearing failure.",
+    "Expected Chain": [],
+    "Model Answer": "The steady decrease in oil quantity to zero indicates an **oil leak / oil loss** failure mode. [D3_c19]",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Chip detectors ... to collect bearing compartment particles as an indication of bearing compartment distress",
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "If the oil filter becomes clogged with debris (either from contamination ... or debris from a bearing failure)",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge",
+      "Bearing failures will be accompanied by an increase in oil temperature and indicated vibration",
+      "Leaks will produce a sustained reduction in oil quantity, down to zero",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c19",
+    "Ground Truth Nodes": [
+      "FM_oil_leak_or_oil_loss",
+      "SY_decreasing_oil_quantity"
+    ],
+    "Time (s)": 5.24,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "PA_oil_temp",
+        "name": "Oil temperature",
+        "type": "Parameter",
+        "matched_phrase": "oil temperature"
+      },
+      {
+        "id": "SY_decreasing_oil_quantity",
+        "name": "Steady decrease in oil quantity",
+        "type": "Symptom",
+        "matched_phrase": "oil quantity"
+      },
+      {
+        "id": "PA_oil_pressure",
+        "name": "Oil pressure",
+        "type": "Parameter",
+        "matched_phrase": "oil pressure"
+      },
+      {
+        "id": "SY_high_vibration",
+        "name": "High vibration",
+        "type": "Symptom",
+        "matched_phrase": "vibration"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Flameout",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel starvation / interruption",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Compressor surge / stall",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_2",
+        "name": "Fuel filter clogging",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Continuous ignition",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Low EPR",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "MANIFESTS_AS_1",
+        "name": "Low oil pressure",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_2",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_1",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 0.0
+  },
+  {
+    "ID": "OS04",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "A twin-engine aircraft loses a fuel tank boost pump. Shortly after, the crew receives an oil and fuel filter bypass warning. What severe operational risk is now present?",
+    "Ground Truth": "Debris from the failed boost pump is clogging the fuel filter. Once bypassed, the debris can interrupt fuel control, posing a direct risk of a multiple-engine flameout.",
+    "Expected Chain": [],
+    "Model Answer": "The loss of a fuel tank boost pump can cause fuel filter clogging, which can lead to a flameout. [D3_c29] [D3_c30]",
+    "Retrieved Contexts": [
+      "Fuel filter clogging can result from the failure of one of the fuel tank boost pumps",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c29, D3_c30",
+    "Ground Truth Nodes": [
+      "C_boost_pump_failure",
+      "FM_fuel_filter_clogging",
+      "FM_flameout"
+    ],
+    "Time (s)": 3.71,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_oil_filter_bypass",
+        "name": "Oil filter bypass indication",
+        "type": "Symptom",
+        "matched_phrase": "oil filter bypass"
+      },
+      {
+        "id": "FM_fuel_filter_clogging",
+        "name": "Fuel filter clogging",
+        "type": "FailureMode",
+        "matched_phrase": "fuel filter"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Fuel filter clogging",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Fuel boost-pump debris",
+        "label": "CAUSES"
+      },
+      {
+        "id": "LEADS_TO_0",
+        "name": "Flameout",
+        "label": "LEADS_TO"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "LEADS_TO_0",
+        "type": "LEADS_TO"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "OS05",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "An engine operating heavily in desert environments is brought to the shop for high fuel consumption. If borescope shows no cracks, what is the likely physical condition of the compressor?",
+    "Ground Truth": "The High-Pressure Compressor (HPC) blades are likely suffering from airfoil erosion due to sand and dust ingestion, degrading their aerodynamic efficiency.",
+    "Expected Chain": [],
+    "Model Answer": "The compressor is likely suffering from airfoil erosion or surface roughness. This condition is associated with engines operating in dusty, sandy desert environments, where particulate ingestion can erode high‑pressure compressor blades [D1_c07, D1_c06, D4_c06].",
+    "Retrieved Contexts": [
+      "used to inspect the internal parts of the engine for defects such as cracks, stress fractures and corrosion",
+      "Engines operated in dusty, sandy and erosive-corrosive environments are exposed to higher blade distress",
+      "Particulate material due to air pollution, such as dust, sand or industry emissions can erode HPC blades",
+      "airfoil Quality (foreign object damage (FOD), erosion, and surface roughness) is significant",
+      "non-destructive testing (NDT) inspection"
+    ],
+    "Source Chunks": "D1_c07",
+    "Ground Truth Nodes": [
+      "OF_environment",
+      "C_particulate_ingestion",
+      "FM_airfoil_erosion"
+    ],
+    "Time (s)": 5.25,
+    "Retrieval Type": "independent_stars_no_path",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "OF_environment",
+        "name": "Operating environment (dusty / erosive / temperate)",
+        "type": "OperatingFactor",
+        "matched_phrase": "operating environment"
+      },
+      {
+        "id": "MI_borescope_inspection",
+        "name": "Borescope inspection",
+        "type": "Mitigation",
+        "matched_phrase": "borescope"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade cracking / chipping",
+        "label": "FailureMode"
+      }
+    ],
+    "Path Edges": [],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "OS06",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "During an engine start sequence, the EGT rises rapidly toward redline while the engine core speed hangs in a sub-idle state. What is happening and why is the temperature spiking?",
+    "Ground Truth": "The engine is experiencing a hot start. Because it is operating at sub-idle speeds, normal engine cooling flows are not effective, allowing turbine temperatures to appear relatively high.",
+    "Expected Chain": [],
+    "Model Answer": "The engine is undergoing a **hot start**. In a hot start the core speed remains sub‑idle, so the normal cooling airflow is ineffective and turbine temperatures rise rapidly toward redline. This is reflected in the symptom of **high / rising EGT** that accompanies a hot start [D3_c25].",
+    "Retrieved Contexts": [
+      "reduce reactive maintenance costs, which may account for up to 40% of the overall budget",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "Excessive EGT is a key indicator of engine stall, of difficulty in engine starting, of a major bleed air leak",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "unstable engine operation (such as a compressor stall)",
+      "Normal engine cooling flows will not be effective during sub-idle operation, and turbine temperatures may appear relatively high",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "severe engine damage may be accompanied by symptoms such as fire warning ... or engine surge"
+    ],
+    "Source Chunks": "D3_c25",
+    "Ground Truth Nodes": [
+      "FM_hot_start",
+      "SY_high_egt"
+    ],
+    "Time (s)": 8.49,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "SY_high_egt",
+        "name": "High / rising EGT",
+        "type": "Symptom",
+        "matched_phrase": "exhaust gas temperature"
+      },
+      {
+        "id": "SY_egt_exceedance",
+        "name": "EGT redline exceedance",
+        "type": "Symptom",
+        "matched_phrase": "egt redline"
+      },
+      {
+        "id": "FM_hot_start",
+        "name": "Hot start",
+        "type": "FailureMode",
+        "matched_phrase": "sub idle"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Hot start",
+        "label": "FailureMode"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "High / rising EGT",
+        "label": "MANIFESTS_AS"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.0,
+    "Context Recall": 0.5
+  },
+  {
+    "ID": "OS07",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "A heavy aircraft executes a harsh maneuver and hard landing. On subsequent flights, the engine exhibits a permanent increase in cruise SFC. What mechanical damage occurred during the flight?",
+    "Ground Truth": "Flight loads and deflections caused the turbine blades to rub against their outer shrouds, permanently increasing the blade tip clearance and causing efficiency losses.",
+    "Expected Chain": [],
+    "Model Answer": "The permanent rise in cruise SFC indicates that the engine suffered a blade‑tip clearance increase, most likely caused by blade‑tip wear or rub during the hard maneuver and landing. This damage raises the clearance between turbine blade tips and the surrounding case, degrading compressor efficiency and raising fuel consumption. [D4_c02] [D4_c03]",
+    "Retrieved Contexts": [
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c04, D4_c01",
+    "Ground Truth Nodes": [
+      "C_flight_loads",
+      "FM_blade_tip_rub",
+      "FM_tip_clearance_increase"
+    ],
+    "Time (s)": 4.12,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "SY_sfc_increase",
+        "label": "Symptom",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "edge_type": "MANIFESTS_AS",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL064",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D4_c10"
+        ]
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "label": "FailureMode",
+        "name": "Blade-tip clearance increase",
+        "edge_type": "DEGRADES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL057",
+        "edge_confidence": 0.9,
+        "edge_chunks": [
+          "D4_c03"
+        ]
+      },
+      {
+        "id": "PA_sfc",
+        "label": "Parameter",
+        "name": "Specific Fuel Consumption (SFC)"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "SY_sfc_increase",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "type": "Symptom",
+        "matched_phrase": "sfc increase"
+      },
+      {
+        "id": "PA_sfc",
+        "name": "Specific Fuel Consumption (SFC)",
+        "type": "Parameter",
+        "matched_phrase": "sfc"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "SY_sfc_increase",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "Symptom"
+      },
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "PA_sfc",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "Parameter"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "SY_sfc_increase",
+        "target": "FM_tip_clearance_increase",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "FM_tip_clearance_increase",
+        "target": "PA_sfc",
+        "type": "DEGRADES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.4,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "OS08",
+    "Category": "operational_scenario",
+    "Hop Count": 1,
+    "Question": "In flight, the pilot notices brief fluctuations in EPR and EGT, but the engine continues running normally because the continuous ignition system activated automatically. What event did the ignition system prevent?",
+    "Ground Truth": "It prevented a total flameout by automatically restarting combustion after an unstable engine operation or temporary fuel interruption.",
+    "Expected Chain": [],
+    "Model Answer": "The continuous ignition prevented a flameout. [D3_c12][D3_c10]",
+    "Retrieved Contexts": [
+      "With continuous ignition, combustion will restart automatically, often without the pilot even noticing",
+      "A low EPR reading may be caused by engine rollback or flameout, or internal damage such as an LP turbine failure",
+      "Rapid EPR fluctuations may be caused by engine operational instability, such as surge",
+      "The air flowing over the compressor airfoils can stall ... the compressor can no longer compress the incoming air",
+      "Compressor surge may be caused by engine deterioration, it may be the result of ingestion of birds or ice",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Engine surge can be accompanied by visible flames forward out the inlet and rearward out the tailpipe",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "sustained surging will eventually over-heat the turbine ... Compressor blades may also be damaged and fail",
+      "The desired pilot action is to retard the thrust lever until the engine recovers",
+      "The flameout may result from the engine running out of fuel ... a control system malfunction, or unstable engine operation",
+      "unstable engine operation (such as a compressor stall)",
+      "A flameout will be accompanied by a drop in EGT, in engine core speed and in engine pressure ratio",
+      "there may be other symptoms, such as low oil pressure warnings and electrical generators dropping off line",
+      "Bird ingestion can result in the fracture of one or more fan blades, in which case, the engine will likely surge once and not recover",
+      "There is potential for multiple-engine flameout"
+    ],
+    "Source Chunks": "D3_c12, D3_c08",
+    "Ground Truth Nodes": [
+      "MI_continuous_ignition",
+      "FM_flameout"
+    ],
+    "Time (s)": 5.67,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [
+      {
+        "id": "MI_continuous_ignition",
+        "label": "Mitigation",
+        "name": "Continuous ignition",
+        "edge_type": "MITIGATES",
+        "edge_direction": "outgoing",
+        "edge_claim_id": "CL033",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D3_c12"
+        ]
+      },
+      {
+        "id": "FM_flameout",
+        "label": "FailureMode",
+        "name": "Flameout",
+        "edge_type": "LEADS_TO",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL030",
+        "edge_confidence": 0.8,
+        "edge_chunks": [
+          "D3_c09"
+        ]
+      },
+      {
+        "id": "FM_compressor_surge",
+        "label": "FailureMode",
+        "name": "Compressor surge / stall",
+        "edge_type": "INDICATES",
+        "edge_direction": "incoming",
+        "edge_claim_id": "CL035",
+        "edge_confidence": 0.85,
+        "edge_chunks": [
+          "D3_c14"
+        ]
+      },
+      {
+        "id": "SY_epr_fluctuation",
+        "label": "Symptom",
+        "name": "Rapid EPR fluctuation"
+      }
+    ],
+    "Matched Entities": [
+      {
+        "id": "MI_continuous_ignition",
+        "name": "Continuous ignition",
+        "type": "Mitigation",
+        "matched_phrase": "continuous ignition"
+      },
+      {
+        "id": "SY_epr_fluctuation",
+        "name": "Rapid EPR fluctuation",
+        "type": "Symptom",
+        "matched_phrase": "epr fluctuation"
+      },
+      {
+        "id": "SY_egt_exceedance",
+        "name": "EGT redline exceedance",
+        "type": "Symptom",
+        "matched_phrase": "egt exceedance"
+      },
+      {
+        "id": "SY_high_egt",
+        "name": "High / rising EGT",
+        "type": "Symptom",
+        "matched_phrase": "rising egt"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "MI_continuous_ignition",
+        "name": "Continuous ignition",
+        "label": "Mitigation"
+      },
+      {
+        "id": "FM_flameout",
+        "name": "Flameout",
+        "label": "FailureMode"
+      },
+      {
+        "id": "FM_compressor_surge",
+        "name": "Compressor surge / stall",
+        "label": "FailureMode"
+      },
+      {
+        "id": "SY_epr_fluctuation",
+        "name": "Rapid EPR fluctuation",
+        "label": "Symptom"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "MI_continuous_ignition",
+        "target": "FM_flameout",
+        "type": "MITIGATES"
+      },
+      {
+        "source": "FM_flameout",
+        "target": "FM_compressor_surge",
+        "type": "LEADS_TO"
+      },
+      {
+        "source": "FM_compressor_surge",
+        "target": "SY_epr_fluctuation",
+        "type": "INDICATES"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "PR01",
+    "Category": "provenance",
+    "Hop Count": 1,
+    "Question": "According to the NASA TM-81552 research memorandum, what specific percentage of short-term performance deterioration is attributed to High-Pressure Turbine (HPT) clearance increases?",
+    "Ground Truth": "HPT clearance increases contribute over 90 percent of the total short-term performance deterioration.",
+    "Expected Chain": [],
+    "Model Answer": "High‑pressure turbine clearance increases contribute over 90 percent of the total short‑term performance deterioration. [D4_c09]",
+    "Retrieved Contexts": [
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "blade distress (particularly on HPT blades), parts cracking and chipping, and in extreme situations, part failures",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "predict the current health state, the eventual failing component(s), and the remaining useful life",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "the flight crew will hear a very loud bang, which will be accompanied by yaw and vibration",
+      "Instruments may show high EGT and EPR or rotor speed changes",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC",
+      "The major purpose of overhaul is to inspect, repair, and replace worn engine parts"
+    ],
+    "Source Chunks": "D4_c09",
+    "Ground Truth Nodes": [
+      "FM_tip_clearance_increase",
+      "M_hpt"
+    ],
+    "Time (s)": 2.75,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "FM_tip_clearance_increase",
+        "name": "Blade-tip clearance increase",
+        "type": "FailureMode",
+        "matched_phrase": "clearance increases"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "PR02",
+    "Category": "provenance",
+    "Hop Count": 1,
+    "Question": "Based on historical data from NASA TM-81552, what is the estimated permanent residual cruise SFC penalty that cannot be restored even after a performance restoration shop visit?",
+    "Ground Truth": "There is a residual of approximately 0.2 percent cruise SFC that is not restored.",
+    "Expected Chain": [],
+    "Model Answer": "The estimated permanent residual cruise SFC penalty that cannot be restored even after a performance restoration shop visit is approximately 0.2 percent cruise SFC. [D4_c11]",
+    "Retrieved Contexts": [
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c11",
+    "Ground Truth Nodes": [
+      "MI_performance_restoration",
+      "PA_sfc"
+    ],
+    "Time (s)": 2.25,
+    "Retrieval Type": "path_traversal",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "MI_performance_restoration",
+        "name": "Performance restoration shop visit",
+        "type": "Mitigation",
+        "matched_phrase": "performance restoration"
+      },
+      {
+        "id": "PA_sfc",
+        "name": "Specific Fuel Consumption (SFC)",
+        "type": "Parameter",
+        "matched_phrase": "sfc"
+      }
+    ],
+    "Path Nodes": [],
+    "Path Edges": [],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 0.5,
+    "Context Recall": 1.0
+  },
+  {
+    "ID": "PR03",
+    "Category": "provenance",
+    "Hop Count": 1,
+    "Question": "According to the concluding remarks of NASA TM-81552, what is the total expected penalty to cruise Specific Fuel Consumption (SFC) caused by long-term performance deterioration?",
+    "Ground Truth": "Long-term performance deterioration accounts for about a 2.5 to 3.0 percent increase in cruise SFC.",
+    "Expected Chain": [],
+    "Model Answer": "The concluding remarks of NASA TM‑81552 state that long‑term performance deterioration is expected to increase cruise SFC by about 2.5 % to 3.0 % [D4_c10].",
+    "Retrieved Contexts": [
+      "the core module is traditionally dismantled and airfoils (rotors & stators) are inspected, balanced, and repaired or replaced as necessary",
+      "a major factor in deterioration of engine efficiency is the gradual increase in the clearance between the turbine blade tips and surrounding static seals or shrouds",
+      "Rates of deterioration are highest in the initial 1,000 - 2,000 engine flight cycles of operation as the blade tips begin to wear",
+      "Engine wash provides increased EGT margin - thus longer on-wing life - and compressor efficiency resulting in reduced fuel burn",
+      "As the engine ages a disproportionate amount of parts experience higher deterioration rates, higher scrap rates",
+      "air extracted from the compressor is ducted and directed onto the engine cases to control the clearance between the rotor blade tips and the case wall",
+      "Clearance increases resulting in efficiency losses occur ... as a result of blades rubbing their outer shrouds",
+      "The performance deterioration mechanisms - such as clearance increases ... affect the cruise specific fuel consumption (SFC)",
+      "thermal distortion is one of the predominant deterioration mechanisms causing ... warpage or distortion of vanes",
+      "deflections produced by aircraft induced flight loads that occur during take off rotation, flight maneuvers, landing, and thrust reversal",
+      "hot rotor reburst ... can result in high pressure turbine blade rubs due to different thermal growth rates between rotating and stationary structures",
+      "high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration",
+      "High and low pressure turbine thermal distortion is also a contributing source to the long-term performance deterioration",
+      "not all performance deterioration is restored, there being a residual of approximately 0.2 percent cruise SFC",
+      "a primary cause of engine performance deterioration was increased blade tip clearances throughout the engine",
+      "Long-term performance deterioration ... is about 2.5 to 3.0 percent cruise SFC"
+    ],
+    "Source Chunks": "D4_c10",
+    "Ground Truth Nodes": [
+      "PA_sfc"
+    ],
+    "Time (s)": 4.66,
+    "Retrieval Type": "query_plan_recall_heavy_graph_context",
+    "Reasoning Chain": [],
+    "Matched Entities": [
+      {
+        "id": "PA_sfc",
+        "name": "Specific Fuel Consumption (SFC)",
+        "type": "Parameter",
+        "matched_phrase": "specific fuel consumption"
+      }
+    ],
+    "Path Nodes": [
+      {
+        "id": "center",
+        "name": "Blade-tip clearance increase",
+        "label": "FailureMode"
+      },
+      {
+        "id": "CAUSES_0",
+        "name": "Blade tip rub",
+        "label": "CAUSES"
+      },
+      {
+        "id": "CAUSES_1",
+        "name": "Blade tip wear",
+        "label": "CAUSES"
+      },
+      {
+        "id": "MITIGATED_BY_0",
+        "name": "Active clearance control (case cooling bleed)",
+        "label": "MITIGATED_BY"
+      },
+      {
+        "id": "MANIFESTS_AS_0",
+        "name": "Cruise SFC increase / higher fuel burn",
+        "label": "MANIFESTS_AS"
+      },
+      {
+        "id": "DEGRADES_0",
+        "name": "EGT margin",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "DEGRADES_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "DEGRADES"
+      },
+      {
+        "id": "RESTORED_BY_0",
+        "name": "EGT margin",
+        "label": "RESTORED_BY"
+      },
+      {
+        "id": "RESTORED_BY_1",
+        "name": "Specific Fuel Consumption (SFC)",
+        "label": "RESTORED_BY"
+      }
+    ],
+    "Path Edges": [
+      {
+        "source": "CAUSES_0",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "CAUSES_1",
+        "target": "center",
+        "type": "CAUSES"
+      },
+      {
+        "source": "center",
+        "target": "MITIGATED_BY_0",
+        "type": "MITIGATED_BY"
+      },
+      {
+        "source": "center",
+        "target": "MANIFESTS_AS_0",
+        "type": "MANIFESTS_AS"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_0",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "center",
+        "target": "DEGRADES_1",
+        "type": "DEGRADES"
+      },
+      {
+        "source": "RESTORED_BY_0",
+        "target": "center",
+        "type": "RESTORED_BY"
+      },
+      {
+        "source": "RESTORED_BY_1",
+        "target": "center",
+        "type": "RESTORED_BY"
+      }
+    ],
+    "Retrieval Error": null,
+    "Generation Error": null,
+    "Faithfulness": 1.0,
+    "Context Recall": 1.0
+  }
+]

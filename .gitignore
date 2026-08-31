@@ -22,6 +22,11 @@ Resources/
 # Eval / notebook files (not needed for deployment)
 *.xlsx
 *.ipynb
+
+# Exception: the evaluation/ folder holds the final, citation-linked eval
+# deliverables (gold set, RAGAS inputs/outputs, mechanical scores) -- keep
+# its xlsx files even though *.xlsx is excluded everywhere else.
+!evaluation/**/*.xlsx
 aeroops v1
 AeroOps_Copilot_Build_Spec
 RAGAS vs GRAPH RAG

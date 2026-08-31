@@ -1,0 +1,1705 @@
+{
+  "summary": {
+    "overall": {
+      "node_recall": 0.586,
+      "node_precision": 0.369,
+      "citation_recall": 0.804,
+      "citation_precision": 0.711,
+      "chain_coverage": 0.189,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 7.337,
+      "n_items": 45
+    },
+    "aggregation_fanout": {
+      "node_recall": 0.425,
+      "node_precision": 0.267,
+      "citation_recall": 0.861,
+      "citation_precision": 0.677,
+      "chain_coverage": 0.111,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 5.527,
+      "n_items": 6
+    },
+    "cross_document": {
+      "node_recall": 0.385,
+      "node_precision": 0.251,
+      "citation_recall": 0.562,
+      "citation_precision": 0.55,
+      "chain_coverage": 0.062,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 7.062,
+      "n_items": 8
+    },
+    "disambiguation": {
+      "node_recall": 0.653,
+      "node_precision": 0.518,
+      "citation_recall": 0.75,
+      "citation_precision": 0.8,
+      "chain_coverage": null,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 6.583,
+      "n_items": 6
+    },
+    "factual_single_hop": {
+      "node_recall": 0.778,
+      "node_precision": 0.398,
+      "citation_recall": 1.0,
+      "citation_precision": 0.889,
+      "chain_coverage": null,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 10.167,
+      "n_items": 6
+    },
+    "multi_hop_causal": {
+      "node_recall": 0.646,
+      "node_precision": 0.49,
+      "citation_recall": 0.812,
+      "citation_precision": 0.581,
+      "chain_coverage": 0.375,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 6.375,
+      "n_items": 8
+    },
+    "operational_scenario": {
+      "node_recall": 0.562,
+      "node_precision": 0.299,
+      "citation_recall": 0.812,
+      "citation_precision": 0.729,
+      "chain_coverage": null,
+      "edge_authenticity_rate": 1.0,
+      "overfetch_ratio": 7.0,
+      "n_items": 8
+    },
+    "provenance": {
+      "node_recall": 0.833,
+      "node_precision": 0.4,
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "chain_coverage": null,
+      "edge_authenticity_rate": null,
+      "overfetch_ratio": 11.0,
+      "n_items": 3
+    }
+  },
+  "items": [
+    {
+      "ID": "FH01",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "node_precision": 0.5,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_severe_engine_damage",
+        "SY_high_vibration",
+        "SY_loud_bang"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c03"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 3,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 13.0,
+      "num_contexts": 13
+    },
+    {
+      "ID": "FH02",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "FM_tailpipe_fire",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "MI_dry_motoring"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c22"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 16.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "FH03",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_clearance_control_bleed"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c32"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 1,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 9.0,
+      "num_contexts": 9
+    },
+    {
+      "ID": "FH04",
+      "Category": "factual_single_hop",
+      "node_recall": 0.667,
+      "node_precision": 0.286,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion",
+        "FM_blocked_cooling_holes",
+        "OF_environment",
+        "center"
+      ],
+      "missing_nodes": [
+        "M_hpt"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.333,
+      "cited_chunks": [
+        "D1_c07",
+        "D1_c08",
+        "D4_c06"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 4.0,
+      "num_contexts": 4
+    },
+    {
+      "ID": "FH05",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "C_blade_tip_wear",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_tip_clearance_increase"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D1_c03"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 16.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "FH06",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "C_bearing_distress",
+        "MANIFESTS_AS_0",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c18"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 3.0,
+      "num_contexts": 3
+    },
+    {
+      "ID": "MH01",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "node_precision": 0.5,
+      "touched_nodes": [
+        "C_bearing_distress",
+        "FM_bearing_failure",
+        "PA_oil_temp",
+        "PA_vibration",
+        "SY_high_vibration",
+        "SY_oil_filter_bypass"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D3_c17",
+        "D3_c20"
+      ],
+      "missing_chunks": [
+        "D3_c18"
+      ],
+      "chain_coverage": 1.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c18",
+        "D3_c20"
+      ],
+      "actual_sequence": [
+        "D3_c20",
+        "D3_c18"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 4.5,
+      "num_contexts": 9
+    },
+    {
+      "ID": "MH02",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.333,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "C_hot_rotor_reburst",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.4,
+      "cited_chunks": [
+        "D4_c01",
+        "D4_c03",
+        "D4_c05",
+        "D4_c09",
+        "D4_c10"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D4_c05",
+        "D4_c01"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 6.0,
+      "num_contexts": 12
+    },
+    {
+      "ID": "MH03",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout",
+        "FM_fuel_filter_clogging"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c29",
+        "D3_c30"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 1.0,
+      "chain_exact_order": true,
+      "expected_sequence": [
+        "D3_c29",
+        "D3_c30"
+      ],
+      "actual_sequence": [
+        "D3_c29",
+        "D3_c30"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 4.0,
+      "num_contexts": 8
+    },
+    {
+      "ID": "MH04",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.667,
+      "node_precision": 0.667,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_severe_engine_damage",
+        "MI_thrust_reduction"
+      ],
+      "missing_nodes": [
+        "SY_high_vibration"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.25,
+      "cited_chunks": [
+        "D3_c03",
+        "D3_c04",
+        "D3_c05",
+        "D3_c07",
+        "D3_c09",
+        "D3_c14",
+        "D3_c15",
+        "D3_c31"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.5,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c07",
+        "D3_c31"
+      ],
+      "actual_sequence": [
+        "D3_c06",
+        "D3_c07"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 6.5,
+      "num_contexts": 13
+    },
+    {
+      "ID": "MH05",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "node_precision": 0.3,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "C_compressor_airfoil_stall",
+        "FM_compressor_surge",
+        "FM_flameout",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 0.667,
+      "cited_chunks": [
+        "D3_c01",
+        "D3_c08",
+        "D3_c09"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c01",
+        "D3_c09"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "MH06",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.5,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_fod"
+      ],
+      "missing_nodes": [
+        "C_fod_ingestion",
+        "P_fan_blade"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D1_c15",
+        "D3_c27"
+      ],
+      "missing_chunks": [
+        "D3_c28"
+      ],
+      "chain_coverage": 0.5,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c28",
+        "D3_c27"
+      ],
+      "actual_sequence": [
+        "D3_c27"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 1,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 6.0,
+      "num_contexts": 12
+    },
+    {
+      "ID": "MH07",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.333,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "C_fuel_puddling",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_tailpipe_fire",
+        "MI_dry_motoring"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c21",
+        "D3_c22"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c21",
+        "D3_c22"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "MH08",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.333,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "OF_flight_length",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_egt_margin_deterioration",
+        "OF_thrust_rating"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 0.333,
+      "cited_chunks": [
+        "D1_c01",
+        "D1_c02",
+        "D1_c18"
+      ],
+      "missing_chunks": [
+        "D1_c04"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c18",
+        "D1_c04"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD01",
+      "Category": "cross_document",
+      "node_recall": 0.333,
+      "node_precision": 0.111,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "CAUSES_3",
+        "FM_egt_margin_deterioration",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "MITIGATED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_water_wash"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D1_c01",
+        "D1_c10"
+      ],
+      "missing_chunks": [
+        "D4_c02"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D4_c02",
+        "D1_c10"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD02",
+      "Category": "cross_document",
+      "node_recall": 0.333,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "FM_fod",
+        "LEADS_TO_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_fod_ingestion",
+        "FM_compressor_surge"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.4,
+      "cited_chunks": [
+        "D1_c15",
+        "D3_c01",
+        "D3_c02",
+        "D3_c26",
+        "D3_c27"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c15",
+        "D3_c27"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD03",
+      "Category": "cross_document",
+      "node_recall": 0.5,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "FM_blade_cracking",
+        "MI_overhaul",
+        "OF_engine_age",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_hardware_deterioration"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D7_c01"
+      ],
+      "missing_chunks": [
+        "D1_c14"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c14",
+        "D7_c01"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 3.5,
+      "num_contexts": 7
+    },
+    {
+      "ID": "CD04",
+      "Category": "cross_document",
+      "node_recall": 0.0,
+      "node_precision": 0.0,
+      "touched_nodes": [
+        "CAUSES_0",
+        "MITIGATED_BY_0",
+        "MITIGATED_BY_1",
+        "MI_overhaul",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_blade_cracking",
+        "MI_borescope_inspection",
+        "MI_ndt"
+      ],
+      "citation_recall": 0.0,
+      "citation_precision": 0.0,
+      "cited_chunks": [
+        "D1_c11",
+        "D2_c02",
+        "D7_c01"
+      ],
+      "missing_chunks": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD05",
+      "Category": "cross_document",
+      "node_recall": 0.333,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "FM_tip_clearance_increase",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "PA_egt_margin",
+        "PA_sfc"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D1_c01",
+        "D4_c03"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c01",
+        "D4_c03"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD06",
+      "Category": "cross_document",
+      "node_recall": 1.0,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "C_blade_tip_wear",
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D1_c03",
+        "D4_c01"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.5,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D4_c01",
+        "D1_c03"
+      ],
+      "actual_sequence": [
+        "D4_c02",
+        "D1_c03"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 6.0,
+      "num_contexts": 12
+    },
+    {
+      "ID": "CD07",
+      "Category": "cross_document",
+      "node_recall": 0.333,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "LEADS_TO_0",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MANIFESTS_AS_2",
+        "MITIGATED_BY_0",
+        "SY_high_egt",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_compressor_surge",
+        "FM_egt_margin_deterioration"
+      ],
+      "citation_recall": 0.0,
+      "citation_precision": 0.0,
+      "cited_chunks": [
+        "D3_c05",
+        "D3_c25"
+      ],
+      "missing_chunks": [
+        "D1_c21",
+        "D3_c15"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c21",
+        "D3_c15"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "CD08",
+      "Category": "cross_document",
+      "node_recall": 0.25,
+      "node_precision": 0.2,
+      "touched_nodes": [
+        "C_thermal_stress",
+        "FM_blade_tip_rub",
+        "FM_thermal_distortion",
+        "FM_tip_clearance_increase",
+        "PA_sfc"
+      ],
+      "missing_nodes": [
+        "C_flight_loads",
+        "FM_egt_margin_deterioration",
+        "OF_oat"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D4_c04",
+        "D4_c07"
+      ],
+      "missing_chunks": [
+        "D1_c19"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c19",
+        "D4_c04"
+      ],
+      "actual_sequence": [
+        "D4_c07",
+        "D4_c08",
+        "D4_c03",
+        "D4_c02"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 4,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 7.0,
+      "num_contexts": 14
+    },
+    {
+      "ID": "AF01",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "node_precision": 0.2,
+      "touched_nodes": [
+        "CAUSES_0",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "SY_high_vibration",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_bearing_failure",
+        "FM_fan_unbalance",
+        "FM_severe_engine_damage"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 0.143,
+      "cited_chunks": [
+        "D3_c01",
+        "D3_c02",
+        "D3_c16",
+        "D3_c17",
+        "D3_c18",
+        "D3_c26",
+        "D3_c27"
+      ],
+      "missing_chunks": [
+        "D3_c31"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c16",
+        "D3_c31"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "AF02",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "FM_compressor_surge",
+        "LEADS_TO_0",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MANIFESTS_AS_2",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "SY_high_egt",
+        "SY_loud_bang",
+        "SY_visible_flame"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.75,
+      "cited_chunks": [
+        "D3_c03",
+        "D3_c04",
+        "D3_c05",
+        "D3_c14"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c03",
+        "D3_c04",
+        "D3_c05"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 5.33,
+      "num_contexts": 16
+    },
+    {
+      "ID": "AF03",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.333,
+      "node_precision": 0.125,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "FM_flameout",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_fuel_starvation",
+        "FM_fuel_filter_clogging"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.667,
+      "cited_chunks": [
+        "D3_c08",
+        "D3_c09",
+        "D3_c30"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c08",
+        "D3_c30"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "AF04",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.8,
+      "node_precision": 0.667,
+      "touched_nodes": [
+        "C_bearing_distress",
+        "FM_bearing_failure",
+        "PA_oil_temp",
+        "PA_vibration",
+        "SY_high_vibration",
+        "SY_oil_filter_bypass"
+      ],
+      "missing_nodes": [
+        "SY_high_oil_temp"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c17",
+        "D3_c18",
+        "D3_c20"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.667,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D3_c17",
+        "D3_c18",
+        "D3_c20"
+      ],
+      "actual_sequence": [
+        "D3_c20",
+        "D3_c18"
+      ],
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 3.0,
+      "num_contexts": 9
+    },
+    {
+      "ID": "AF05",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "node_precision": 0.111,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "CAUSES_3",
+        "FM_egt_margin_deterioration",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "MITIGATED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "OF_flight_length",
+        "OF_oat",
+        "OF_thrust_rating"
+      ],
+      "citation_recall": 0.667,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D1_c01",
+        "D1_c04",
+        "D1_c18",
+        "D1_c19"
+      ],
+      "missing_chunks": [
+        "D1_c05"
+      ],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c05",
+        "D1_c18",
+        "D1_c19"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 5.33,
+      "num_contexts": 16
+    },
+    {
+      "ID": "AF06",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.667,
+      "node_precision": 0.4,
+      "touched_nodes": [
+        "CAUSES_0",
+        "C_particulate_ingestion",
+        "FM_fod",
+        "LEADS_TO_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_fod_ingestion"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D1_c07",
+        "D1_c15"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": 0.0,
+      "chain_exact_order": false,
+      "expected_sequence": [
+        "D1_c15",
+        "D1_c07"
+      ],
+      "actual_sequence": [],
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 3.5,
+      "num_contexts": 7
+    },
+    {
+      "ID": "DA01",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_flameout"
+      ],
+      "missing_nodes": [
+        "SY_epr_fluctuation",
+        "SY_low_epr"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.667,
+      "cited_chunks": [
+        "D3_c10",
+        "D3_c13",
+        "D3_c14"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 1,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "DA02",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "MANIFESTS_AS_0",
+        "SY_oil_filter_bypass",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_bearing_failure"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.667,
+      "cited_chunks": [
+        "D3_c17",
+        "D3_c18",
+        "D3_c20"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 7.0,
+      "num_contexts": 14
+    },
+    {
+      "ID": "DA03",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "node_precision": 0.273,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "FM_flameout",
+        "FM_hot_start",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MITIGATED_BY_0",
+        "SY_egt_exceedance",
+        "SY_high_egt",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c10",
+        "D3_c25"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "DA04",
+      "Category": "disambiguation",
+      "node_recall": 0.25,
+      "node_precision": 0.25,
+      "touched_nodes": [
+        "CAUSES_0",
+        "FM_tailpipe_fire",
+        "MITIGATED_BY_0",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_engine_fire",
+        "MI_dry_motoring",
+        "MI_engine_shutdown"
+      ],
+      "citation_recall": 0.5,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c22"
+      ],
+      "missing_chunks": [
+        "D3_c24"
+      ],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 7.5,
+      "num_contexts": 15
+    },
+    {
+      "ID": "DA05",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "node_precision": 0.333,
+      "touched_nodes": [
+        "CAUSES_0",
+        "MITIGATED_BY_0",
+        "MITIGATED_BY_1",
+        "MI_on_condition_monitoring",
+        "MI_overhaul",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 0.667,
+      "cited_chunks": [
+        "D1_c11",
+        "D1_c13",
+        "D7_c01"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "DA06",
+      "Category": "disambiguation",
+      "node_recall": 0.667,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "FM_llp_expiry",
+        "OF_short_haul"
+      ],
+      "missing_nodes": [
+        "FM_egt_margin_deterioration"
+      ],
+      "citation_recall": 0.0,
+      "citation_precision": null,
+      "cited_chunks": [],
+      "missing_chunks": [
+        "D1_c16",
+        "D1_c18"
+      ],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 1,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 1.0,
+      "num_contexts": 2
+    },
+    {
+      "ID": "OS01",
+      "Category": "operational_scenario",
+      "node_recall": 0.667,
+      "node_precision": 0.5,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_severe_engine_damage",
+        "SY_high_vibration",
+        "SY_loud_bang"
+      ],
+      "missing_nodes": [
+        "MI_thrust_reduction"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c03",
+        "D3_c06"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 3,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 6.5,
+      "num_contexts": 13
+    },
+    {
+      "ID": "OS02",
+      "Category": "operational_scenario",
+      "node_recall": 0.333,
+      "node_precision": 0.2,
+      "touched_nodes": [
+        "CAUSES_0",
+        "FM_tailpipe_fire",
+        "MITIGATED_BY_0",
+        "SY_fire_warning",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_fuel_puddling",
+        "MI_dry_motoring"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c21",
+        "D3_c22"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 2.0,
+      "num_contexts": 4
+    },
+    {
+      "ID": "OS03",
+      "Category": "operational_scenario",
+      "node_recall": 0.5,
+      "node_precision": 0.091,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "CAUSES_2",
+        "MANIFESTS_AS_0",
+        "MANIFESTS_AS_1",
+        "MITIGATED_BY_0",
+        "PA_oil_pressure",
+        "PA_oil_temp",
+        "SY_decreasing_oil_quantity",
+        "SY_high_vibration",
+        "center"
+      ],
+      "missing_nodes": [
+        "FM_oil_leak_or_oil_loss"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c19"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 15.0,
+      "num_contexts": 15
+    },
+    {
+      "ID": "OS04",
+      "Category": "operational_scenario",
+      "node_recall": 0.333,
+      "node_precision": 0.2,
+      "touched_nodes": [
+        "CAUSES_0",
+        "FM_fuel_filter_clogging",
+        "LEADS_TO_0",
+        "SY_oil_filter_bypass",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c29",
+        "D3_c30"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 1.0,
+      "num_contexts": 2
+    },
+    {
+      "ID": "OS05",
+      "Category": "operational_scenario",
+      "node_recall": 0.333,
+      "node_precision": 0.333,
+      "touched_nodes": [
+        "MI_borescope_inspection",
+        "OF_environment",
+        "center"
+      ],
+      "missing_nodes": [
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 0.333,
+      "cited_chunks": [
+        "D1_c06",
+        "D1_c07",
+        "D4_c06"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 5.0,
+      "num_contexts": 5
+    },
+    {
+      "ID": "OS06",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "node_precision": 0.4,
+      "touched_nodes": [
+        "FM_hot_start",
+        "MANIFESTS_AS_0",
+        "SY_egt_exceedance",
+        "SY_high_egt",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D3_c25"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 14.0,
+      "num_contexts": 14
+    },
+    {
+      "ID": "OS07",
+      "Category": "operational_scenario",
+      "node_recall": 0.333,
+      "node_precision": 0.333,
+      "touched_nodes": [
+        "FM_tip_clearance_increase",
+        "PA_sfc",
+        "SY_sfc_increase"
+      ],
+      "missing_nodes": [
+        "C_flight_loads",
+        "FM_blade_tip_rub"
+      ],
+      "citation_recall": 0.0,
+      "citation_precision": 0.0,
+      "cited_chunks": [
+        "D1_c03",
+        "D4_c02",
+        "D4_c10"
+      ],
+      "missing_chunks": [
+        "D4_c01",
+        "D4_c04"
+      ],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 2,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 4.5,
+      "num_contexts": 9
+    },
+    {
+      "ID": "OS08",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "node_precision": 0.333,
+      "touched_nodes": [
+        "FM_compressor_surge",
+        "FM_flameout",
+        "MI_continuous_ignition",
+        "SY_egt_exceedance",
+        "SY_epr_fluctuation",
+        "SY_high_egt"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 0.5,
+      "citation_precision": 0.5,
+      "cited_chunks": [
+        "D3_c10",
+        "D3_c12"
+      ],
+      "missing_chunks": [
+        "D3_c08"
+      ],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": 1.0,
+      "real_hops": 3,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 8.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "PR01",
+      "Category": "provenance",
+      "node_recall": 0.5,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "FM_tip_clearance_increase",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [
+        "M_hpt"
+      ],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D4_c09"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 16.0,
+      "num_contexts": 16
+    },
+    {
+      "ID": "PR02",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "node_precision": 1.0,
+      "touched_nodes": [
+        "MI_performance_restoration",
+        "PA_sfc"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D4_c11"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 1.0,
+      "num_contexts": 1
+    },
+    {
+      "ID": "PR03",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "node_precision": 0.1,
+      "touched_nodes": [
+        "CAUSES_0",
+        "CAUSES_1",
+        "DEGRADES_0",
+        "DEGRADES_1",
+        "MANIFESTS_AS_0",
+        "MITIGATED_BY_0",
+        "PA_sfc",
+        "RESTORED_BY_0",
+        "RESTORED_BY_1",
+        "center"
+      ],
+      "missing_nodes": [],
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "cited_chunks": [
+        "D4_c10"
+      ],
+      "missing_chunks": [],
+      "chain_coverage": null,
+      "chain_exact_order": null,
+      "edge_authenticity_rate": null,
+      "real_hops": 0,
+      "structural_hops": 0,
+      "structural_edge_types": [],
+      "overfetch_ratio": 16.0,
+      "num_contexts": 16
+    }
+  ]
+}
