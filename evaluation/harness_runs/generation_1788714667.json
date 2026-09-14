@@ -1,0 +1,238 @@
+{
+  "per_item": [
+    {
+      "id": "FH01",
+      "category": "factual_single_hop",
+      "question": "If a flight crew reports hearing a very loud bang accompanied by yaw and heavy vibration, what engine failure mode has likely occurred?",
+      "expected_answer": "The engine has likely experienced a compressor surge or stall.",
+      "naive": {
+        "answer": "Based on the provided context, the flight crew's report of a very loud bang accompanied by yaw and heavy vibration suggests that a compressor surge (also known as a compressor stall) has likely occurred. This is described in the context as a rare event that can occur during high power at takeoff, causing a very loud bang and yaw and vibration.",
+        "retrieval_time": 73.23,
+        "generation_time": 3.74,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "retrieved_filepages": [
+          "AircraftTurbineEngineControlResearchatNASAGlennResearchCenter.pdf|p15",
+          "TurbofanEngineFamilization.pdf|p18",
+          "TurbofanEngineFamilization.pdf|p21",
+          "TurbofanEngineFamilization.pdf|p28",
+          "TurbofanEngineFamilization.pdf|p36"
+        ],
+        "cited_filepages": []
+      },
+      "graphrag": {
+        "answer": "The loud bang with yaw is a symptom of a compressor surge or stall. [D3_c03]",
+        "retrieval_time": 2.66,
+        "generation_time": 2.73,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "retrieved_filepages": [
+          "FaultPrognosisofTurbofanEngines.pdf|p2",
+          "TurbofanEngineFamilization.pdf|p18",
+          "TurbofanEngineFamilization.pdf|p19",
+          "TurbofanEngineFamilization.pdf|p21",
+          "TurbofanEngineFamilization.pdf|p24"
+        ],
+        "cited_filepages": [
+          "TurbofanEngineFamilization.pdf|p18"
+        ],
+        "diagnostics": {
+          "node_recall": 1.0,
+          "node_precision": 0.5,
+          "chain_coverage": null,
+          "edge_authenticity_rate": 1.0
+        }
+      },
+      "agentic": {
+        "answer": "The loud bang with yaw is a symptom of a compressor surge or stall.",
+        "retrieval_time": 0.8,
+        "generation_time": 4.01,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "retrieved_filepages": [
+          "FaultPrognosisofTurbofanEngines.pdf|p2",
+          "TurbofanEngineFamilization.pdf|p18",
+          "TurbofanEngineFamilization.pdf|p19",
+          "TurbofanEngineFamilization.pdf|p21",
+          "TurbofanEngineFamilization.pdf|p24"
+        ],
+        "cited_filepages": [],
+        "routed_to": "graphrag",
+        "decided_by": "default",
+        "matched_patterns": []
+      }
+    },
+    {
+      "id": "FH02",
+      "category": "factual_single_hop",
+      "question": "What is the recommended operational mitigation if ground crews observe a tailpipe fire during engine start-up?",
+      "expected_answer": "The quickest way to extinguish most tailpipe fires is to dry motor the engine.",
+      "naive": {
+        "answer": "The recommended operational mitigation if ground crews observe a tailpipe fire during engine start-up is to move the fuel shutoff lever to the off position and continue cranking or motoring the engine until the fire has been expelled from the engine. If the fire persists, CO2 can be discharged into the inlet duct while it is being cranked.",
+        "retrieval_time": 0.18,
+        "generation_time": 3.04,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "retrieved_filepages": [
+          "TurbofanEnginMaintenanceandOperation.pdf|p30",
+          "TurbofanEnginMaintenanceandOperation.pdf|p57",
+          "TurbofanEngineFamilization.pdf|p16",
+          "TurbofanEngineFamilization.pdf|p22",
+          "TurbofanEngineFamilization.pdf|p23"
+        ],
+        "cited_filepages": []
+      },
+      "graphrag": {
+        "answer": "Dry‑motor the engine, which is the quickest way of extinguishing most tailpipe fires. [D3_c22]",
+        "retrieval_time": 1.74,
+        "generation_time": 2.09,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 4.0,
+        "num_retrieved": 4,
+        "retrieved_filepages": [
+          "TurbofanEngineFamilization.pdf|p18",
+          "TurbofanEngineFamilization.pdf|p21",
+          "TurbofanEngineFamilization.pdf|p23",
+          "TurbofanEngineFamilization.pdf|p24"
+        ],
+        "cited_filepages": [
+          "TurbofanEngineFamilization.pdf|p23"
+        ],
+        "diagnostics": {
+          "node_recall": 0.5,
+          "node_precision": 0.25,
+          "chain_coverage": null,
+          "edge_authenticity_rate": null
+        }
+      },
+      "agentic": {
+        "answer": "Dry‑motor the engine, which is the quickest way of extinguishing most tailpipe fires. [D3_c22]",
+        "retrieval_time": 0.6,
+        "generation_time": 1.72,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 4.0,
+        "num_retrieved": 4,
+        "retrieved_filepages": [
+          "TurbofanEngineFamilization.pdf|p18",
+          "TurbofanEngineFamilization.pdf|p21",
+          "TurbofanEngineFamilization.pdf|p23",
+          "TurbofanEngineFamilization.pdf|p24"
+        ],
+        "cited_filepages": [
+          "TurbofanEngineFamilization.pdf|p23"
+        ],
+        "routed_to": "graphrag",
+        "decided_by": "pattern",
+        "matched_patterns": [
+          "mitigated_by"
+        ]
+      }
+    },
+    {
+      "id": "FH03",
+      "category": "factual_single_hop",
+      "question": "How does the engine physically control the clearance between the rotor blade tips and the case wall during operation?",
+      "expected_answer": "Air is extracted from the compressor and ducted onto the engine cases to cool them, which shrinks the cases and controls the clearance between the blade tips and the wall.",
+      "naive": {
+        "answer": "The context does not provide information on how the engine physically controls the clearance between the rotor blade tips and the case wall during operation.",
+        "retrieval_time": 0.2,
+        "generation_time": 3.97,
+        "degraded": false,
+        "retrieval_recall": 0.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "retrieved_filepages": [
+          "AircraftTurbineEngineControlResearchatNASAGlennResearchCenter.pdf|p23",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p7",
+          "TurbofanEnginMaintenanceandOperation.pdf|p24",
+          "TurbofanEnginMaintenanceandOperation.pdf|p8",
+          "TurbofanEngineFamilization.pdf|p5"
+        ],
+        "cited_filepages": []
+      },
+      "graphrag": {
+        "answer": "The engine uses active clearance control by extracting air from the compressor and ducting it onto the engine cases, thereby controlling the clearance between the rotor blade tips and the case wall. [D3_c32]",
+        "retrieval_time": 0.72,
+        "generation_time": 2.79,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 9.0,
+        "num_retrieved": 9,
+        "retrieved_filepages": [
+          "EngineMaintenanceConcepts.pdf|p17",
+          "EngineMaintenanceConcepts.pdf|p18",
+          "EngineMaintenanceConcepts.pdf|p19",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p13",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p4",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p5",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p6",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p9",
+          "TurbofanEngineFamilization.pdf|p12"
+        ],
+        "cited_filepages": [
+          "TurbofanEngineFamilization.pdf|p12"
+        ],
+        "diagnostics": {
+          "node_recall": 1.0,
+          "node_precision": 1.0,
+          "chain_coverage": null,
+          "edge_authenticity_rate": 1.0
+        }
+      },
+      "agentic": {
+        "answer": "The engine controls rotor‑blade‑tip clearance by directing compressor bleed air onto the engine cases, a method known as active clearance control or case‑cooling bleed. This airflow cools and shapes the case surface, maintaining the desired gap between blade tips and the case wall. [D3_c32]",
+        "retrieval_time": 0.65,
+        "generation_time": 3.93,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 9.0,
+        "num_retrieved": 9,
+        "retrieved_filepages": [
+          "EngineMaintenanceConcepts.pdf|p17",
+          "EngineMaintenanceConcepts.pdf|p18",
+          "EngineMaintenanceConcepts.pdf|p19",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p13",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p4",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p5",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p6",
+          "PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf|p9",
+          "TurbofanEngineFamilization.pdf|p12"
+        ],
+        "cited_filepages": [
+          "TurbofanEngineFamilization.pdf|p12"
+        ],
+        "routed_to": "graphrag",
+        "decided_by": "default",
+        "matched_patterns": []
+      }
+    }
+  ]
+}

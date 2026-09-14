@@ -1,0 +1,2342 @@
+{
+  "16": [
+    {
+      "ID": "FH01",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 13.0,
+      "num_chunks": 13,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH02",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 16.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "FH03",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 9.0,
+      "num_chunks": 9,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH04",
+      "Category": "factual_single_hop",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "FH05",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 16.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "FH06",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 3,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH01",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.5,
+      "num_chunks": 9,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH02",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 12,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "MH03",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH04",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.5,
+      "num_chunks": 13,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_vibration"
+      ]
+    },
+    {
+      "ID": "MH05",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH06",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 12,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "P_fan_blade"
+      ]
+    },
+    {
+      "ID": "MH07",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tailpipe_fire",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "MH08",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "CD01",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_water_wash"
+      ]
+    },
+    {
+      "ID": "CD02",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "FM_compressor_surge"
+      ]
+    },
+    {
+      "ID": "CD03",
+      "Category": "cross_document",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.5,
+      "num_chunks": 7,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_hardware_deterioration"
+      ]
+    },
+    {
+      "ID": "CD04",
+      "Category": "cross_document",
+      "node_recall": 0.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_cracking",
+        "MI_borescope_inspection",
+        "MI_ndt"
+      ]
+    },
+    {
+      "ID": "CD05",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "PA_egt_margin",
+        "PA_sfc"
+      ]
+    },
+    {
+      "ID": "CD06",
+      "Category": "cross_document",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 12,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "CD07",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [
+        "D3_c15"
+      ],
+      "missing_gold_nodes": [
+        "FM_compressor_surge",
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "CD08",
+      "Category": "cross_document",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 7.0,
+      "num_chunks": 14,
+      "missing_gold_chunks": [
+        "D1_c19"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_egt_margin_deterioration",
+        "OF_oat"
+      ]
+    },
+    {
+      "ID": "AF01",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [
+        "D3_c16"
+      ],
+      "missing_gold_nodes": [
+        "FM_bearing_failure",
+        "FM_fan_unbalance",
+        "FM_severe_engine_damage"
+      ]
+    },
+    {
+      "ID": "AF02",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 5.333333333333333,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_egt",
+        "SY_loud_bang",
+        "SY_visible_flame"
+      ]
+    },
+    {
+      "ID": "AF03",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_starvation",
+        "FM_fuel_filter_clogging"
+      ]
+    },
+    {
+      "ID": "AF04",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.8,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 9,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_oil_temp"
+      ]
+    },
+    {
+      "ID": "AF05",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 5.333333333333333,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "OF_flight_length",
+        "OF_oat",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "AF06",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.5,
+      "num_chunks": 7,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion"
+      ]
+    },
+    {
+      "ID": "DA01",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_epr_fluctuation",
+        "SY_low_epr"
+      ]
+    },
+    {
+      "ID": "DA02",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 7.0,
+      "num_chunks": 14,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_bearing_failure"
+      ]
+    },
+    {
+      "ID": "DA03",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA04",
+      "Category": "disambiguation",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 7.5,
+      "num_chunks": 15,
+      "missing_gold_chunks": [
+        "D3_c24"
+      ],
+      "missing_gold_nodes": [
+        "FM_engine_fire",
+        "MI_dry_motoring",
+        "MI_engine_shutdown"
+      ]
+    },
+    {
+      "ID": "DA05",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [
+        "D1_c13"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA06",
+      "Category": "disambiguation",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "OS01",
+      "Category": "operational_scenario",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.5,
+      "num_chunks": 13,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "MI_thrust_reduction"
+      ]
+    },
+    {
+      "ID": "OS02",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_puddling",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "OS03",
+      "Category": "operational_scenario",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 15.0,
+      "num_chunks": 15,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_oil_leak_or_oil_loss"
+      ]
+    },
+    {
+      "ID": "OS04",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout"
+      ]
+    },
+    {
+      "ID": "OS05",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 5.0,
+      "num_chunks": 5,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion"
+      ]
+    },
+    {
+      "ID": "OS06",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 14.0,
+      "num_chunks": 14,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "OS07",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.5,
+      "num_chunks": 9,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c04"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_blade_tip_rub"
+      ]
+    },
+    {
+      "ID": "OS08",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR01",
+      "Category": "provenance",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 16.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "PR02",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 1,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR03",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 16.0,
+      "num_chunks": 16,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    }
+  ],
+  "8": [
+    {
+      "ID": "FH01",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH02",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "FH03",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH04",
+      "Category": "factual_single_hop",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "FH05",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "FH06",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 3,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH01",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH02",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c05"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "MH03",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH04",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_vibration"
+      ]
+    },
+    {
+      "ID": "MH05",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH06",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c28"
+      ],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "P_fan_blade"
+      ]
+    },
+    {
+      "ID": "MH07",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tailpipe_fire",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "MH08",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D1_c04",
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "CD01",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D4_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_water_wash"
+      ]
+    },
+    {
+      "ID": "CD02",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "FM_compressor_surge"
+      ]
+    },
+    {
+      "ID": "CD03",
+      "Category": "cross_document",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.5,
+      "num_chunks": 7,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_hardware_deterioration"
+      ]
+    },
+    {
+      "ID": "CD04",
+      "Category": "cross_document",
+      "node_recall": 0.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_cracking",
+        "MI_borescope_inspection",
+        "MI_ndt"
+      ]
+    },
+    {
+      "ID": "CD05",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "PA_egt_margin",
+        "PA_sfc"
+      ]
+    },
+    {
+      "ID": "CD06",
+      "Category": "cross_document",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "CD07",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D1_c21",
+        "D3_c15"
+      ],
+      "missing_gold_nodes": [
+        "FM_compressor_surge",
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "CD08",
+      "Category": "cross_document",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D1_c19"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_egt_margin_deterioration",
+        "OF_oat"
+      ]
+    },
+    {
+      "ID": "AF01",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c16"
+      ],
+      "missing_gold_nodes": [
+        "FM_bearing_failure",
+        "FM_fan_unbalance",
+        "FM_severe_engine_damage"
+      ]
+    },
+    {
+      "ID": "AF02",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.6666666666666665,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_egt",
+        "SY_loud_bang",
+        "SY_visible_flame"
+      ]
+    },
+    {
+      "ID": "AF03",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_starvation",
+        "FM_fuel_filter_clogging"
+      ]
+    },
+    {
+      "ID": "AF04",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.8,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.6666666666666665,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_oil_temp"
+      ]
+    },
+    {
+      "ID": "AF05",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.6666666666666665,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "OF_flight_length",
+        "OF_oat",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "AF06",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.5,
+      "num_chunks": 7,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion"
+      ]
+    },
+    {
+      "ID": "DA01",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c13",
+        "D3_c14"
+      ],
+      "missing_gold_nodes": [
+        "SY_epr_fluctuation",
+        "SY_low_epr"
+      ]
+    },
+    {
+      "ID": "DA02",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_bearing_failure"
+      ]
+    },
+    {
+      "ID": "DA03",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c10",
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA04",
+      "Category": "disambiguation",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c24"
+      ],
+      "missing_gold_nodes": [
+        "FM_engine_fire",
+        "MI_dry_motoring",
+        "MI_engine_shutdown"
+      ]
+    },
+    {
+      "ID": "DA05",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D1_c13",
+        "D7_c01"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA06",
+      "Category": "disambiguation",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "OS01",
+      "Category": "operational_scenario",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c06"
+      ],
+      "missing_gold_nodes": [
+        "MI_thrust_reduction"
+      ]
+    },
+    {
+      "ID": "OS02",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_puddling",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "OS03",
+      "Category": "operational_scenario",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_oil_leak_or_oil_loss"
+      ]
+    },
+    {
+      "ID": "OS04",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout"
+      ]
+    },
+    {
+      "ID": "OS05",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 5.0,
+      "num_chunks": 5,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion"
+      ]
+    },
+    {
+      "ID": "OS06",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "OS07",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c04"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_blade_tip_rub"
+      ]
+    },
+    {
+      "ID": "OS08",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 4.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [
+        "D3_c12"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR01",
+      "Category": "provenance",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "PR02",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 1,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR03",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 8.0,
+      "num_chunks": 8,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    }
+  ],
+  "6": [
+    {
+      "ID": "FH01",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH02",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "FH03",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH04",
+      "Category": "factual_single_hop",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "FH05",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "FH06",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 3,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH01",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH02",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c05"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "MH03",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH04",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_vibration"
+      ]
+    },
+    {
+      "ID": "MH05",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c09"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH06",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c27",
+        "D3_c28"
+      ],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "P_fan_blade"
+      ]
+    },
+    {
+      "ID": "MH07",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tailpipe_fire",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "MH08",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c04",
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "CD01",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D4_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_water_wash"
+      ]
+    },
+    {
+      "ID": "CD02",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "FM_compressor_surge"
+      ]
+    },
+    {
+      "ID": "CD03",
+      "Category": "cross_document",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_hardware_deterioration"
+      ]
+    },
+    {
+      "ID": "CD04",
+      "Category": "cross_document",
+      "node_recall": 0.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_cracking",
+        "MI_borescope_inspection",
+        "MI_ndt"
+      ]
+    },
+    {
+      "ID": "CD05",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D4_c03"
+      ],
+      "missing_gold_nodes": [
+        "PA_egt_margin",
+        "PA_sfc"
+      ]
+    },
+    {
+      "ID": "CD06",
+      "Category": "cross_document",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "CD07",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c21",
+        "D3_c15"
+      ],
+      "missing_gold_nodes": [
+        "FM_compressor_surge",
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "CD08",
+      "Category": "cross_document",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c19"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_egt_margin_deterioration",
+        "OF_oat"
+      ]
+    },
+    {
+      "ID": "AF01",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c16"
+      ],
+      "missing_gold_nodes": [
+        "FM_bearing_failure",
+        "FM_fan_unbalance",
+        "FM_severe_engine_damage"
+      ]
+    },
+    {
+      "ID": "AF02",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_egt",
+        "SY_loud_bang",
+        "SY_visible_flame"
+      ]
+    },
+    {
+      "ID": "AF03",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_starvation",
+        "FM_fuel_filter_clogging"
+      ]
+    },
+    {
+      "ID": "AF04",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.8,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_oil_temp"
+      ]
+    },
+    {
+      "ID": "AF05",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.6666666666666666,
+      "overfetch": 2.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c05"
+      ],
+      "missing_gold_nodes": [
+        "OF_flight_length",
+        "OF_oat",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "AF06",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion"
+      ]
+    },
+    {
+      "ID": "DA01",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c13",
+        "D3_c14"
+      ],
+      "missing_gold_nodes": [
+        "SY_epr_fluctuation",
+        "SY_low_epr"
+      ]
+    },
+    {
+      "ID": "DA02",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_bearing_failure"
+      ]
+    },
+    {
+      "ID": "DA03",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c10",
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA04",
+      "Category": "disambiguation",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c24"
+      ],
+      "missing_gold_nodes": [
+        "FM_engine_fire",
+        "MI_dry_motoring",
+        "MI_engine_shutdown"
+      ]
+    },
+    {
+      "ID": "DA05",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D1_c13",
+        "D7_c01"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA06",
+      "Category": "disambiguation",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "OS01",
+      "Category": "operational_scenario",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c06"
+      ],
+      "missing_gold_nodes": [
+        "MI_thrust_reduction"
+      ]
+    },
+    {
+      "ID": "OS02",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_puddling",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "OS03",
+      "Category": "operational_scenario",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_oil_leak_or_oil_loss"
+      ]
+    },
+    {
+      "ID": "OS04",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout"
+      ]
+    },
+    {
+      "ID": "OS05",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 5.0,
+      "num_chunks": 5,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion"
+      ]
+    },
+    {
+      "ID": "OS06",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "OS07",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c04"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_blade_tip_rub"
+      ]
+    },
+    {
+      "ID": "OS08",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 3.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [
+        "D3_c12"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR01",
+      "Category": "provenance",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "PR02",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 1,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR03",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 6.0,
+      "num_chunks": 6,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    }
+  ],
+  "4": [
+    {
+      "ID": "FH01",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH02",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "FH03",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "FH04",
+      "Category": "factual_single_hop",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "FH05",
+      "Category": "factual_single_hop",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "FH06",
+      "Category": "factual_single_hop",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 3.0,
+      "num_chunks": 3,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH01",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH02",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c05"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_tip_rub",
+        "FM_tip_clearance_increase"
+      ]
+    },
+    {
+      "ID": "MH03",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c30"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH04",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c07"
+      ],
+      "missing_gold_nodes": [
+        "SY_high_vibration"
+      ]
+    },
+    {
+      "ID": "MH05",
+      "Category": "multi_hop_causal",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c01",
+        "D3_c09"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "MH06",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c27",
+        "D3_c28"
+      ],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "P_fan_blade"
+      ]
+    },
+    {
+      "ID": "MH07",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_tailpipe_fire",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "MH08",
+      "Category": "multi_hop_causal",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c04",
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "CD01",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c10",
+        "D4_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_tip_clearance_increase",
+        "MI_water_wash"
+      ]
+    },
+    {
+      "ID": "CD02",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion",
+        "FM_compressor_surge"
+      ]
+    },
+    {
+      "ID": "CD03",
+      "Category": "cross_document",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_hardware_deterioration"
+      ]
+    },
+    {
+      "ID": "CD04",
+      "Category": "cross_document",
+      "node_recall": 0.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c12",
+        "D7_c02"
+      ],
+      "missing_gold_nodes": [
+        "FM_blade_cracking",
+        "MI_borescope_inspection",
+        "MI_ndt"
+      ]
+    },
+    {
+      "ID": "CD05",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c01",
+        "D4_c03"
+      ],
+      "missing_gold_nodes": [
+        "PA_egt_margin",
+        "PA_sfc"
+      ]
+    },
+    {
+      "ID": "CD06",
+      "Category": "cross_document",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c03"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "CD07",
+      "Category": "cross_document",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c21",
+        "D3_c15"
+      ],
+      "missing_gold_nodes": [
+        "FM_compressor_surge",
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "CD08",
+      "Category": "cross_document",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c19"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_egt_margin_deterioration",
+        "OF_oat"
+      ]
+    },
+    {
+      "ID": "AF01",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c16"
+      ],
+      "missing_gold_nodes": [
+        "FM_bearing_failure",
+        "FM_fan_unbalance",
+        "FM_severe_engine_damage"
+      ]
+    },
+    {
+      "ID": "AF02",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.3333333333333333,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_egt",
+        "SY_loud_bang",
+        "SY_visible_flame"
+      ]
+    },
+    {
+      "ID": "AF03",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c30"
+      ],
+      "missing_gold_nodes": [
+        "C_fuel_starvation",
+        "FM_fuel_filter_clogging"
+      ]
+    },
+    {
+      "ID": "AF04",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.8,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.3333333333333333,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "SY_high_oil_temp"
+      ]
+    },
+    {
+      "ID": "AF05",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.6666666666666666,
+      "overfetch": 1.3333333333333333,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c05"
+      ],
+      "missing_gold_nodes": [
+        "OF_flight_length",
+        "OF_oat",
+        "OF_thrust_rating"
+      ]
+    },
+    {
+      "ID": "AF06",
+      "Category": "aggregation_fanout",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fod_ingestion"
+      ]
+    },
+    {
+      "ID": "DA01",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c13",
+        "D3_c14"
+      ],
+      "missing_gold_nodes": [
+        "SY_epr_fluctuation",
+        "SY_low_epr"
+      ]
+    },
+    {
+      "ID": "DA02",
+      "Category": "disambiguation",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_bearing_failure"
+      ]
+    },
+    {
+      "ID": "DA03",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c10",
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA04",
+      "Category": "disambiguation",
+      "node_recall": 0.25,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c24"
+      ],
+      "missing_gold_nodes": [
+        "FM_engine_fire",
+        "MI_dry_motoring",
+        "MI_engine_shutdown"
+      ]
+    },
+    {
+      "ID": "DA05",
+      "Category": "disambiguation",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D1_c13",
+        "D7_c01"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "DA06",
+      "Category": "disambiguation",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [
+        "D1_c18"
+      ],
+      "missing_gold_nodes": [
+        "FM_egt_margin_deterioration"
+      ]
+    },
+    {
+      "ID": "OS01",
+      "Category": "operational_scenario",
+      "node_recall": 0.6666666666666666,
+      "avail_chunk_recall": 0.5,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c06"
+      ],
+      "missing_gold_nodes": [
+        "MI_thrust_reduction"
+      ]
+    },
+    {
+      "ID": "OS02",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_fuel_puddling",
+        "MI_dry_motoring"
+      ]
+    },
+    {
+      "ID": "OS03",
+      "Category": "operational_scenario",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "FM_oil_leak_or_oil_loss"
+      ]
+    },
+    {
+      "ID": "OS04",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 2,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_boost_pump_failure",
+        "FM_flameout"
+      ]
+    },
+    {
+      "ID": "OS05",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": [
+        "C_particulate_ingestion",
+        "FM_airfoil_erosion"
+      ]
+    },
+    {
+      "ID": "OS06",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c25"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "OS07",
+      "Category": "operational_scenario",
+      "node_recall": 0.3333333333333333,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D4_c01",
+        "D4_c04"
+      ],
+      "missing_gold_nodes": [
+        "C_flight_loads",
+        "FM_blade_tip_rub"
+      ]
+    },
+    {
+      "ID": "OS08",
+      "Category": "operational_scenario",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 2.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D3_c08",
+        "D3_c12"
+      ],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR01",
+      "Category": "provenance",
+      "node_recall": 0.5,
+      "avail_chunk_recall": 0.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [
+        "D4_c09"
+      ],
+      "missing_gold_nodes": [
+        "M_hpt"
+      ]
+    },
+    {
+      "ID": "PR02",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 1.0,
+      "num_chunks": 1,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    },
+    {
+      "ID": "PR03",
+      "Category": "provenance",
+      "node_recall": 1.0,
+      "avail_chunk_recall": 1.0,
+      "overfetch": 4.0,
+      "num_chunks": 4,
+      "missing_gold_chunks": [],
+      "missing_gold_nodes": []
+    }
+  ]
+}

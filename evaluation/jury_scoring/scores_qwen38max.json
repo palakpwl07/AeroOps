@@ -1,0 +1,317 @@
+[
+  {
+    "id": "FH01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A describes dry motoring (cranking/motoring with fuel off) which is equivalent to the expected answer."
+  },
+  {
+    "id": "FH03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A claims information is not available."
+  },
+  {
+    "id": "FH04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A describes low oil quantity/pressure triggering bypass rather than debris clogging the filter."
+  },
+  {
+    "id": "MH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A uses 'fuel imbalance' as intermediate step rather than 'disrupted fuel flow/contamination' but the core causal chain is preserved."
+  },
+  {
+    "id": "MH04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A covers the mechanical damage (blade failure, turbine overheat) but omits explicit mention of vibration/fire warnings; still captures essential facts."
+  },
+  {
+    "id": "MH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Expected answer requires the mechanism of frequent high-thrust takeoffs causing thermal stress; B and C only state that shorter stages correlate with EGT margin loss and clearance increase without explaining the thermal-stress cause."
+  },
+  {
+    "id": "CD01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A correctly identifies blade tip clearance but fails to mention water washing as the restorative procedure."
+  },
+  {
+    "id": "CD02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says blades are bent and calls it a stall, not FOD or compressor surge as expected."
+  },
+  {
+    "id": "CD03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says 'shop visit' which is too vague and doesn't convey the specific overhaul/core-dismantling nature."
+  },
+  {
+    "id": "CD04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Expected borescope on-wing and NDT in shop; A says penetrant/magnetic particle, B and C say ANN-Flux neural network—none match."
+  },
+  {
+    "id": "CD05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A mentions SFC and efficiency but omits EGT margin, one of the two key metrics asked about."
+  },
+  {
+    "id": "CD06",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A correctly notes clearance increase but explicitly says the peak wear phase is not stated, contradicting the expected 1000-2000 cycles."
+  },
+  {
+    "id": "CD07",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "B and C capture stall and hot start (starting difficulty) but omit bleed air leak; still conveys the core concept."
+  },
+  {
+    "id": "CD08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Expected answer is high ambient temperature (OAT) as the environmental variable; all three systems give something else (thermal distortion or core temperature)."
+  },
+  {
+    "id": "AF01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A includes extra items but covers the key faults; B and C miss tip clearances but capture the other three main items."
+  },
+  {
+    "id": "AF02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says indications are not explicitly stated and discusses unrelated limits."
+  },
+  {
+    "id": "AF03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A adds weather/volcanic ash but covers the main causes; B and C omit control system malfunction as standalone but mention it as sub-cause."
+  },
+  {
+    "id": "AF04",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gets oil temp and vibration but misses chip detectors and doesn't clearly state oil filter bypass."
+  },
+  {
+    "id": "AF05",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "A only mentions thermal distortion; B is null; C incorrectly states longer stage lengths accelerate deterioration (expected says short stage lengths)."
+  },
+  {
+    "id": "AF06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "DA01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A reverses the EPR behavior (says surge decreases EPR, flameout increases it), which is opposite of expected."
+  },
+  {
+    "id": "DA02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says the context doesn't provide the distinction; B and C correctly describe the differentiating symptoms."
+  },
+  {
+    "id": "DA03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says info unavailable; B and C correctly distinguish flameout (no EGT rise) from hot start (rising EGT), capturing the essential contrast."
+  },
+  {
+    "id": "DA04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Expected requires both nacelle fire (shut off fuel) and tailpipe fire (dry motor); A and C miss both key actions, B only gets tailpipe side."
+  },
+  {
+    "id": "DA05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "All three capture the core distinction of on-wing parameter monitoring vs. shop teardown/repair."
+  },
+  {
+    "id": "DA06",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "A says LLP info unavailable; B and C correctly describe LLP expiry but explicitly state no info on performance deterioration, missing half the expected answer."
+  },
+  {
+    "id": "OS01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A adds 'shut off fuel' which is extra but not wrong; all correctly identify tailpipe fire and dry motoring."
+  },
+  {
+    "id": "OS03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says context doesn't provide the answer; B and C correctly identify airfoil erosion from sand/dust."
+  },
+  {
+    "id": "OS06",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A incorrectly attributes the spike to tip clearance opening; B and C correctly identify hot start."
+  },
+  {
+    "id": "OS07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS08",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says 'engine stall' but expected answer is flameout; B and C correctly say flameout."
+  },
+  {
+    "id": "PR01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "PR02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gives incorrect values (0.5%-2.5% range) instead of the expected 0.2%."
+  },
+  {
+    "id": "PR03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "FH01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A describes fuel-off plus continued motoring, which is dry motoring."
+  },
+  {
+    "id": "FH03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says the information is not in context."
+  },
+  {
+    "id": "FH04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A attributes the bypass to low oil quantity/pressure rather than bearing debris clogging the filter."
+  },
+  {
+    "id": "MH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A's 'fuel imbalance' step is loose but the boost-pump/debris/clogged-filter/flameout chain is right."
+  },
+  {
+    "id": "MH04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "None give the mechanism (more frequent high takeoff thrust per flight hour raising core temperature); B and C are circular, A declines."
+  },
+  {
+    "id": "CD01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gets the primary cause but says the restoration procedure is not stated."
+  },
+  {
+    "id": "CD02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "Borderline: A never uses the term FOD and says blades are bent rather than fractured, but the damage-to-surge chain is right."
+  },
+  {
+    "id": "CD03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A answers 'shop visit' rather than an overhaul/teardown."
+  },
+  {
+    "id": "CD04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "No system gives borescope on-wing plus NDT in the shop; A names penetrant/magnetic particle, B and C name a neural-network method."
+  },
+  {
+    "id": "CD05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gives only SFC and omits the EGT margin metric."
+  },
+  {
+    "id": "CD06",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says the highest-wear phase is not stated."
+  },
+  {
+    "id": "CD07",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A declines; B and C give stall and hot start, missing only the bleed-leak case."
+  },
+  {
+    "id": "CD08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "None identify high ambient temperature as the environmental variable; A says thermal distortion, B and C say high core temperature."
+  },
+  {
+    "id": "AF01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "All three cover most listed faults; each omits one item, treated as a side detail."
+  },
+  {
+    "id": "AF02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A declines and gives unrelated control-limit material."
+  },
+  {
+    "id": "AF03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "AF04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A omits chip detectors but covers the other indications."
+  },
+  {
+    "id": "AF05",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "A is off-topic, B answers 'None', and C inverts the stage-length factor (says longer sectors accelerate deterioration)."
+  },
+  {
+    "id": "AF06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "DA01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A inverts the distinction (surge decrease, flameout increase)."
+  },
+  {
+    "id": "DA02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says the distinction is not in context."
+  },
+  {
+    "id": "DA03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "Borderline: B and C say EGT does not rise in a flameout rather than explicitly dropping, but the contrast with hot start is right; A declines."
+  },
+  {
+    "id": "DA04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "A and C give 'fly the airplane' for the nacelle fire and say tailpipe is not covered; B covers only the tailpipe and declines the nacelle half."
+  },
+  {
+    "id": "DA05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "DA06",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Each covers one mechanism and explicitly declines the other."
+  },
+  {
+    "id": "OS01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "B and C say 'flameout' without the multiple-engine qualifier; core risk still conveyed."
+  },
+  {
+    "id": "OS05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says the compressor condition cannot be determined."
+  },
+  {
+    "id": "OS06",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gives an unrelated blade-tip-clearance explanation; C's text is truncated mid-sentence but still identifies the hot start."
+  },
+  {
+    "id": "OS07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS08",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A says engine stall rather than flameout."
+  },
+  {
+    "id": "PR01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "PR02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A gives 0.5-2.5 percent figures instead of the ~0.2 percent residual."
+  },
+  {
+    "id": "PR03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  }
+]

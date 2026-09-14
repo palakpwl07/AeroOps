@@ -1,0 +1,317 @@
+[
+  {
+    "id": "FH01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A says the requested mechanism is unavailable instead of identifying compressor bleed air case cooling."
+  },
+  {
+    "id": "FH04",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "FH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A incorrectly attributes the bypass indication to low oil quantity and pressure rather than bearing debris clogging the filter."
+  },
+  {
+    "id": "MH02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A gives the essential thermal-growth and blade-rub cause, although it omits the intermediate clearance increase."
+  },
+  {
+    "id": "MH03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "System A omits the requested physical symptoms, while Systems B and C omit the specific turbine overheating and compressor-blade failure damage."
+  },
+  {
+    "id": "MH05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "MH08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "None explains the core mechanism of more frequent high-thrust exposure per flight hour producing greater thermal stress."
+  },
+  {
+    "id": "CD01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A omits engine water washing, the requested on-wing restoration procedure."
+  },
+  {
+    "id": "CD02",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A describes the physical fan-blade damage and equivalent compressor-stall failure mode despite omitting the FOD label."
+  },
+  {
+    "id": "CD03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "A generic shop visit does not identify the required overhaul and full core teardown."
+  },
+  {
+    "id": "CD04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "None gives the required pairing of on-wing borescope inspection and shop-overhaul NDT."
+  },
+  {
+    "id": "CD05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A addresses SFC but omits the requested EGT-margin effect."
+  },
+  {
+    "id": "CD06",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A omits the specified first 1,000 to 2,000 flight-cycle phase."
+  },
+  {
+    "id": "CD07",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Systems B and C identify stall and hot start but omit a major bleed-air leak, and System A supplies none of the malfunctions."
+  },
+  {
+    "id": "CD08",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "All miss high ambient temperature as the requested environmental variable, although they largely identify the flight-load forces correctly."
+  },
+  {
+    "id": "AF01",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "System A omits sustained-surge severe damage, while Systems B and C omit excessive fan-rotor tip clearance."
+  },
+  {
+    "id": "AF02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A does not provide any of the requested surge indications."
+  },
+  {
+    "id": "AF03",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": false,
+    "notes": "System A omits fuel-filter clogging, and System C omits control-system malfunction from the requested root-cause set."
+  },
+  {
+    "id": "AF04",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A omits particles collected on chip detectors."
+  },
+  {
+    "id": "AF05",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "System A supplies none of the requested factors, System B is blank, and System C reverses the short-stage relationship and omits erosive environments."
+  },
+  {
+    "id": "AF06",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "DA01",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A reverses and misstates the distinguishing EPR behaviors."
+  },
+  {
+    "id": "DA02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "Systems B and C provide the essential temperature-and-vibration distinction, with chip-detector evidence being confirmatory detail."
+  },
+  {
+    "id": "DA03",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Systems B and C correctly describe hot-start EGT but do not state the distinct EGT drop during flameout."
+  },
+  {
+    "id": "DA04",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "None provides both immediate actions: fuel shutoff for a nacelle fire and dry motoring for a tailpipe fire."
+  },
+  {
+    "id": "DA05",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "All convey the essential distinction between trend-based on-wing health monitoring and teardown-based shop repair."
+  },
+  {
+    "id": "DA06",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Each answer omits one of the two mechanisms, so none makes the requested comparison."
+  },
+  {
+    "id": "OS01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A identifies the tailpipe fire and remedy but omits puddled fuel as the requested cause."
+  },
+  {
+    "id": "OS03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "OS04",
+    "system_a_correct": true,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "Systems B and C reduce the central multiple-engine flameout risk to an unspecified single engine flameout."
+  },
+  {
+    "id": "OS05",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A fails to identify sand-and-dust airfoil erosion."
+  },
+  {
+    "id": "OS06",
+    "system_a_correct": false,
+    "system_b_correct": false,
+    "system_c_correct": false,
+    "notes": "System A diagnoses the wrong mechanism, System B does not explain ineffective sub-idle cooling, and System C is truncated before completing the answer."
+  },
+  {
+    "id": "OS07",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A gives the essential flight-load-induced permanent clearance damage despite omitting the detailed rub sequence."
+  },
+  {
+    "id": "OS08",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A says stall rather than the prevented flameout."
+  },
+  {
+    "id": "PR01",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  },
+  {
+    "id": "PR02",
+    "system_a_correct": false,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": "System A gives cycle-dependent deterioration values instead of the approximately 0.2 percent unrestored residual."
+  },
+  {
+    "id": "PR03",
+    "system_a_correct": true,
+    "system_b_correct": true,
+    "system_c_correct": true,
+    "notes": ""
+  }
+]

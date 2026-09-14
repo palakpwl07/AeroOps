@@ -1,0 +1,134 @@
+{
+  "core_summary": {
+    "naive": {
+      "retrieval_recall": 0.0,
+      "citation_recall": 0.0,
+      "citation_precision": null,
+      "overfetch_ratio": 5.0,
+      "retrieval_time": 17.94,
+      "generation_time": 2.98,
+      "degraded_rate": 0.0,
+      "n_items": 3
+    },
+    "graphrag": {
+      "retrieval_recall": 1.0,
+      "citation_recall": 1.0,
+      "citation_precision": 1.0,
+      "overfetch_ratio": 6.0,
+      "retrieval_time": 1.703,
+      "generation_time": 4.727,
+      "degraded_rate": 0.0,
+      "n_items": 3
+    }
+  },
+  "graphrag_only_diagnostics": {
+    "node_recall": 0.833,
+    "node_precision": 0.583,
+    "chain_coverage": null,
+    "edge_authenticity_rate": 1.0
+  },
+  "per_item": [
+    {
+      "id": "FH01",
+      "category": "factual_single_hop",
+      "question": "If a flight crew reports hearing a very loud bang accompanied by yaw and heavy vibration, what engine failure mode has likely occurred?",
+      "expected_answer": "The engine has likely experienced a compressor surge or stall.",
+      "naive": {
+        "answer": "Compressor surge.",
+        "retrieval_time": 53.5,
+        "generation_time": 1.28,
+        "degraded": false,
+        "retrieval_recall": 0.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5
+      },
+      "graphrag": {
+        "answer": "The crew’s description of a very loud bang with yaw and heavy vibration is a symptom of a compressor surge / stall. [D3_c03]",
+        "retrieval_time": 2.76,
+        "generation_time": 4.03,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5,
+        "diagnostics": {
+          "node_recall": 1.0,
+          "node_precision": 0.5,
+          "chain_coverage": null,
+          "edge_authenticity_rate": 1.0
+        }
+      }
+    },
+    {
+      "id": "FH02",
+      "category": "factual_single_hop",
+      "question": "What is the recommended operational mitigation if ground crews observe a tailpipe fire during engine start-up?",
+      "expected_answer": "The quickest way to extinguish most tailpipe fires is to dry motor the engine.",
+      "naive": {
+        "answer": "Discharge CO2 on the ground rather than on the engine.",
+        "retrieval_time": 0.11,
+        "generation_time": 3.91,
+        "degraded": false,
+        "retrieval_recall": 0.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5
+      },
+      "graphrag": {
+        "answer": "Dry‑motor the engine, which is the quickest way of extinguishing most tailpipe fires. [D3_c22]",
+        "retrieval_time": 1.74,
+        "generation_time": 2.83,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 4.0,
+        "num_retrieved": 4,
+        "diagnostics": {
+          "node_recall": 0.5,
+          "node_precision": 0.25,
+          "chain_coverage": null,
+          "edge_authenticity_rate": null
+        }
+      }
+    },
+    {
+      "id": "FH03",
+      "category": "factual_single_hop",
+      "question": "How does the engine physically control the clearance between the rotor blade tips and the case wall during operation?",
+      "expected_answer": "Air is extracted from the compressor and ducted onto the engine cases to cool them, which shrinks the cases and controls the clearance between the blade tips and the wall.",
+      "naive": {
+        "answer": "The engine physically controls the clearance between the rotor blade tips and the case wall during operation through rotor/case interferences that produce increases in blade tip clearances, which is believed to be associated with an event that produces rotor/case interferences that result in high pressure turbine clearance increases, contributing over 90 percent of the total short-term performance deterioration, as shown in the CF6-6D data (Fig. 9).",
+        "retrieval_time": 0.21,
+        "generation_time": 3.75,
+        "degraded": false,
+        "retrieval_recall": 0.0,
+        "citation_recall": 0.0,
+        "citation_precision": null,
+        "overfetch_ratio": 5.0,
+        "num_retrieved": 5
+      },
+      "graphrag": {
+        "answer": "The engine controls rotor‑blade‑tip clearance by actively directing compressor bleed air onto the engine cases. This case‑cooling bleed air is ducted from the compressor and applied to the case wall to maintain the desired clearance between the blade tips and the case during operation. [D3_c32]",
+        "retrieval_time": 0.61,
+        "generation_time": 7.32,
+        "degraded": false,
+        "retrieval_recall": 1.0,
+        "citation_recall": 1.0,
+        "citation_precision": 1.0,
+        "overfetch_ratio": 9.0,
+        "num_retrieved": 9,
+        "diagnostics": {
+          "node_recall": 1.0,
+          "node_precision": 1.0,
+          "chain_coverage": null,
+          "edge_authenticity_rate": 1.0
+        }
+      }
+    }
+  ]
+}

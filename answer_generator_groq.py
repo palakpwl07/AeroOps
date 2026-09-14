@@ -32,6 +32,44 @@ import os
 from typing import Any, Dict, List
 
 from openai import OpenAI
+from langsmith import traceable
+from langsmith.wrappers import wrap_openai
+
+import tracing_setup  # noqa: F401 -- populates LANGCHAIN_* env vars before use
+
+# Live-fetched from OpenRouter's per-provider pricing endpoint
+# (https://openrouter.ai/api/v1/models/openai/gpt-oss-20b/endpoints),
+# most recently re-verified 2026-09-11 -- USD per token (not per
+# million). OpenRouter dynamically routes each request to whichever of
+# these providers it picks that moment -- there is no single fixed rate
+# for this model, so cost is computed per-call from the actual
+# `provider` the response reports, not a flat assumed number.
+#
+# This table needs to track the FULL current provider list, not just
+# whichever ones happened to show up in a historical sample -- a real
+# production call came back with provider="DekaLLM" (missing from the
+# first version of this table, built off a 160-call historical sample
+# that hadn't hit it yet) and silently produced estimated_cost_usd=None.
+# An unrecognized provider fails this way rather than guessing a rate,
+# by design, but that only stays rare if this list is kept complete.
+# Re-fetch and update if pricing is revisited later; it will drift as
+# OpenRouter's provider mix and their rates change.
+PRICING_PER_TOKEN_USD = {
+    "Darkbloom":       (0.00000002, 0.0000001),
+    "AkashML":         (0.00000002, 0.0000001),
+    "DekaLLM":         (0.000000029, 0.00000014),
+    "CoreWeave":       (0.00000003, 0.00000013),
+    "DeepInfra":       (0.00000003, 0.00000014),
+    "Parasail":        (0.00000003, 0.00000015),
+    "Phala":           (0.00000004, 0.00000015),
+    "Novita":          (0.00000004, 0.00000015),
+    "SiliconFlow":     (0.00000004, 0.00000018),
+    "Together":        (0.00000005, 0.0000002),
+    "Amazon Bedrock":  (0.00000007, 0.00000015),
+    "Google":          (0.00000007, 0.00000025),
+    "Google Vertex":   (0.00000007, 0.00000025),
+    "Groq":            (0.000000075, 0.0000003),
+}
 
 
 class AnswerGenerator:
@@ -42,7 +80,7 @@ class AnswerGenerator:
         base_url: str = "https://openrouter.ai/api/v1",
     ):
         self.model = model
-        self.client = OpenAI(
+        raw_client = OpenAI(
             api_key=api_key or os.getenv("OPENROUTER_API_KEY"),
             base_url=base_url,
             # Same attribution headers as score_graphrag_ragas.py's
@@ -53,6 +91,22 @@ class AnswerGenerator:
                 "X-Title": "AeroOps GraphRAG Generator",
             },
         )
+        # wrap_openai, not @traceable, is what actually captures this call --
+        # it's a raw openai.OpenAI client (not a LangChain LLM), so
+        # LANGCHAIN_TRACING_V2's auto-instrumentation (which only hooks
+        # LangChain's own callback system) never sees it. wrap_openai patches
+        # chat.completions.create so every call becomes its own traced LLM
+        # run with model, prompt/completion, latency, and token usage
+        # attached automatically -- an @traceable wrapper around generate()
+        # would only get the function's own inputs/outputs, not per-call
+        # token counts.
+        self.client = wrap_openai(raw_client)
+
+        # Populated by generate() after each call -- real per-request
+        # token counts and cost read directly off the OpenAI-compatible
+        # response object, not estimated. None until the first call, or
+        # if the last call's response didn't carry usage/provider info.
+        self.last_usage: Dict[str, Any] | None = None
 
     # ------------------------------------------------------------------
     # Formatting helpers (unchanged)
@@ -252,6 +306,7 @@ Rules:
     # Generate
     # ------------------------------------------------------------------
 
+    @traceable(name="graphrag_generate", run_type="chain")
     def generate(self, context: Dict[str, Any]) -> str:
         prompt = self.build_prompt(context)
 
@@ -262,4 +317,38 @@ Rules:
             max_tokens=1024,
         )
 
+        self.last_usage = self._extract_usage(response)
+
         return response.choices[0].message.content
+
+    @staticmethod
+    def _extract_usage(response: Any) -> Dict[str, Any] | None:
+        """Real per-request token counts + cost, read directly off the
+        response object -- not estimated. `provider` is OpenRouter-
+        specific (which backing provider actually served this request;
+        it varies per call, see PRICING_PER_TOKEN_USD's note above), so
+        this returns None for cost if provider is missing/unrecognized
+        rather than guessing a rate."""
+        usage = getattr(response, "usage", None)
+        if usage is None:
+            return None
+
+        prompt_tokens = getattr(usage, "prompt_tokens", None)
+        completion_tokens = getattr(usage, "completion_tokens", None)
+        total_tokens = getattr(usage, "total_tokens", None)
+        provider = getattr(response, "provider", None)
+
+        cost_usd = None
+        if prompt_tokens is not None and completion_tokens is not None:
+            rate = PRICING_PER_TOKEN_USD.get(provider)
+            if rate is not None:
+                prompt_rate, completion_rate = rate
+                cost_usd = prompt_tokens * prompt_rate + completion_tokens * completion_rate
+
+        return {
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": completion_tokens,
+            "total_tokens": total_tokens,
+            "provider": provider,
+            "estimated_cost_usd": cost_usd,
+        }

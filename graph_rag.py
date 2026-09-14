@@ -12,7 +12,9 @@ import time
 from typing import Any, Dict, List, Optional
 
 import streamlit as st
+from langsmith import traceable
 
+import tracing_setup  # noqa: F401 -- populates LANGCHAIN_* env vars before use
 from query_understanding_v3 import QueryRouter
 from graphretriever_v5 import GraphRetriever
 from context_builder import ContextBuilder
@@ -137,6 +139,7 @@ def _build_sources(chunks: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     ]
 
 
+@traceable(name="graph_rag", run_type="chain")
 def graph_rag(query: str) -> Dict[str, Any]:
     """
     Single entrypoint. Shares query/answer/retrieval_time/
@@ -150,6 +153,7 @@ def graph_rag(query: str) -> Dict[str, Any]:
         parsed = router.understand(query)
         graph_result = retriever.retrieve(parsed.entity_id)
     except Exception as exc:
+        tracing_setup.tag_degraded("retrieval_error", str(exc))
         return {
             "query": query,
             "answer": "Retrieval failed before an answer could be generated.",
@@ -165,15 +169,47 @@ def graph_rag(query: str) -> Dict[str, Any]:
         }
     retrieval_time = time.time() - start
 
-    context = builder.build(query, graph_result)
+    # Root-cause note (MH01 crash investigation): retrieval and generation
+    # both degrade to a clean fallback string on failure (see the two
+    # try/except blocks around them). This call had none -- an uncaught
+    # exception here (e.g. from a graph_result shape a stale/reset Neo4j
+    # connection returned, corrupted mid-response) crashed the whole
+    # request with a raw Python traceback as the "answer" instead of
+    # degrading like the other two stages. 30 targeted reproduction
+    # attempts (including a 25-call run against a long-lived driver,
+    # matching real batch conditions) never reproduced a MH01-specific
+    # logic bug, so this isn't fixing a deterministic defect in
+    # ContextBuilder.build() itself -- it's closing the one gap in
+    # graph_rag()'s own error-handling symmetry, consistent with how
+    # retrieval and generation already behave.
+    try:
+        context = builder.build(query, graph_result)
+    except Exception as exc:
+        tracing_setup.tag_degraded("context_build_error", str(exc))
+        return {
+            "query": query,
+            "answer": "Context building failed after retrieval completed.",
+            "retrieval_time": round(retrieval_time, 2),
+            "generation_time": 0,
+            "sources": _build_sources(graph_result.get("chunks") or []),
+            "retrieval_type": graph_result.get("retrieval_type"),
+            "path_nodes": [],
+            "path_edges": [],
+            "reasoning_chain": [],
+            "matched_entities": parsed.matched_entities,
+            "context_build_error": str(exc),
+        }
 
     gen_start = time.time()
     generation_error = None
+    usage = None
     try:
         answer = generator.generate(context)
+        usage = generator.last_usage
     except Exception as exc:
         answer = "Answer generation failed after retrieval completed."
         generation_error = str(exc)
+        tracing_setup.tag_degraded("generation_error", generation_error)
     generation_time = time.time() - gen_start
 
     results = graph_result.get("results", [])
@@ -196,10 +232,20 @@ def graph_rag(query: str) -> Dict[str, Any]:
         "path_edges": path_edges,
         "reasoning_chain": reasoning_chain,
         "matched_entities": parsed.matched_entities,
+        "prompt_tokens": (usage or {}).get("prompt_tokens"),
+        "completion_tokens": (usage or {}).get("completion_tokens"),
+        "estimated_cost_usd": (usage or {}).get("estimated_cost_usd"),
+        "provider": (usage or {}).get("provider"),
     }
 
     if generation_error:
         output["generation_error"] = generation_error
+
+    tracing_setup.add_metadata({
+        "retrieval_type": output["retrieval_type"],
+        "retrieval_time": output["retrieval_time"],
+        "generation_time": output["generation_time"],
+    })
 
     return output
 

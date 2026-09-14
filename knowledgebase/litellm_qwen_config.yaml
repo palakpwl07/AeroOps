@@ -1,0 +1,31 @@
+# LiteLLM proxy config — routes Claude Code's Anthropic-format requests to
+# Qwen3.8 Max (free tier) via TokenRouter's OpenAI-compatible API.
+#
+# Setup:
+#   pip install 'litellm[proxy]'
+#   export TOKENROUTER_API_KEY=your_key_here
+#   litellm --config litellm_qwen_config.yaml --port 4000
+#
+# Leave this running in its own terminal window while you run Claude Code
+# in another. It's just a local translation layer, no data leaves your
+# machine except what actually goes to TokenRouter.
+
+model_list:
+  - model_name: qwen-jury
+    litellm_params:
+      model: openai/qwen/qwen3.8-max-free
+      api_base: https://api.tokenrouter.com/v1
+      api_key: os.environ/TOKENROUTER_API_KEY
+      drop_params: true
+      # ^ Claude Code sends a reasoning_effort param ("high") that doesn't
+      # match TokenRouter's accepted values for this model (xhigh/medium/low).
+      # drop_params strips parameters the backend doesn't recognize instead
+      # of erroring on them, so this mismatch stops causing 400s.
+
+# Free tier is explicitly documented as unstable ("service stability and
+# concurrency are not guaranteed"), so retry/fallback settings matter more
+# here than they would for a paid endpoint.
+litellm_settings:
+  num_retries: 4
+  request_timeout: 60
+  drop_params: true  # belt-and-suspenders: global fallback too

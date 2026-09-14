@@ -1,5 +1,8 @@
 # Secrets
 .streamlit/secrets.toml
+**/.streamlit/secrets.toml
+.env
+**/secrets.toml
 
 # Virtual environment
 Include/
@@ -18,6 +21,12 @@ ragas_outputs/
 redundant_code/
 Evaluations/
 Resources/
+
+# Archived naive RAG + agentic router (superseded by GraphRAG-only
+# architecture, kept locally as a private reference, not the shipped
+# architecture -- see archive_naive_agentic/README.md)
+archive_naive_agentic/
+archive_naive_agentic.zip
 
 # Eval / notebook files (not needed for deployment)
 *.xlsx

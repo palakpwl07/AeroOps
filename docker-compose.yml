@@ -1,0 +1,68 @@
+# Deployment target: a single EC2 instance (t3.small, us-east-1) running
+# this same docker-compose file directly -- not ECS Fargate. Also used
+# locally first to prove the self-hosted-Neo4j architecture works
+# (container networking, bolt auth, health check) before touching AWS.
+#
+# IMPORTANT -- Neo4j Community Edition (this image) does NOT support
+# multiple named databases; that's an Enterprise-only feature. AuraDB's
+# free tier provisions a custom-named database ("aeroops" in this
+# project's case), which is a Aura-specific allowance, not something
+# self-hosted Community can replicate. NEO4J_DATABASE is therefore set to
+# the default "neo4j" database below -- the app already reads this from
+# an env var (graphretriever_v5.py's GraphRetriever.__init__), so this is
+# a config change, not a code change. The existing graph DATA in AuraDB
+# still has to be migrated into this instance's "neo4j" database before
+# this is a real replacement -- that migration hasn't happened yet.
+#
+# Usage:
+#   cp .env.example .env   # fill in OPENROUTER_API_KEY, LANGCHAIN_API_KEY
+#   docker compose up --build
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    environment:
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:-localtestpassword}
+      NEO4J_dbms_security_procedures_unrestricted: apoc.*
+      # Neo4j auto-sizes its heap/page-cache off whatever memory it
+      # detects in the container -- on a t3.small (2GB total, shared with
+      # the app container + host OS), the un-pinned default risks either
+      # over-committing and OOM-killing, or the JVM's memory probe seeing
+      # the host's full RAM rather than this container's actual share.
+      # Pinned explicitly instead of relying on autodetection.
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 256m
+    mem_limit: 1200m
+    ports:
+      - "7474:7474"   # browser UI, optional, for inspecting the local graph
+      - "7687:7687"   # bolt
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USERNAME: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:-localtestpassword}
+      NEO4J_DATABASE: neo4j
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY}
+      GRAPHRAG_GROQ_MODEL: openai/gpt-oss-20b
+      LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2:-false}
+      LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY:-}
+      LANGCHAIN_PROJECT: aeroops
+    mem_limit: 512m
+    ports:
+      - "8000:8000"
+
+volumes:
+  neo4j_data:

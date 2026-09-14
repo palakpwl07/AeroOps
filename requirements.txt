@@ -3,10 +3,9 @@ neo4j
 openai
 langchain-community
 langchain-text-splitters
-langchain-huggingface
-sentence-transformers
-faiss-cpu
-rank-bm25
 graphviz
 pypdf
 numpy<2.0
+langsmith
+fastapi
+uvicorn[standard]

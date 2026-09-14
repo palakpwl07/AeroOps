@@ -1,0 +1,414 @@
+[
+  {
+    "id": "FH01",
+    "gpt56_answer": "The likely failure mode is a compressor surge / compressor stall.",
+    "gpt56_retrieved_chunk_ids": ["D3_c03"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "FH02",
+    "gpt56_answer": "The recommended mitigation is to dry-motor the engine, which the corpus identifies as the quickest way to extinguish most tailpipe fires.",
+    "gpt56_retrieved_chunk_ids": ["D3_c22"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "FH03",
+    "gpt56_answer": "It uses active clearance-control bleed air: compressor air is extracted, ducted, and directed onto the engine cases to control clearance between rotor blade tips and the case wall.",
+    "gpt56_retrieved_chunk_ids": ["D3_c32"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "FH04",
+    "gpt56_answer": "Dusty or sandy operation can block HPT vane/blade cooling holes.",
+    "gpt56_retrieved_chunk_ids": ["D1_c08"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "FH05",
+    "gpt56_answer": "The highest rates occur in the initial 1,000 to 2,000 engine flight cycles, as the blade tips begin to wear.",
+    "gpt56_retrieved_chunk_ids": ["D1_c03"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "FH06",
+    "gpt56_answer": "Chip detectors collect bearing-compartment particles; those particles are the physical evidence indicating bearing-compartment distress.",
+    "gpt56_retrieved_chunk_ids": ["D3_c18"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "MH01",
+    "gpt56_answer": "A failing bearing can shed debris or bearing-compartment particles; that debris can clog the oil filter, causing the oil filter bypass indication.",
+    "gpt56_retrieved_chunk_ids": ["D3_c18", "D3_c20"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Bearing distress produces bearing-compartment particles collected by chip detectors.", "source_chunk_id": "D3_c18"},
+      {"step": 2, "fact": "The oil filter can become clogged by debris from a bearing failure, which leads to an oil filter bypass indication.", "source_chunk_id": "D3_c20"}
+    ]
+  },
+  {
+    "id": "MH02",
+    "gpt56_answer": "A hot rotor reburst can create HPT blade rubs because rotating and stationary structures grow thermally at different rates. Those rubs increase blade-tip clearances, and the increased clearances create efficiency losses and higher SFC.",
+    "gpt56_retrieved_chunk_ids": ["D4_c05", "D4_c01", "D4_c03"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Hot rotor reburst can cause HPT blade rubs through differential thermal growth between rotating and stationary structures.", "source_chunk_id": "D4_c05"},
+      {"step": 2, "fact": "Blade rubs produce clearance increases that are associated with efficiency losses.", "source_chunk_id": "D4_c01"},
+      {"step": 3, "fact": "Clearance increases affect cruise specific fuel consumption, so the rub mechanism degrades efficiency.", "source_chunk_id": "D4_c03"}
+    ]
+  },
+  {
+    "id": "MH03",
+    "gpt56_answer": "Failure of a fuel tank boost pump can clog the fuel filter; the corpus then identifies a potential for multiple-engine flameout from that fuel-filter clogging condition.",
+    "gpt56_retrieved_chunk_ids": ["D3_c29", "D3_c30"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Fuel filter clogging can result from failure of one of the fuel tank boost pumps.", "source_chunk_id": "D3_c29"},
+      {"step": 2, "fact": "Fuel filter clogging creates a potential for multiple-engine flameout.", "source_chunk_id": "D3_c30"}
+    ]
+  },
+  {
+    "id": "MH04",
+    "gpt56_answer": "If the surge is sustained, the turbine can overheat and compressor blades can be damaged and fail. The event may continue to present as surge, loud bang/yaw/vibration, visible flames, and in severe damage cases fire warning or surge symptoms.",
+    "gpt56_retrieved_chunk_ids": ["D3_c03", "D3_c04", "D3_c07", "D3_c31"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A compressor surge is associated with a loud bang, yaw, and vibration.", "source_chunk_id": "D3_c03"},
+      {"step": 2, "fact": "Engine surge can also be accompanied by visible flames from the inlet and tailpipe.", "source_chunk_id": "D3_c04"},
+      {"step": 3, "fact": "Sustained surging can overheat the turbine and damage or fail compressor blades.", "source_chunk_id": "D3_c07"},
+      {"step": 4, "fact": "Severe engine damage may show symptoms such as a fire warning or engine surge.", "source_chunk_id": "D3_c31"}
+    ]
+  },
+  {
+    "id": "MH05",
+    "gpt56_answer": "Compressor airfoil aerodynamic stall means the compressor can no longer compress incoming air. That unstable compressor operation can progress into a flameout.",
+    "gpt56_retrieved_chunk_ids": ["D3_c01", "D3_c08", "D3_c09"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "When airflow over compressor airfoils stalls, the compressor can no longer compress incoming air.", "source_chunk_id": "D3_c01"},
+      {"step": 2, "fact": "A flameout can result from unstable engine operation.", "source_chunk_id": "D3_c08"},
+      {"step": 3, "fact": "The corpus gives compressor stall as an example of unstable engine operation leading toward flameout.", "source_chunk_id": "D3_c09"}
+    ]
+  },
+  {
+    "id": "MH06",
+    "gpt56_answer": "A bird strike can fracture one or more fan blades. In that condition, the engine is likely to surge once and not recover.",
+    "gpt56_retrieved_chunk_ids": ["D3_c27"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Bird ingestion can fracture one or more fan blades.", "source_chunk_id": "D3_c27"},
+      {"step": 2, "fact": "With that fan-blade fracture damage, the engine will likely surge once and not recover.", "source_chunk_id": "D3_c27"}
+    ]
+  },
+  {
+    "id": "MH07",
+    "gpt56_answer": "Fuel that puddles in the turbine casing or exhaust during shutdown can ignite and cause a tailpipe fire. The required immediate intervention supported by the corpus is to dry-motor the engine.",
+    "gpt56_retrieved_chunk_ids": ["D3_c21", "D3_c22"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Fuel can puddle in turbine casings and exhaust during startup or shutdown and then ignite.", "source_chunk_id": "D3_c21"},
+      {"step": 2, "fact": "The resulting event is a tailpipe fire, and dry motoring is identified as the quickest way to extinguish most tailpipe fires.", "source_chunk_id": "D3_c22"}
+    ]
+  },
+  {
+    "id": "MH08",
+    "gpt56_answer": "The corpus supports that shorter stage-length operation produces more rapid performance deterioration. It also links short-to-medium haul operation with faster accumulation of flight cycles; beyond that, the retrieved corpus does not spell out a more detailed mechanism.",
+    "gpt56_retrieved_chunk_ids": ["D1_c16", "D1_c18"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Short-to-medium haul engines accumulate enough flight cycles to run into LLP stub-life limits.", "source_chunk_id": "D1_c16"},
+      {"step": 2, "fact": "The corpus states directly that shorter stage-length operation causes more rapid performance deterioration.", "source_chunk_id": "D1_c18"}
+    ]
+  },
+  {
+    "id": "CD01",
+    "gpt56_answer": "The primary physical cause is increased blade-tip clearances throughout the engine. The on-wing procedure that can temporarily restore lost EGT margin is engine water washing / regular engine wash.",
+    "gpt56_retrieved_chunk_ids": ["D4_c02", "D1_c09", "D1_c10"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "NASA TM-81552 identifies increased blade-tip clearances throughout the engine as a primary cause of performance deterioration.", "source_chunk_id": "D4_c02"},
+      {"step": 2, "fact": "Engine wash provides increased EGT margin and improved compressor efficiency.", "source_chunk_id": "D1_c09"},
+      {"step": 3, "fact": "The contamination-related deterioration can be restored by regular engine wash.", "source_chunk_id": "D1_c10"}
+    ]
+  },
+  {
+    "id": "CD02",
+    "gpt56_answer": "Bird ingestion is treated as FOD and can bend or fracture fan blades; that damage can trigger a compressor surge, including a surge that does not recover.",
+    "gpt56_retrieved_chunk_ids": ["D1_c15", "D3_c27", "D3_c28"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "FOD includes ingestion of foreign objects such as birds.", "source_chunk_id": "D1_c15"},
+      {"step": 2, "fact": "Bird ingestion can fracture fan blades and make the engine likely to surge once and not recover.", "source_chunk_id": "D3_c27"},
+      {"step": 3, "fact": "The corpus also documents fan blades bent by bird ingestion.", "source_chunk_id": "D3_c28"}
+    ]
+  },
+  {
+    "id": "CD03",
+    "gpt56_answer": "The supported maintenance response is a shop maintenance overhaul / performance-restoration shop visit in which the core is dismantled and worn or damaged airfoils and parts are inspected, repaired, or replaced.",
+    "gpt56_retrieved_chunk_ids": ["D1_c20", "D1_c14", "D1_c11", "D7_c01"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "As engines age, more parts experience higher deterioration and scrap rates.", "source_chunk_id": "D1_c20"},
+      {"step": 2, "fact": "Hardware deterioration includes HPT blade distress, cracking, and chipping.", "source_chunk_id": "D1_c14"},
+      {"step": 3, "fact": "In shop maintenance, the core module is dismantled and airfoils are inspected, balanced, repaired, or replaced.", "source_chunk_id": "D1_c11"},
+      {"step": 4, "fact": "The major purpose of overhaul is to inspect, repair, and replace worn engine parts.", "source_chunk_id": "D7_c01"}
+    ]
+  },
+  {
+    "id": "CD04",
+    "gpt56_answer": "On-wing, borescope inspection is used to inspect internal engine parts for cracks and stress fractures. During shop overhaul, the distinct process identified is non-destructive testing (NDT) inspection.",
+    "gpt56_retrieved_chunk_ids": ["D1_c12", "D7_c02"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Borescope inspection is used to inspect internal engine parts for defects such as cracks and stress fractures.", "source_chunk_id": "D1_c12"},
+      {"step": 2, "fact": "The overhaul process identifies non-destructive testing inspection.", "source_chunk_id": "D7_c02"}
+    ]
+  },
+  {
+    "id": "CD05",
+    "gpt56_answer": "Widened turbine blade-tip/static-seal clearances lower EGT margin / engine efficiency and raise specific fuel consumption, which appears operationally as higher cruise SFC or fuel burn.",
+    "gpt56_retrieved_chunk_ids": ["D1_c01", "D1_c02", "D4_c03", "D4_c10"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A major efficiency-deterioration factor is gradual clearance growth between turbine blade tips and static seals or shrouds.", "source_chunk_id": "D1_c01"},
+      {"step": 2, "fact": "The leakage from those clearances reduces efficiency and raises total specific fuel consumption.", "source_chunk_id": "D1_c02"},
+      {"step": 3, "fact": "NASA TM-81552 also links clearance increases to cruise SFC impact.", "source_chunk_id": "D4_c03"},
+      {"step": 4, "fact": "Long-term deterioration is expressed as about 2.5 to 3.0 percent cruise SFC.", "source_chunk_id": "D4_c10"}
+    ]
+  },
+  {
+    "id": "CD06",
+    "gpt56_answer": "Rubbing outer shrouds increases blade-tip clearances and produces efficiency losses. The wear/deterioration rate is highest in the first 1,000 to 2,000 engine flight cycles.",
+    "gpt56_retrieved_chunk_ids": ["D4_c01", "D4_c02", "D1_c03"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Blades rubbing their outer shrouds cause clearance increases and efficiency losses.", "source_chunk_id": "D4_c01"},
+      {"step": 2, "fact": "Increased blade-tip clearances throughout the engine are identified as a primary deterioration cause.", "source_chunk_id": "D4_c02"},
+      {"step": 3, "fact": "Blade-tip wear and deterioration rates are highest during the initial 1,000 to 2,000 engine flight cycles.", "source_chunk_id": "D1_c03"}
+    ]
+  },
+  {
+    "id": "CD07",
+    "gpt56_answer": "Besides gradual degraded performance, excessive or high EGT is an acute indicator of engine stall/surge, difficulty during engine starting / hot start, and major bleed-air leak.",
+    "gpt56_retrieved_chunk_ids": ["D1_c21", "D3_c05", "D3_c15", "D3_c25"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "High EGT can indicate degraded engine performance.", "source_chunk_id": "D1_c21"},
+      {"step": 2, "fact": "Compressor surge instruments may show high EGT and EPR or rotor-speed changes.", "source_chunk_id": "D3_c05"},
+      {"step": 3, "fact": "Excessive EGT is identified as a key indicator of engine stall, starting difficulty, and a major bleed-air leak.", "source_chunk_id": "D3_c15"},
+      {"step": 4, "fact": "Hot starts can show relatively high turbine temperatures during sub-idle operation.", "source_chunk_id": "D3_c25"}
+    ]
+  },
+  {
+    "id": "CD08",
+    "gpt56_answer": "The environmental variable is high ambient temperature / OAT, which lowers available EGT margin and increases degradation. The operational forces are aircraft-induced flight loads during takeoff rotation, flight maneuvers, landing, and thrust reversal.",
+    "gpt56_retrieved_chunk_ids": ["D1_c19", "D4_c04"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "High ambient temperature lowers available EGT margin and increases performance degradation.", "source_chunk_id": "D1_c19"},
+      {"step": 2, "fact": "Aircraft-induced flight loads during takeoff rotation, maneuvers, landing, and thrust reversal create deflections.", "source_chunk_id": "D4_c04"}
+    ]
+  },
+  {
+    "id": "AF01",
+    "gpt56_answer": "The technician should investigate fan unbalance at assembly, bird ingestion/FOD, bearing failure, and excessive fan rotor system tip clearances. Bearing failure should be cross-checked with oil-temperature rise and indicated vibration.",
+    "gpt56_retrieved_chunk_ids": ["D3_c16", "D3_c17"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "High vibration can be associated with fan unbalance at assembly, bird ingestion/FOD, bearing failure, and excessive fan rotor system tip clearances.", "source_chunk_id": "D3_c16"},
+      {"step": 2, "fact": "Bearing failures are accompanied by increased oil temperature and indicated vibration.", "source_chunk_id": "D3_c17"}
+    ]
+  },
+  {
+    "id": "AF02",
+    "gpt56_answer": "The combined indications are a very loud bang, yaw, vibration, visible flames forward out the inlet or rearward out the tailpipe, high EGT, EPR or rotor-speed changes, and rapid EPR fluctuations.",
+    "gpt56_retrieved_chunk_ids": ["D3_c03", "D3_c04", "D3_c05", "D3_c14"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "The sensory/aircraft-motion cues are a very loud bang accompanied by yaw and vibration.", "source_chunk_id": "D3_c03"},
+      {"step": 2, "fact": "The visual cue can be flames forward out the inlet and rearward out the tailpipe.", "source_chunk_id": "D3_c04"},
+      {"step": 3, "fact": "Instrument cues may include high EGT plus EPR or rotor-speed changes.", "source_chunk_id": "D3_c05"},
+      {"step": 4, "fact": "Rapid EPR fluctuations may be caused by surge.", "source_chunk_id": "D3_c14"}
+    ]
+  },
+  {
+    "id": "AF03",
+    "gpt56_answer": "The identified root causes are fuel starvation/running out of fuel, fuel interruption, control-system malfunction, unstable engine operation such as compressor stall, and fuel-filter clogging that can follow fuel tank boost-pump failure.",
+    "gpt56_retrieved_chunk_ids": ["D3_c08", "D3_c09", "D3_c29", "D3_c30"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Flameout may result from running out of fuel, a control-system malfunction, or unstable engine operation.", "source_chunk_id": "D3_c08"},
+      {"step": 2, "fact": "Compressor stall is identified as unstable engine operation relevant to flameout.", "source_chunk_id": "D3_c09"},
+      {"step": 3, "fact": "Fuel filter clogging can result from failure of a fuel tank boost pump.", "source_chunk_id": "D3_c29"},
+      {"step": 4, "fact": "Fuel filter clogging creates potential for multiple-engine flameout.", "source_chunk_id": "D3_c30"}
+    ]
+  },
+  {
+    "id": "AF04",
+    "gpt56_answer": "The monitored indications are increased oil temperature, indicated vibration, bearing-compartment particles/chips collected by chip detectors, and oil-filter bypass caused by debris from bearing failure.",
+    "gpt56_retrieved_chunk_ids": ["D3_c17", "D3_c18", "D3_c20"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Bearing failures are accompanied by increased oil temperature and indicated vibration.", "source_chunk_id": "D3_c17"},
+      {"step": 2, "fact": "Chip detectors collect bearing-compartment particles indicating bearing-compartment distress.", "source_chunk_id": "D3_c18"},
+      {"step": 3, "fact": "The oil filter may clog from debris from a bearing failure, producing an oil-filter bypass indication.", "source_chunk_id": "D3_c20"}
+    ]
+  },
+  {
+    "id": "AF05",
+    "gpt56_answer": "The accelerating factors are higher thrust rating/higher core temperature, dusty/sandy/erosive-corrosive operating environments, shorter stage lengths, high ambient temperature, and lower use of takeoff derate. Engine age is also linked to higher deterioration and scrap rates, but it is not purely operational or environmental.",
+    "gpt56_retrieved_chunk_ids": ["D1_c04", "D1_c05", "D1_c06", "D1_c18", "D1_c19", "D1_c20"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Higher thrust generates higher core temperatures and greater thermal stress.", "source_chunk_id": "D1_c04"},
+      {"step": 2, "fact": "A larger takeoff derate lowers takeoff EGT and lowers deterioration rate, so less derate would remove that reduction.", "source_chunk_id": "D1_c05"},
+      {"step": 3, "fact": "Dusty, sandy, and erosive-corrosive environments expose engines to higher blade distress.", "source_chunk_id": "D1_c06"},
+      {"step": 4, "fact": "Shorter stage-length operation produces more rapid performance deterioration.", "source_chunk_id": "D1_c18"},
+      {"step": 5, "fact": "High ambient temperatures lower available EGT margin and increase performance degradation.", "source_chunk_id": "D1_c19"},
+      {"step": 6, "fact": "Engine age is associated with higher deterioration and scrap rates.", "source_chunk_id": "D1_c20"}
+    ]
+  },
+  {
+    "id": "AF06",
+    "gpt56_answer": "The corpus identifies birds, ice, hail, ash, runway debris, dust, sand, and industrial emissions as ingested materials relevant to FOD or particulate distress.",
+    "gpt56_retrieved_chunk_ids": ["D1_c15", "D1_c07"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "FOD includes ingestion of birds, ice, hail, ash, and runway debris.", "source_chunk_id": "D1_c15"},
+      {"step": 2, "fact": "Particulate distress includes dust, sand, and industrial emissions that can erode HPC blades.", "source_chunk_id": "D1_c07"}
+    ]
+  },
+  {
+    "id": "DA01",
+    "gpt56_answer": "By EPR alone: flameout shows a drop/low EPR, while compressor surge is associated with rapid EPR fluctuations and may show EPR changes during the surge.",
+    "gpt56_retrieved_chunk_ids": ["D3_c10", "D3_c13", "D3_c14", "D3_c05"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A flameout is accompanied by a drop in engine pressure ratio.", "source_chunk_id": "D3_c10"},
+      {"step": 2, "fact": "A low EPR reading may be caused by flameout.", "source_chunk_id": "D3_c13"},
+      {"step": 3, "fact": "Rapid EPR fluctuations may be caused by surge.", "source_chunk_id": "D3_c14"},
+      {"step": 4, "fact": "Surge instruments may show EPR changes.", "source_chunk_id": "D3_c05"}
+    ]
+  },
+  {
+    "id": "DA02",
+    "gpt56_answer": "The bypass indication alone does not distinguish them, because the corpus says oil-filter clogging can come from either contamination or bearing-failure debris. Evidence for catastrophic mechanical failure would be bearing-failure corroboration such as rising oil temperature, indicated vibration, or chip-detector particles.",
+    "gpt56_retrieved_chunk_ids": ["D3_c20", "D3_c17", "D3_c18"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Oil-filter bypass can be caused either by contamination or by debris from a bearing failure.", "source_chunk_id": "D3_c20"},
+      {"step": 2, "fact": "Bearing failure is accompanied by increased oil temperature and indicated vibration.", "source_chunk_id": "D3_c17"},
+      {"step": 3, "fact": "Chip-detector bearing-compartment particles provide additional evidence of bearing distress.", "source_chunk_id": "D3_c18"}
+    ]
+  },
+  {
+    "id": "DA03",
+    "gpt56_answer": "In a flameout, EGT drops. In a hot start, the core is sub-idle and normal cooling flows are ineffective, so turbine temperatures appear relatively high / spike toward excessive EGT.",
+    "gpt56_retrieved_chunk_ids": ["D3_c10", "D3_c25"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A flameout is accompanied by a drop in EGT.", "source_chunk_id": "D3_c10"},
+      {"step": 2, "fact": "During sub-idle operation in a hot start, normal cooling flows are ineffective and turbine temperatures may appear relatively high.", "source_chunk_id": "D3_c25"}
+    ]
+  },
+  {
+    "id": "DA04",
+    "gpt56_answer": "For an engine nacelle fire, the immediate response is engine shutdown by shutting off fuel to the engine. For a tailpipe fire, the supported immediate response is to dry-motor the engine rather than treating it as a nacelle fire.",
+    "gpt56_retrieved_chunk_ids": ["D3_c23", "D3_c24", "D3_c22"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A fire near the engine should annunciate as a flight-deck fire warning.", "source_chunk_id": "D3_c23"},
+      {"step": 2, "fact": "For that engine fire condition, engine shutdown should immediately be accomplished by shutting off fuel.", "source_chunk_id": "D3_c24"},
+      {"step": 3, "fact": "For tailpipe fires, dry motoring is identified as the quickest way to extinguish most cases.", "source_chunk_id": "D3_c22"}
+    ]
+  },
+  {
+    "id": "DA05",
+    "gpt56_answer": "On-condition monitoring keeps the engine in service while tracking measurements such as speed, temperature, pressure, fuel flow, vibration, and internal borescope defects. A shop overhaul is intrusive: the core or engine is dismantled so worn parts/airfoils can be inspected, balanced, repaired, or replaced.",
+    "gpt56_retrieved_chunk_ids": ["D1_c13", "D1_c12", "D1_c11", "D7_c01"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "On-condition monitoring takes regular detailed measurements of operating speed, temperature, pressure, fuel flow, and vibration.", "source_chunk_id": "D1_c13"},
+      {"step": 2, "fact": "Borescope inspection supports on-condition inspection of internal parts for defects such as cracks.", "source_chunk_id": "D1_c12"},
+      {"step": 3, "fact": "Shop maintenance dismantles the core and inspects, balances, repairs, or replaces airfoils as needed.", "source_chunk_id": "D1_c11"},
+      {"step": 4, "fact": "Overhaul is for inspecting, repairing, and replacing worn engine parts.", "source_chunk_id": "D7_c01"}
+    ]
+  },
+  {
+    "id": "DA06",
+    "gpt56_answer": "LLP expiry is cycle-life consumption: short-to-medium haul engines accumulate enough cycles to reach life-limited-part stub-life limits, and those parts must be replaced. Performance deterioration is efficiency loss: shorter stage lengths accelerate deterioration, while clearance growth and leakage reduce efficiency and raise SFC / erode EGT margin.",
+    "gpt56_retrieved_chunk_ids": ["D1_c16", "D1_c17", "D1_c18", "D1_c01", "D1_c02"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Short-to-medium haul engines accumulate cycles and can bump up against LLP stub-life limits.", "source_chunk_id": "D1_c16"},
+      {"step": 2, "fact": "LLP-limited parts must be replaced and not used again.", "source_chunk_id": "D1_c17"},
+      {"step": 3, "fact": "Shorter stage-length operation also causes more rapid performance deterioration.", "source_chunk_id": "D1_c18"},
+      {"step": 4, "fact": "A major efficiency deterioration mechanism is increased clearance between turbine blade tips and static seals or shrouds.", "source_chunk_id": "D1_c01"},
+      {"step": 5, "fact": "The resulting leakage reduces engine efficiency and raises total SFC.", "source_chunk_id": "D1_c02"}
+    ]
+  },
+  {
+    "id": "OS01",
+    "gpt56_answer": "The fault was a compressor surge / stall, and it recovered because the pilot retarded the thrust lever until the engine recovered.",
+    "gpt56_retrieved_chunk_ids": ["D3_c03", "D3_c06"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "A compressor surge presents with a loud bang accompanied by yaw and vibration.", "source_chunk_id": "D3_c03"},
+      {"step": 2, "fact": "The desired pilot action is to retard the thrust lever until the engine recovers.", "source_chunk_id": "D3_c06"}
+    ]
+  },
+  {
+    "id": "OS02",
+    "gpt56_answer": "This indicates a tailpipe fire caused by fuel puddling in the turbine casings/exhaust during shutdown and igniting. The immediate remedy is to dry-motor the engine. The lack of a fire warning argues against the nacelle-fire procedure in the retrieved corpus.",
+    "gpt56_retrieved_chunk_ids": ["D3_c21", "D3_c22", "D3_c23"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Fuel may puddle in turbine casings and exhaust during shutdown and then ignite.", "source_chunk_id": "D3_c21"},
+      {"step": 2, "fact": "Dry motoring is the quickest way to extinguish most tailpipe fires.", "source_chunk_id": "D3_c22"},
+      {"step": 3, "fact": "A fire near the engine should annunciate as a flight-deck fire warning, which distinguishes it from the no-warning tailpipe-fire scenario.", "source_chunk_id": "D3_c23"}
+    ]
+  },
+  {
+    "id": "OS03",
+    "gpt56_answer": "This indicates an oil leak / oil loss. The corpus says oil leaks produce a sustained reduction in oil quantity down to zero; the lack of oil-temperature rise or vibration makes bearing failure less supported by the retrieved evidence.",
+    "gpt56_retrieved_chunk_ids": ["D3_c19", "D3_c17"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Oil leaks produce a sustained reduction in oil quantity down to zero.", "source_chunk_id": "D3_c19"},
+      {"step": 2, "fact": "Bearing failures would be accompanied by increased oil temperature and indicated vibration, which the scenario lacks.", "source_chunk_id": "D3_c17"}
+    ]
+  },
+  {
+    "id": "OS04",
+    "gpt56_answer": "The severe operational risk is multiple-engine flameout, because fuel-filter clogging can follow failure of a fuel tank boost pump and the corpus explicitly says that condition can create potential for multiple-engine flameout.",
+    "gpt56_retrieved_chunk_ids": ["D3_c29", "D3_c30", "D3_c20"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Fuel filter clogging can result from failure of a fuel tank boost pump.", "source_chunk_id": "D3_c29"},
+      {"step": 2, "fact": "Fuel filter clogging creates potential for multiple-engine flameout.", "source_chunk_id": "D3_c30"},
+      {"step": 3, "fact": "Oil-filter bypass can also be caused by contamination or debris, matching the filter-bypass warning context.", "source_chunk_id": "D3_c20"}
+    ]
+  },
+  {
+    "id": "OS05",
+    "gpt56_answer": "The likely compressor condition is airfoil erosion / surface roughness from particulate ingestion: dust, sand, and industrial emissions can erode HPC blades, and airfoil quality problems such as FOD, erosion, and roughness are significant deterioration mechanisms.",
+    "gpt56_retrieved_chunk_ids": ["D1_c07", "D4_c06"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Dust, sand, and industrial emissions can erode HPC blades.", "source_chunk_id": "D1_c07"},
+      {"step": 2, "fact": "Airfoil quality issues, including FOD, erosion, and surface roughness, are significant deterioration mechanisms.", "source_chunk_id": "D4_c06"}
+    ]
+  },
+  {
+    "id": "OS06",
+    "gpt56_answer": "This is a hot start. During sub-idle operation, normal cooling flows are not effective, so turbine temperatures can appear relatively high and EGT can rise rapidly toward an excessive limit.",
+    "gpt56_retrieved_chunk_ids": ["D3_c25", "D3_c15"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "During sub-idle operation, normal engine cooling flows are ineffective and turbine temperatures may appear relatively high.", "source_chunk_id": "D3_c25"},
+      {"step": 2, "fact": "Excessive EGT is a key indicator of difficulty in engine starting.", "source_chunk_id": "D3_c15"}
+    ]
+  },
+  {
+    "id": "OS07",
+    "gpt56_answer": "Aircraft-induced flight loads during the maneuver/landing produced structural deflections that caused blade rubs against shrouds. Those rubs increased blade-tip clearances, and clearance-related deterioration affects cruise SFC, explaining the permanent SFC increase.",
+    "gpt56_retrieved_chunk_ids": ["D4_c04", "D4_c01", "D4_c03"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Aircraft-induced flight loads during maneuvers and landing produce deflections.", "source_chunk_id": "D4_c04"},
+      {"step": 2, "fact": "Blade rubs against outer shrouds cause clearance increases and efficiency losses.", "source_chunk_id": "D4_c01"},
+      {"step": 3, "fact": "Clearance-increase deterioration mechanisms affect cruise SFC.", "source_chunk_id": "D4_c03"}
+    ]
+  },
+  {
+    "id": "OS08",
+    "gpt56_answer": "The ignition system prevented or automatically recovered a flameout by restarting combustion; the corpus says continuous ignition can restart combustion automatically, often without the pilot noticing.",
+    "gpt56_retrieved_chunk_ids": ["D3_c12", "D3_c10"],
+    "gpt56_reasoning_chain": [
+      {"step": 1, "fact": "Continuous ignition can restart combustion automatically, often without the pilot noticing.", "source_chunk_id": "D3_c12"},
+      {"step": 2, "fact": "A flameout is associated with drops in EGT, core speed, and EPR, tying the event to the EPR/EGT disturbance context.", "source_chunk_id": "D3_c10"}
+    ]
+  },
+  {
+    "id": "PR01",
+    "gpt56_answer": "High-pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration.",
+    "gpt56_retrieved_chunk_ids": ["D4_c09"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "PR02",
+    "gpt56_answer": "The estimated permanent residual penalty is approximately 0.2 percent cruise SFC.",
+    "gpt56_retrieved_chunk_ids": ["D4_c11"],
+    "gpt56_reasoning_chain": []
+  },
+  {
+    "id": "PR03",
+    "gpt56_answer": "The total expected long-term performance-deterioration penalty is about 2.5 to 3.0 percent cruise SFC.",
+    "gpt56_retrieved_chunk_ids": ["D4_c10"],
+    "gpt56_reasoning_chain": []
+  }
+]

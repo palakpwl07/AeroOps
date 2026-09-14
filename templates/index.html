@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AeroOps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/style.css?v={{ static_version }}" />
+</head>
+<body>
+  <div class="page">
+    <header class="app-header">
+      <span class="kicker">Turbofan Maintenance Assistant</span>
+      <h1>AeroOps</h1>
+      <p>Ask a maintenance question and get a grounded answer from graph-based reasoning over the maintenance corpus.</p>
+    </header>
+
+    <form class="query-form" id="query-form">
+      <label for="question" class="sr-only">Ask a maintenance question</label>
+      <input
+        type="text"
+        id="question"
+        name="question"
+        placeholder="e.g. What causes a compressor surge?"
+        required
+        autocomplete="off"
+      />
+      <button type="submit" id="query-submit">Ask</button>
+    </form>
+    <p class="hint" id="form-hint">
+      The first query after a cold start takes longer while the pipeline warms up.
+    </p>
+
+    <div id="status-area"></div>
+
+    <!-- Always visible -- gives a first-time visitor something concrete to
+         try instead of a bare form, and stays around afterward so people
+         can keep trying more examples rather than a one-shot hint that
+         vanishes once "used". -->
+    <section id="empty-state" class="empty-state">
+      <p class="empty-state-label">Not sure what to ask? Try one of these:</p>
+      <div class="sample-chips" id="sample-chips"></div>
+    </section>
+
+    <section id="agentic-view"></section>
+  </div>
+
+  <script src="/static/app.js?v={{ static_version }}"></script>
+</body>
+</html>

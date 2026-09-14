@@ -1,0 +1,272 @@
+[
+  {
+    "id": "FH01",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "If a flight crew reports hearing a very loud bang accompanied by yaw and heavy vibration, what engine failure mode has likely occurred?"
+  },
+  {
+    "id": "FH02",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "What is the recommended operational mitigation if ground crews observe a tailpipe fire during engine start-up?"
+  },
+  {
+    "id": "FH03",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "How does the engine physically control the clearance between the rotor blade tips and the case wall during operation?"
+  },
+  {
+    "id": "FH04",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "Operating a turbofan in dusty or sandy environments can cause what specific damage to the High-Pressure Turbine (HPT) components?"
+  },
+  {
+    "id": "FH05",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "During what specific phase of an engine's operational life are the rates of blade tip wear and resulting deterioration the highest?"
+  },
+  {
+    "id": "FH06",
+    "category": "factual_single_hop",
+    "hop_count": 1,
+    "question": "What physical evidence collected by chip detectors indicates distress inside the bearing compartment?"
+  },
+  {
+    "id": "MH01",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "How can a failing bearing eventually trigger an oil filter bypass indication in the cockpit?"
+  },
+  {
+    "id": "MH02",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "Why does a hot rotor reburst event degrade engine efficiency?"
+  },
+  {
+    "id": "MH03",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "How could the failure of a single fuel tank boost pump potentially cause a multiple-engine flameout?"
+  },
+  {
+    "id": "MH04",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "If a compressor surge is sustained and the crew does not retard the thrust lever, what severe mechanical damage and physical symptoms can result?"
+  },
+  {
+    "id": "MH05",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "How does an aerodynamic stall of the compressor airfoils potentially cause an engine flameout?"
+  },
+  {
+    "id": "MH06",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "How does a bird strike lead to an unrecoverable engine surge?"
+  },
+  {
+    "id": "MH07",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "If fuel puddles in the turbine casing during shutdown, what consequence occurs and what is the required maintenance intervention?"
+  },
+  {
+    "id": "MH08",
+    "category": "multi_hop_causal",
+    "hop_count": 2,
+    "question": "Why does operating aircraft on shorter stage lengths result in more rapid performance deterioration?"
+  },
+  {
+    "id": "CD01",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "What is the primary physical cause of engine performance deterioration, and what on-wing maintenance procedure can temporarily restore some of the lost EGT margin?"
+  },
+  {
+    "id": "CD02",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "When an engine ingests a bird, what form of damage occurs, and what aerodynamic failure mode does it trigger?"
+  },
+  {
+    "id": "CD03",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "If an older engine is experiencing high scrap rates due to cracked and chipped blades, what major maintenance event is required to rectify this?"
+  },
+  {
+    "id": "CD04",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "What inspection method is used on-wing to find internal blade cracks, and what distinct inspection process is used to find them during a shop overhaul?"
+  },
+  {
+    "id": "CD05",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "How does the widening of clearances between turbine blade tips and static seals affect the two main operational efficiency metrics monitored by airlines?"
+  },
+  {
+    "id": "CD06",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "When rotor blades rub their outer shrouds, what happens to the clearances, and during what specific phase of the engine's lifecycle is this wear rate the highest?"
+  },
+  {
+    "id": "CD07",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "While high EGT is generally an indication of gradual performance degradation, it is also a key acute indicator of what specific malfunctions?"
+  },
+  {
+    "id": "CD08",
+    "category": "cross_document",
+    "hop_count": 2,
+    "question": "What specific environmental variable accelerates thermal degradation, and what external operational forces cause structural deflections that lead to blade tip rubs?"
+  },
+  {
+    "id": "AF01",
+    "category": "aggregation_fanout",
+    "hop_count": 2,
+    "question": "When troubleshooting high engine vibration on the shop floor, what primary mechanical and operational faults should a technician investigate?"
+  },
+  {
+    "id": "AF02",
+    "category": "aggregation_fanout",
+    "hop_count": 3,
+    "question": "What are all the combined sensory, visual, and instrument indications that an engine is experiencing a compressor surge?"
+  },
+  {
+    "id": "AF03",
+    "category": "aggregation_fanout",
+    "hop_count": 2,
+    "question": "What are the distinctly identified root causes that can result in an engine flameout?"
+  },
+  {
+    "id": "AF04",
+    "category": "aggregation_fanout",
+    "hop_count": 3,
+    "question": "What specific engine parameters and fluid indications are monitored to detect a failing bearing?"
+  },
+  {
+    "id": "AF05",
+    "category": "aggregation_fanout",
+    "hop_count": 3,
+    "question": "What operational and environmental factors accelerate the rate of engine EGT margin deterioration?"
+  },
+  {
+    "id": "AF06",
+    "category": "aggregation_fanout",
+    "hop_count": 2,
+    "question": "What types of materials ingested by the engine constitute Foreign Object Damage (FOD) or particulate distress?"
+  },
+  {
+    "id": "DA01",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "Both a compressor surge and a flameout cause abnormal Engine Pressure Ratio (EPR) indications. How do you distinguish between the two based solely on EPR?"
+  },
+  {
+    "id": "DA02",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "How do you distinguish whether an oil filter bypass is caused by generic fluid contamination or by a catastrophic mechanical failure?"
+  },
+  {
+    "id": "DA03",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "How does the Exhaust Gas Temperature (EGT) indication behave differently between a flameout and a hot start?"
+  },
+  {
+    "id": "DA04",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "Maintenance crews must respond to engine nacelle fires and tailpipe fires differently. What is the immediate procedural difference?"
+  },
+  {
+    "id": "DA05",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "How do the actions and goals of on-condition monitoring differ from those of a shop maintenance overhaul?"
+  },
+  {
+    "id": "DA06",
+    "category": "disambiguation",
+    "hop_count": 1,
+    "question": "Short-haul operations degrade an engine through two distinct mechanisms. What is the difference between LLP expiry and performance deterioration?"
+  },
+  {
+    "id": "OS01",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "A pilot reports a loud bang and heavy vibration during takeoff, but notes the engine recovered immediately after they pulled back the thrust lever. What fault happened and what corrected it?"
+  },
+  {
+    "id": "OS02",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "Following a normal shutdown, ground crews notice flames coming from the exhaust nozzle, but no fire warning is sounding in the flight deck. What is the cause and the immediate remedy?"
+  },
+  {
+    "id": "OS03",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "During a climb, the engine oil quantity steadily decreases to zero, though oil temperature and pressure remain temporarily normal without vibration. What failure mode does this indicate?"
+  },
+  {
+    "id": "OS04",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "A twin-engine aircraft loses a fuel tank boost pump. Shortly after, the crew receives an oil and fuel filter bypass warning. What severe operational risk is now present?"
+  },
+  {
+    "id": "OS05",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "An engine operating heavily in desert environments is brought to the shop for high fuel consumption. If borescope shows no cracks, what is the likely physical condition of the compressor?"
+  },
+  {
+    "id": "OS06",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "During an engine start sequence, the EGT rises rapidly toward redline while the engine core speed hangs in a sub-idle state. What is happening and why is the temperature spiking?"
+  },
+  {
+    "id": "OS07",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "A heavy aircraft executes a harsh maneuver and hard landing. On subsequent flights, the engine exhibits a permanent increase in cruise SFC. What mechanical damage occurred during the flight?"
+  },
+  {
+    "id": "OS08",
+    "category": "operational_scenario",
+    "hop_count": 1,
+    "question": "In flight, the pilot notices brief fluctuations in EPR and EGT, but the engine continues running normally because the continuous ignition system activated automatically. What event did the ignition system prevent?"
+  },
+  {
+    "id": "PR01",
+    "category": "provenance",
+    "hop_count": 1,
+    "question": "According to the NASA TM-81552 research memorandum, what specific percentage of short-term performance deterioration is attributed to High-Pressure Turbine (HPT) clearance increases?"
+  },
+  {
+    "id": "PR02",
+    "category": "provenance",
+    "hop_count": 1,
+    "question": "Based on historical data from NASA TM-81552, what is the estimated permanent residual cruise SFC penalty that cannot be restored even after a performance restoration shop visit?"
+  },
+  {
+    "id": "PR03",
+    "category": "provenance",
+    "hop_count": 1,
+    "question": "According to the concluding remarks of NASA TM-81552, what is the total expected penalty to cruise Specific Fuel Consumption (SFC) caused by long-term performance deterioration?"
+  }
+]

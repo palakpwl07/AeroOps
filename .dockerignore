@@ -1,0 +1,45 @@
+# Local venv living directly in the repo root (not a separate .venv/) --
+# without this, `docker build`'s context upload would scan hundreds of MB
+# of installed packages before the Dockerfile's explicit COPY lines (which
+# never reference these paths anyway) even get a chance to ignore them.
+Lib/
+Scripts/
+Include/
+Resources/
+etc/
+share/
+pyvenv.cfg
+
+.git/
+.claude/
+.devcontainer/
+__pycache__/
+*.pyc
+
+# Eval/scratch artifacts -- not part of the running app, just this
+# project's development history.
+agentic_eval_scoring/
+Evaluations/
+evaluation/
+graphify-out/
+chroma_db_v4/
+mech_fresh_cap10/
+mech_fresh_cap16/
+mech_scoring_orig/
+mech_scoring_trimmed/
+graphrag_mechanical_scores/
+ragas_outputs_graphrag/
+ragas_outputs_naive_rag/
+redundant_code/
+*.xlsx
+*.ragas_inputs.json
+agentic_router_log.jsonl
+*.pdf
+!knowledgebase/*.pdf
+
+# Secrets -- never baked into an image; the container gets these as real
+# env vars from the ECS task definition / docker-compose, not this file.
+.streamlit/
+
+assests/
+banner.jpg

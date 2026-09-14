@@ -1,0 +1,526 @@
+/* AeroOps frontend -- dark, technical. Brand accents (cyan = Naive RAG,
+   amber = GraphRAG) are reserved for backend identity in Compare mode --
+   they do NOT double as general UI chrome color, which is why the primary
+   action color below is a neutral near-white rather than a third
+   competing hue. IBM Plex Sans for prose, JetBrains Mono for anything
+   numeric/technical (timings, badges, source ids). */
+
+:root {
+  --color-background: #0b0f1a;
+  --color-foreground: #f8fafc;
+  --color-card: #141b2c;
+  --color-card-foreground: #f8fafc;
+  --color-muted: #212a40;
+  --color-muted-foreground: #8b96ac;
+  --color-border: #2a3450;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fff1f1;
+
+  /* Neutral, premium primary action color -- buttons and the active
+     toggle segment -- deliberately not green/blue/etc so it never
+     competes with the naive/graphrag brand colors below. */
+  --color-accent: #eef1f8;
+  --color-on-accent: #0b0f1a;
+  --color-ring: #f8fafc;
+
+  /* Reserved for the one metric this product is actually selling --
+     generation time. Not reused as a generic UI color anywhere else. */
+  --color-highlight: #34d399;
+
+  --color-naive: #4fc3f7;
+  --color-naive-foreground: #0a1520;
+  --color-graphrag: #ffb000;
+  --color-graphrag-foreground: #201500;
+
+  --radius: 10px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px -12px rgba(0, 0, 0, 0.55);
+  --shadow-raised: 0 2px 6px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1100px 520px at 12% -10%, rgba(79, 195, 247, 0.07), transparent 60%),
+    radial-gradient(900px 480px at 100% 0%, rgba(255, 176, 0, 0.05), transparent 55%),
+    var(--color-background);
+  color: var(--color-foreground);
+  font-family: "IBM Plex Sans", -apple-system, Segoe UI, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-3) var(--space-6);
+}
+
+header.app-header {
+  margin-bottom: var(--space-5);
+}
+
+header.app-header .kicker {
+  display: block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-graphrag);
+  margin-bottom: var(--space-2);
+}
+
+header.app-header h1 {
+  margin: 0 0 6px;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+header.app-header p {
+  margin: 0;
+  color: var(--color-muted-foreground);
+  font-size: 0.95rem;
+  max-width: 56ch;
+}
+
+/* --- Mode toggle (segmented control) --- */
+
+.mode-toggle {
+  display: inline-flex;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 4px;
+  margin-bottom: var(--space-5);
+  gap: 4px;
+}
+
+.mode-toggle button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: calc(var(--radius) - 4px);
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+}
+
+.mode-toggle button:hover {
+  color: var(--color-foreground);
+}
+
+.mode-toggle button:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.mode-toggle button.active {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: var(--shadow-raised);
+}
+
+/* --- Query form --- */
+
+.query-form {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.query-form input[type="text"] {
+  flex: 1 1 320px;
+  min-height: 50px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-foreground);
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0 var(--space-3);
+  transition: border-color 150ms ease;
+}
+
+.query-form input[type="text"]:hover {
+  border-color: #3a4568;
+}
+
+.query-form input[type="text"]:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+.query-form button[type="submit"] {
+  appearance: none;
+  border: none;
+  min-height: 50px;
+  min-width: 100px;
+  padding: 0 var(--space-4);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  cursor: pointer;
+  box-shadow: var(--shadow-raised);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.query-form button[type="submit"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+}
+.query-form button[type="submit"]:active { transform: translateY(0); }
+.query-form button[type="submit"]:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+.query-form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+.hint {
+  color: var(--color-muted-foreground);
+  font-size: 0.82rem;
+  margin: 0 0 var(--space-5);
+}
+
+[hidden] { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Empty state / sample questions --- */
+
+.empty-state {
+  margin-bottom: var(--space-4);
+}
+
+.empty-state-label {
+  margin: 0 0 var(--space-2);
+  font-size: 0.85rem;
+  color: var(--color-muted-foreground);
+}
+
+.sample-chips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+@media (max-width: 640px) {
+  .sample-chips { grid-template-columns: 1fr; }
+}
+
+.sample-chip {
+  appearance: none;
+  text-align: left;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 2px solid var(--color-border);
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+}
+
+.sample-chip:hover {
+  border-left-color: var(--color-graphrag);
+  color: var(--color-foreground);
+  background: var(--color-muted);
+}
+
+.sample-chip:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/* --- Badges --- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge-naive { background: var(--color-naive); color: var(--color-naive-foreground); }
+.badge-graphrag { background: var(--color-graphrag); color: var(--color-graphrag-foreground); }
+
+.badge-degraded {
+  background: var(--color-destructive);
+  color: var(--color-destructive-foreground);
+}
+
+.badge svg { width: 13px; height: 13px; flex: none; }
+
+/* --- Result cards --- */
+
+.card {
+  background: linear-gradient(180deg, #171f34 0%, var(--color-card) 100%);
+  border: 1px solid var(--color-border);
+  border-radius: calc(var(--radius) + 2px);
+  padding: var(--space-4);
+  color: var(--color-card-foreground);
+  box-shadow: var(--shadow-card);
+}
+
+.card + .card { margin-top: var(--space-3); }
+
+.result-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.degraded-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--color-destructive);
+  color: var(--color-destructive-foreground);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: 0.88rem;
+}
+
+.degraded-banner svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  color: var(--color-destructive);
+  margin-top: 1px;
+}
+
+.degraded-banner strong { display: block; margin-bottom: 2px; }
+
+.answer-text {
+  white-space: pre-wrap;
+  margin: 0 0 var(--space-3);
+  max-width: 68ch;
+}
+
+.citation-ref {
+  appearance: none;
+  border: none;
+  background: var(--color-muted);
+  color: var(--color-graphrag);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 1px 4px;
+  margin-left: 1px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.citation-ref:hover { background: var(--color-border); }
+.citation-ref:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 1px;
+}
+
+/* --- Timing readouts --- */
+
+.timing-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Primary/secondary no longer differ -- same size, same weight, same
+   color (see the shared color rule below) for all three timing
+   readouts. Kept as one rule instead of two identical ones now that
+   there's nothing left to distinguish between them. */
+.timing-primary .timing-value,
+.timing-secondary .timing-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.timing-label {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted-foreground);
+  margin-top: 2px;
+}
+
+/* All three timing readouts -- generation time, cost, retrieval time --
+   render identically now: same size, same weight, same highlight green.
+   Started as generation time (hero stat) vs. retrieval time (muted
+   footnote); once cost joined as a second hero-styled stat, having only
+   one of the three look different read as broken rather than as a
+   meaningful hierarchy, so the distinction was dropped rather than
+   half-preserved. */
+.timing-primary .timing-value,
+.timing-secondary .timing-value { color: var(--color-highlight); }
+.timing-primary .timing-label,
+.timing-secondary .timing-label { color: var(--color-highlight); }
+
+/* --- Compare mode --- */
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 720px) {
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+details.sources {
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-2);
+}
+
+details.sources summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted-foreground);
+}
+
+.source-item {
+  margin-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.85rem;
+}
+
+.source-item:last-child { border-bottom: none; }
+
+.source-item.source-highlight {
+  background: rgba(52, 211, 153, 0.14);
+  border-radius: 6px;
+  transition: background-color 300ms ease;
+}
+
+.source-item .source-title { font-weight: 600; }
+
+.source-item blockquote {
+  margin: 4px 0 0;
+  padding-left: var(--space-2);
+  border-left: 2px solid var(--color-border);
+  color: var(--color-muted-foreground);
+}
+
+.meta-caption {
+  margin-top: var(--space-2);
+  font-size: 0.78rem;
+  color: var(--color-muted-foreground);
+}
+
+/* --- Loading / empty / error states --- */
+
+.loading-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-muted-foreground);
+  padding: var(--space-4) 0;
+}
+
+/* Graph-pulse loader: a small signal traveling node-to-node across a mini
+   graph, instead of a generic spinning ring. Deliberately on-theme for a
+   GraphRAG product -- the motion itself says "traversing the graph" rather
+   than a decoration with no relationship to what's actually happening. */
+.graph-loader {
+  width: 84px;
+  height: 22px;
+  flex: none;
+  overflow: visible;
+}
+
+.graph-loader .gl-line {
+  stroke: var(--color-border);
+  stroke-width: 2;
+}
+
+.graph-loader .gl-node {
+  fill: var(--color-muted-foreground);
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: gl-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes gl-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.8); fill: var(--color-muted-foreground); }
+  40% { opacity: 1; transform: scale(1.25); fill: var(--color-graphrag); }
+  70% { opacity: 0.6; transform: scale(1); fill: var(--color-muted-foreground); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .graph-loader .gl-node {
+    animation: gl-pulse-reduced 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes gl-pulse-reduced {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.error-banner {
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--color-destructive);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  color: var(--color-destructive-foreground);
+}
+
+.error-banner svg { width: 20px; height: 20px; flex: none; color: var(--color-destructive); }

@@ -1,0 +1,538 @@
+[
+  {
+    "id": "FH01",
+    "qwen_answer": "A compressor surge (specifically one occurring during high-power/high-thrust operation, e.g. at takeoff). The knowledge base states that when a compressor surge occurs at high power at takeoff, the flight crew will hear a very loud bang, far beyond any other engine noise, accompanied by yaw and vibration. (Source: TurbofanEngineFamilization.pdf — 'Airplane Turbofan Engine Operation and Malfunctions' (FAA/Boeing), Ch4 'Compressor surge', p.18; graph chunk D3_c03.)",
+    "qwen_retrieved_chunk_ids": ["D3_c03"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "FH02",
+    "qwen_answer": "The crew should accomplish the tailpipe fire procedure, which centers on dry motoring (motoring) the engine — this is the quickest way of extinguishing most tailpipe fires (effectively 'shut off fuel to the engine and dry motor it'). Importantly, they should NOT pull the fire handle: the extinguishant discharges to the space between casings and cowls, which is ineffective against a fire burning inside the turbine casing/exhaust nozzle, and pulling the fire handle may make it impossible to dry motor the engine. The flight deck will typically have no fire warning, so the notification must come from ground crew, cabin crew, or ATC. (Source: TurbofanEngineFamilization.pdf, Ch4 'Tailpipe Fires', p.23; graph chunks D3_c21, D3_c22.)",
+    "qwen_retrieved_chunk_ids": ["D3_c21", "D3_c22"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "FH03",
+    "qwen_answer": "The engine uses active clearance control: air is extracted from the compressor (or fan airflow) and ducted/directed onto the engine cases, cooling them so the case shrinks closer to the rotor blade tips. This keeps the tip clearance tight and improves compression efficiency. (Source: TurbofanEngineFamilization.pdf, Ch2 'Cooling/clearance control bleeds', p.12; graph chunk D3_c32.)",
+    "qwen_retrieved_chunk_ids": ["D3_c32"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "FH04",
+    "qwen_answer": "In dusty/sandy environments, airborne particulate material can erode the airfoils and block the HPT vane/blade cooling holes, leading to higher blade distress (corrosion/oxidation symptoms included) and greater performance deterioration. The HPT-specific damage named is blockage of the HPT vane and blade cooling holes. (Source: EngineMaintenanceConcepts.pdf — 'Engine Maintenance Concepts for Financiers', S10.2 'Operational Severity', p.23; graph chunks D1_c06, D1_c07, D1_c08.)",
+    "qwen_retrieved_chunk_ids": ["D1_c06", "D1_c07", "D1_c08"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "FH05",
+    "qwen_answer": "The rates of deterioration (and of blade tip wear) are highest in the initial 1,000–2,000 engine flight cycles of operation, as the turbine blade tips begin to wear. (Source: EngineMaintenanceConcepts.pdf, S8.1 'EGT Margin Deterioration', p.18; graph chunk D1_c03.)",
+    "qwen_retrieved_chunk_ids": ["D1_c03"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "FH06",
+    "qwen_answer": "Metal chips/particles collected from the bearing compartment. The oil system includes chip detectors (usually magnetic) specifically to collect bearing compartment particles as an indication of bearing compartment distress; they may trigger a flight-deck indication or be examined visually during line maintenance. (Source: TurbofanEngineFamilization.pdf, Ch2 oil-system description, p.10; graph chunk D3_c18.)",
+    "qwen_retrieved_chunk_ids": ["D3_c18"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "MH01",
+    "qwen_answer": "A failing bearing generates metallic debris/chips inside the bearing compartment, which is carried into the oil. When the oil filter becomes clogged with that bearing-failure debris (or with foreign-material contamination), the pressure drop across the filter rises to the point where oil bypasses the filter, and the crew is alerted through the oil filter impending bypass indication in the cockpit. Bearing failures themselves are accompanied by increased oil temperature and indicated vibration, and audible noises / filter clog messages may follow as the failure progresses.",
+    "qwen_retrieved_chunk_ids": ["D3_c17", "D3_c20", "D3_c18"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Bearing failures generate metallic particles/debris in the bearing compartment (chip detectors exist specifically to collect these bearing compartment particles as an indication of bearing compartment distress).",
+        "source_chunk_id": "D3_c18"
+      },
+      {
+        "step": 2,
+        "fact": "The oil filter can become clogged with debris from that bearing failure (in addition to foreign-material contamination).",
+        "source_chunk_id": "D3_c20"
+      },
+      {
+        "step": 3,
+        "fact": "As the filter clogs, the pressure drop across it rises to the point where oil bypasses the filter, and this is announced to the pilot via the oil filter impending bypass indication in the cockpit (the indication may go away if thrust is reduced, since oil flow and pressure drop decrease).",
+        "source_chunk_id": "D3_c20"
+      },
+      {
+        "step": 4,
+        "fact": "Supporting context: bearing failures present with increased oil temperature and indicated vibration, with audible noises and filter clog messages following as the failure progresses.",
+        "source_chunk_id": "D3_c17"
+      }
+    ]
+  },
+  {
+    "id": "MH02",
+    "qwen_answer": "A hot rotor reburst is a thermal transient event (it can occur during aircraft acceptance tests or avoidance maneuvers, not normal operation) in which the rotating and stationary structures grow thermally at different rates. That differential thermal growth causes the high-pressure turbine blades to rub against their outer shrouds (rotor/case interferences). The rubs increase HPT blade tip clearances, and those clearance increases produce efficiency losses (hot gas leaks over the blade tips), degrading engine efficiency — NASA TM-81552 shows HPT clearance increases account for over 90% of total short-term performance deterioration, i.e. a cruise SFC increase.",
+    "qwen_retrieved_chunk_ids": ["D4_c05", "D4_c01", "D1_c02"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Hot rotor reburst is a thermal transient event caused by different thermal growth rates between rotating and stationary structures, which results in high pressure turbine blade rubs.",
+        "source_chunk_id": "D4_c05"
+      },
+      {
+        "step": 2,
+        "fact": "Blades rubbing their outer shrouds produce increases in blade tip clearance.",
+        "source_chunk_id": "D4_c01"
+      },
+      {
+        "step": 3,
+        "fact": "Those clearance increases cause leakage which reduces overall engine efficiency, raising specific fuel consumption (SFC) — the efficiency-loss mechanism.",
+        "source_chunk_id": "D1_c02"
+      }
+    ]
+  },
+  {
+    "id": "MH03",
+    "qwen_answer": "The failure of one fuel tank boost pump generates debris that is swept downstream to clog the engine fuel filter. Fuel filter clogging is usually seen at high power settings (where fuel flow and the sensed pressure drop across the filter are greatest). When multiple fuel filter bypass indications are seen, the fuel may be heavily contaminated, and once the filters bypass, the contaminated fuel goes straight into the engine fuel system, the engine fuel control may no longer operate as intended, and there is potential for multiple-engine flameout.",
+    "qwen_retrieved_chunk_ids": ["D3_c29", "D3_c30"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Failure of one of the fuel tank boost pumps generates debris which is swept downstream and clogs the fuel filter.",
+        "source_chunk_id": "D3_c29"
+      },
+      {
+        "step": 2,
+        "fact": "This fuel filter clogging shows up principally at high power settings, where fuel flow and the sensed pressure drop across the filter are greatest; multiple fuel filter bypass indications suggest heavily contaminated fuel.",
+        "source_chunk_id": "D3_c29"
+      },
+      {
+        "step": 3,
+        "fact": "Once the fuel filter bypasses, the contaminant goes directly into the engine fuel system so the engine fuel control may no longer operate as intended, creating the potential for multiple-engine flameout.",
+        "source_chunk_id": "D3_c30"
+      }
+    ]
+  },
+  {
+    "id": "MH04",
+    "qwen_answer": "If the engine does not recover automatically, it may surge continually until the pilot retards the thrust lever; without that crew action, sustained surging will eventually overheat the turbine, because far too much fuel is being supplied for the volume of air actually reaching the combustor. Repeated violent surges can also damage and fail the compressor blades, rapidly resulting in an engine which cannot run at any power setting. The physical flights of each surge cycle are the sudden escape of compressed air forward through the inlet — a very loud bang (often felt as an explosion) with yaw, vibration, often visible flames from the inlet and tailpipe, and possible high EGT/EPR or rotor speed fluctuations on the instruments. (Source: TurbofanEngineFamilization.pdf — Ch4 'Compressor surge' p.18-19, 'Surge recoverable after crew action' p.21; chunks D3_c06, D3_c07, D3_c03-D3_c05.)",
+    "qwen_retrieved_chunk_ids": ["D3_c06", "D3_c07", "D3_c03", "D3_c04", "D3_c05"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "If the engine does not self-recover from a surge, it may surge continually until the pilot takes action; the desired pilot action is to retard the thrust lever until the engine recovers.",
+        "source_chunk_id": "D3_c06"
+      },
+      {
+        "step": 2,
+        "fact": "Sustained surging will eventually overheat the turbine, because too much fuel is being provided for the volume of air reaching the combustor.",
+        "source_chunk_id": "D3_c07"
+      },
+      {
+        "step": 3,
+        "fact": "Compressor blades may also be damaged and fail as a result of repeated violent surges, rapidly resulting in an engine which cannot run at any power setting.",
+        "source_chunk_id": "D3_c07"
+      },
+      {
+        "step": 4,
+        "fact": "Physical symptoms accompanying the surges: a very loud bang with yaw and vibration, visible flames forward out the inlet and rearward out the tailpipe, and instrument indications of high EGT/EPR or rotor speed changes.",
+        "source_chunk_id": "D3_c03"
+      }
+    ]
+  },
+  {
+    "id": "MH05",
+    "qwen_answer": "Airflow over the compressor airfoils can aerodynamically stall, just as airflow over a wing can. When that airfoil stall occurs, passage of air through the compressor becomes unstable and the compressor can no longer compress the incoming air (the surge condition). This unstable engine operation — a compressor stall is listed explicitly — is a named cause of flameout, meaning the combustion process within the burner stops (accompanied by a drop in EGT, engine core speed and EPR). (Source: TurbofanEngineFamilization.pdf — Ch4 'Compressor surge' p.18, 'Flameout' p.21; chunks D3_c01, D3_c08, D3_c09, D3_c10.)",
+    "qwen_retrieved_chunk_ids": ["D3_c01", "D3_c08", "D3_c09", "D3_c10"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "The air flowing over the compressor airfoils can stall just as air over an airplane wing can.",
+        "source_chunk_id": "D3_c01"
+      },
+      {
+        "step": 2,
+        "fact": "When the airfoil stall occurs, passage of air through the compressor becomes unstable and the compressor can no longer compress the incoming air (the surge/stall condition).",
+        "source_chunk_id": "D3_c01"
+      },
+      {
+        "step": 3,
+        "fact": "Flameout can result from unstable engine operation — a compressor stall is listed explicitly among the causes — and a flameout means combustion has stopped, with a drop in EGT, engine core speed and EPR.",
+        "source_chunk_id": "D3_c08"
+      }
+    ]
+  },
+  {
+    "id": "MH06",
+    "qwen_answer": "A bird strike can cause the fracture of one or more fan blades (bent fan blades are also shown as FOD damage). With fractured fan blades the engine will likely surge once and not recover, resulting in the loss of power from that engine — this is the unrecoverable outcome, as opposed to the other possible bird-ingestion outcomes (one surge with self-recovery, or continuous surging until the crew takes action). (Source: TurbofanEngineFamilization.pdf — Ch4 'Compressor surge' p.18, 'Bird ingestion/FOD' p.24; chunks D3_c02, D3_c27, D3_c28.)",
+    "qwen_retrieved_chunk_ids": ["D3_c02", "D3_c27", "D3_c28"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Bird ingestion is a foreign-object-damage event that strikes the engine: fan blades can be bent (the engine may still produce thrust with that level of damage) and, more severely, one or more fan blades can fracture.",
+        "source_chunk_id": "D3_c28"
+      },
+      {
+        "step": 2,
+        "fact": "Compressor surge may be the result of bird (or ice) ingestion.",
+        "source_chunk_id": "D3_c02"
+      },
+      {
+        "step": 3,
+        "fact": "When bird ingestion results in the fracture of one or more fan blades, the engine will likely surge once and not recover, resulting in loss of power from that engine.",
+        "source_chunk_id": "D3_c27"
+      }
+    ]
+  },
+  {
+    "id": "MH07",
+    "qwen_answer": "Fuel padding in the turbine casing (and exhaust) during shutdown or start-up, if it ignites, causes a tailpipe fire — a highly visible jet of flame out the back of the engine, potentially tens of feet long, which will NOT trigger a fire warning on the flight deck. The required maintenance response is the tailpipe fire procedure, centered on dry-motoring (motoring) the engine to extinguish the flames; pulling the fire handle to discharge extinguishant into the space between casings and cowls is ineffective for a fire burning inside the turbine casing/exhaust nozzle, and may in fact make it impossible to dry motor the engine. (Source: TurbofanEngineFamilization.pdf — Ch4 'Tailpipe Fires' p.23; chunks D3_c21, D3_c22.)",
+    "qwen_retrieved_chunk_ids": ["D3_c21", "D3_c22"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Fuel may puddle in the turbine casings and exhaust during start-up or shutdown.",
+        "source_chunk_id": "D3_c21"
+      },
+      {
+        "step": 2,
+        "fact": "If that puddled fuel ignites, it causes a tailpipe fire (a highly visible jet of flame out the back of the engine, with no fire warning on the flight deck).",
+        "source_chunk_id": "D3_c21"
+      },
+      {
+        "step": 3,
+        "fact": "The required intervention is the tailpipe fire procedure: motor/dry motor the engine to help extinguish the flames; the fire handle should not be pulled because its extinguishant discharges outside the casing and it may make dry-motoring impossible.",
+        "source_chunk_id": "D3_c22"
+      }
+    ]
+  },
+  {
+    "id": "MH08",
+    "qwen_answer": "Under shorter stage length (sector length) operations, an engine spends a larger proportion of total flight time on the high takeoff/climb power settings. Higher thrust generates higher core temperatures, exposing constituent parts of the engine to increased thermal stress; further, blade-tip wear and deterioration rates are highest in the initial flight cycles, so high-cycle short-haul flying repeatedly hits the engine at its most wear-sensitive phase. The net effect is more rapid performance deterioration (and greater direct maintenance cost per flight hour); conversely, longer stage lengths mean less wear and tear and longer on-wing time. (Source: EngineMaintenanceConcepts.pdf — S10.2 'Operational Severity' p.21-22, S8.1 'EGT Margin Deterioration' p.18; chunks D1_c18, D1_c04, D1_c03.)",
+    "qwen_retrieved_chunk_ids": ["D1_c18", "D1_c04", "D1_c03"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "As flight length (stage length) reduces, the engine spends a larger proportion of total flight time using take-off and climb power settings.",
+        "source_chunk_id": "D1_c18"
+      },
+      {
+        "step": 2,
+        "fact": "Higher thrust generates higher core temperatures, which exposes constituent parts in the engine to greater thermal stress.",
+        "source_chunk_id": "D1_c04"
+      },
+      {
+        "step": 3,
+        "fact": "Deterioration rates are highest in the initial 1,000–2,000 engine flight cycles, as the blade tips begin to wear; high-cycle short-haul operation repeatedly incurs this peak-wear phase.",
+        "source_chunk_id": "D1_c03"
+      },
+      {
+        "step": 4,
+        "fact": "Consequently, shorter stage length operation results in more rapid performance deterioration (and greater direct maintenance cost per flight hour).",
+        "source_chunk_id": "D1_c18"
+      }
+    ]
+  },
+  {
+    "id": "CD01",
+    "qwen_answer": "Primary physical cause: the gradual increase in the clearance between the turbine blade tips and the surrounding static seals or shrouds (leakage past the wider gaps reduces overall engine efficiency and raises specific fuel consumption). On-wing recovery procedure: water washing — an on-wing, ground-based process that pumps water and cleansing additives into the engine's intake while it operates, fully penetrating the compressor and turbine to clean airfoil surfaces; a regular engine wash restores contaminated/degraded performance and can increase EGT margin by up to about 15 °C (and cut fuel burn by up to ~1.2%). (Sources: EngineMaintenanceConcepts.pdf — S8.1 'EGT Margin Deterioration' p.17, S8.1 'Water Washing' p.19 (chunks D1_c01, D1_c09, D1_c10); also NASA TM-81552 corroborates increased blade tip clearances as a primary cause of performance deterioration, chunk D4_c02.)",
+    "qwen_retrieved_chunk_ids": ["D1_c01", "D4_c02", "D1_c09", "D1_c10"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "A major factor in deterioration of engine efficiency is the gradual increase in clearance between turbine blade tips and surrounding static seals or shrouds.",
+        "source_chunk_id": "D1_c01"
+      },
+      {
+        "step": 2,
+        "fact": "Such leakage reduces overall engine efficiency and raises specific fuel consumption.",
+        "source_chunk_id": "D1_c02"
+      },
+      {
+        "step": 3,
+        "fact": "The on-wing, ground-based water washing / engine wash process cleans compressor and turbine airfoil surfaces, restoring contaminated performance and increasing EGT margin by up to ~15 °C.",
+        "source_chunk_id": "D1_c09"
+      }
+    ]
+  },
+  {
+    "id": "CD02",
+    "qwen_answer": "Damage form: Foreign Object Damage to the fan — fan blades bent by the ingestion, and in more severe cases fracture of one or more fan blades. The triggered aerodynamic failure mode is an engine (compressor) surge; the surge may self-recover once, run continuously until the crew takes action, or — when fan blades are fractured — surge once and not recover, causing loss of power from that engine. (Sources: TurbofanEngineFamilization.pdf — Ch4 'Compressor surge' p.18, 'Bird ingestion/FOD' p.24; chunks D3_c02, D3_c27, D3_c28; bird strikes may also bend fan blades per the same FOD section and chunk D1_c15 for the FOD causes.)",
+    "qwen_retrieved_chunk_ids": ["D3_c27", "D3_c28", "D3_c02"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "A bird strike inflicts FOD damage on the fan: fan blades are bent (the engine may still produce thrust at this damage level) and, more severely, one or more fan blades can fracture.",
+        "source_chunk_id": "D3_c28"
+      },
+      {
+        "step": 2,
+        "fact": "Bird ingestion triggers the aerodynamic failure mode of engine (compressor) surge.",
+        "source_chunk_id": "D3_c27"
+      },
+      {
+        "step": 3,
+        "fact": "Outcomes range from one surge with recovery, to continuous surging until crew action, to — with fractured fan blades — one unrecoverable surge causing loss of power from that engine.",
+        "source_chunk_id": "D3_c27"
+      }
+    ]
+  },
+  {
+    "id": "CD03",
+    "qwen_answer": "A heavyweight shop-visit/event overhaul is required — specifically, a full-overhaul workscope level, in which the affected module is torn down to component parts and every part gets full maintenance inspection, with repair or replacement of what's needed. The maintenance-concepts document shows why: hardware deterioration that appears after prolonged extreme operating conditions produces blade damage (especially on HPT blades), parts cracking and chipping, and in extreme cases part failures, with aging engines suffering higher landing rates; the purpose of an overhaul (per the AMT handbook) is precisely to inspect, repair, and replace worn engine parts. (Sources: EngineMaintenanceConcepts.pdf — S8.3 'Hardware Deterioration' p.19, S10.3 'Engine Age' p.24, S7.4 workscope 'Full Overhaul' (chunks D1_c14, D1_c20); TurbofanEnginMaintenanceandOperation.pdf (FAA AMT Handbook Ch10, chunks D7_c01, D7_c02); graph claim CL074.)",
+    "qwen_retrieved_chunk_ids": ["D1_c14", "D1_c20", "D7_c01", "D7_c02"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Hardware deterioration (damage after prolonged extreme operating) results in blade distress especially on HPT blades, parts cracking and chipping, and in extreme situations part failures.",
+        "source_chunk_id": "D1_c14"
+      },
+      {
+        "step": 2,
+        "fact": "As the engine ages, an out-of-spec portion of parts experience higher deterioration rates and higher scrap rates.",
+        "source_chunk_id": "D1_c20"
+      },
+      {
+        "step": 3,
+        "fact": "Overhaul is the maintenance event whose major purpose is to inspect, repair, and replace worn engine parts; the full-overhaul workscope level tears the module down to component parts for full maintenance inspection of every part.",
+        "source_chunk_id": "D7_c01"
+      }
+    ]
+  },
+  {
+    "id": "CD04",
+    "qwen_answer": "Inspection on the wing: borescope inspection — using a hand-held unit with a long flexible optical-fiber cable (most commonly a video borescope) that displays, magnifies, and illuminates hard-to-reach areas to find internal defects such as cracks, tension fractures, and corrosion; modern borescope technology can also accurately measure voids/defects on the spot to determine fitness. Independent inspection process during shop overhaul: non-destructive testing (NDT) / structural inspection, which encompasses methods such as magnetic-particle testing, fluid-penetrant testing, eddy-current testing, ultrasonic testing, and X-ray inspection, used to detect costs like cracked airfoils during teardown. (Sources: EngineMaintenanceConcepts.pdf — S7.3 'On-Condition Monitoring' p.10 (chunks D1_c12, D1_c13); TurbofanEnginMaintenanceandOperation.pdf (FAA AMT Handbook Ch10, chunks D7_c01, D7_c02); graph claim CL075.)",
+    "qwen_retrieved_chunk_ids": ["D1_c12", "D7_c02", "D7_c01"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "On the wing, a borescope — an optical diagnostic instrument (typically a video borescope with a handheld unit and a long, flexible fiber-optic cable) — is used to inspect internal engine parts for defects such as cracks, tension fractures, and corrosion.",
+        "source_chunk_id": "D1_c12"
+      },
+      {
+        "step": 2,
+        "fact": "During shop overhaul, a separate process — non-destructive testing (NDT) inspection — is used on the parts to detect defects; the overhaul process is aimed at inspecting, repairing, and replacing worn engine parts.",
+        "source_chunk_id": "D7_c02"
+      },
+      {
+        "step": 3,
+        "fact": "The NDT/structural-inspection methods listed in the AMT overhaul guidance for detecting costs include magnetic-particle, penetrating-fluid, eddy-current, ultrasonic, and X-ray methods.",
+        "source_chunk_id": "D7_c01"
+      }
+    ]
+  },
+  {
+    "id": "CD05",
+    "qwen_answer": "The widening of turbine-blade-tip clearance widens leakage and drives exactly two symptoms that airplanes monitor. (1) EGT decline: the OEM sets a critical EGT based on engine materials (and engine sittings), and base on-condition monitoring is to track EGT as a condition probe — widening clearance pushes EGT up toward the critical limit, reducing randomly available EGT rate and directly shortening engine life. (2) SFC/fuel flow: clearance-based leakage reduces overall engine efficiency and raises specific fuel consumption (SFC), funneling fuel burn up; fuel flow is one of the key conditioning parameters recorded in on-condition monitoring. (Source: EngineMaintenanceConcepts.pdf — S8.1 'EGT Margin Deterioration' p.17, S7.3 'On-Condition Monitoring' p.10-11, S5.3 EGT p.7; chunks D1_c01, D1_c02, D1_c13, D1_c21.)",
+    "qwen_retrieved_chunk_ids": ["D1_c01", "D1_c02", "D1_c13", "D1_c21"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "A major factor in the decline of engine efficiency is the progressive increase in clearance between turbine-blade tips and the nearby stationary seals or blades.",
+        "source_chunk_id": "D1_c01"
+      },
+      {
+        "step": 2,
+        "fact": "Such leakage reduces overall engine efficiency, raising specific fuel consumption (SFC) — impacting fuel-flow as one of the settings parameters recorded in on-condition monitoring.",
+        "source_chunk_id": "D1_c02"
+      },
+      {
+        "step": 3,
+        "fact": "High EGT is the signal of degraded engine performance, and EGT margin rate is the primary excursion metric — this clearance-driven performance degradation shows up as EGT loss against the OEM-established critical EGT limit.",
+        "source_chunk_id": "D1_c21"
+      }
+    ]
+  },
+  {
+    "id": "CD06",
+    "qwen_answer": "When the roating blades shear their outboard blades (the holder/case interference creates blade-tip shear), the flow-clearance increases, and those clearance increases produce efficiency loss. Taking this rate of deterioration is greatest in the first 1,000–2,000 rotation hours of engine operation where the blade tips begin to wear (the short-term deterioration case; NASA TM-81552 attributes over 90 percent of CF6-6D's short-term deterioration to HPT clearance increases from shear in the first flight or thereabouts). (Source: EngineMaintenanceConcepts.pdf S8.1 p.18 chunk D1_c03; NASA deterioration paper chunks D4_c01, D4_c02, D4_c09.)",
+    "qwen_retrieved_chunk_ids": ["D4_c01", "D4_c02", "D1_c03", "D4_c09"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "Blades shearing their outboard blades causes a clearance increase (holder/case interference produces the internal/external shear).",
+        "source_chunk_id": "D4_c01"
+      },
+      {
+        "step": 2,
+        "fact": "The increased blade-tip clearance produces the increase in flow tracking, generating efficiency loss.",
+        "source_chunk_id": "D4_c02"
+      },
+      {
+        "step": 3,
+        "fact": "The deterioration rate — because the blade tips have just begun to wear — peaks in the first 1,000–2,000 flight rotations of engine operation (short-term deterioration).",
+        "source_chunk_id": "D1_c03"
+      }
+    ]
+  },
+  {
+    "id": "CD07",
+    "qwen_answer": "Excessive EGT is a primary indicator of engine stall, of hard starts, of significant air-air leakage, and of any other situations where the turbine has insufficient domain-splitting air to disperse behind it — in other words, of engine damage. This is in addition to high EGT being the typical gradual signal for degraded engine performance. (Source: TurbofanEngineFamilization.pdf Chapter 3 'EGT' p.15 chunk D3_c15; EngineMaintenanceConcepts.pdf S5.3 chunk D1_c21.)",
+    "qwen_retrieved_chunk_ids": ["D3_c15", "D1_c21"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "CD08",
+    "qwen_answer": "Thermal degradation is accelerated by high-temperature environmental variables: engines operating in high-temperature ambient environments for long periods experience low available EGT rate and substantial performance decline, because higher spike air temperatures raise turbine inlet temperature at derated power (higher thrust raises core temperature and puts components under increased thermal stress). Conversely, structural deflections produced by aircraft-induced flight air — the derotation at climb, in-flight maneuvering, landing, and the destruction of runaway — can cause the holder and case to interfere and bring about blade-tip carving (a principal cause of blade-tip clearance increases). (Source: EngineMaintenanceConcepts.pdf S10.1-10.2 p.21-22 chunks D1_c04, D1_c19; NASA TM-81552 Historical data p.5 chunk D4_c04.)",
+    "qwen_retrieved_chunk_ids": ["D1_c19", "D1_c04", "D4_c04"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF01",
+    "qwen_answer": "The knowledge-base source on shop-level progression includes the causes to trace for engine operation, from the shop floor (FAA AMT Handbook troubleshooting tables): turbine damage (the engine trembles across the entire RPM range, and the amplitude decreases as RPM decreases); damage within the compressor compartment (trembling is greatest at high RPM together with increased fuel flow corresponding to EPR); defective engine-mounted accessories such as constant-speed drives, generators, and hydraulic pumps (trembling is greatest during cruise or idle); engine main beings (indicated with increased oil temperature under pure power conditions); and also beginning-approval air valve and compressor-compartment damage. The aircraft manual (D3) also enumerates causes of operating tremors: in-assembly fan imbalance, fan-blade quality/contamination, honeycomb in the fan roater, blade icing, bird ingestion/FOD, being failure, blade distortion/failure, and excessive fan-roater-system tip clearance (the being-failure signature is accompanied by increased oil temperature, indicated vibration, and audible ignition; fan-blade material loss from ingestion or distortion from FOD). (Source: TurbofanEnginMaintenanceandOperation.pdf, AMT Handbook Chapter 10 troubleshooting tables (chunks D7_c01-D7_c02 range provisions); TurbofanEngineFamilization.pdf Chapter 4 'Vibration' p.28 chunks D3_c16, D3_c26, Chapter 4 'Being failure' p.26 chunk D3_c17.)",
+    "qwen_retrieved_chunk_ids": ["D3_c16", "D3_c26", "D3_c17", "D7_c01"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF02",
+    "qwen_answer": "The knowledge base lists the signs of compressor stall as follows. Examination/perception: an unhealably loud bending sound (of a kind that far exceeded anything someone reading might hear during interchange), may be felt repeatedly, accompanied by yaw, with vibration. Visual: flames may spout forward from the inlet and rearward from the exhaust. Instrument: EGT and EPR may be high, the roater gauge may change; at high power, EPR may fluctuate between target values (about 1.6 to 1.3 in the example), EGT may rise about 5 degrees C per second, N may fluctuate between 103% and 95%, and fuel flow may decrease about 2%. In many stalls, because the phenomenon is too rapid for the instruments to respond to, the range may not be displayed. For a series of 3–4 recoveries, roughly real-time fluctuation is felt; on failure to recover, EPR decreases 0.34/s and EGT rises 15 degrees C/s for 8 seconds, and N1/N2 descend as if fuel supply had been cut off. (Source: TurbofanEngineFamilization.pdf Chapter 4 'Compressor Stall' and the stall-recovery area p.18-21; chunks D3_c03, D3_c04, D3_c05.)",
+    "qwen_retrieved_chunk_ids": ["D3_c03", "D3_c04", "D3_c05"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF03",
+    "qwen_answer": "The flameouts that the knowledge base clearly recognizes are as follows: (1) fuelแห้ง active depressed / equivalent to fuel outage; (2) a control-system malfunction; (3) engine comparator malfunction, such as compressor stall; (4) D3 notably includes severe bad weather; and (5) advanced ash encounters as listed causes, and beyond this, the fuel-filter occasion scenario (boost-pump failure or contamination), when the compressor bypasses and contamination enters the fuel control, presents the possibility of multi-engine flameout (listed in D3). (Source: TurbofanEngineFamilization.pdf Chapter 4 'Flameout' p.21 chunks D3_c08-D3_c10; fuel-filter application chunks D3_c29, D3_c30.)",
+    "qwen_retrieved_chunk_ids": ["D3_c08", "D3_c09", "D3_c29", "D3_c30"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF04",
+    "qwen_answer": "A being failure is detected with the following monitored parameters and decimal-mode signs: oil quantity (oil leakage produces a continuing decrease in oil quantity, and in severe cases decreases all the way to zero. If the outage progresses, oil quantity and pressure drop go to zero); oil temperature (increased oil temperature indicates an abnormal heat generation source such as being failure, total wiping, or compressor air leakage into the scavenging system); indicated vibration (heating failure comes with an increase in indicated vibration); and oil-filter diagnostic signs (clogging, audible noise, filter clogging). Separately, the ship detector gathers residual material from the being compartment as early-warning heat of being-compartment distress, and sensors have the possibility to trigger flight-loft signs or can also justify visual inspection during maintenance. (Source: TurbofanEngineFamilization.pdf Chapter 2 lubrication-system p.10, Chapter 3 'Oil Filter Bypass' p.16, Chapter 4 'Being failure' p.26-27, chapter on oil-leakage p.26; chunks D3_c18, D3_c20, D3_c17, D3_c19.)",
+    "qwen_retrieved_chunk_ids": ["D3_c18", "D3_c20", "D3_c17", "D3_c19"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF05",
+    "qwen_answer": "Operating factors listed in the knowledge base: (1) high thrust/deliverance — high thrust makes core temperature high, raising the thermal stress on components, and a large release lowers takeoff EGT, giving a low-deterioration rate, so low-release operation causes deterioration; (2) short-flirt operation — the engine spends a proportionally greater portion of flight time at takeoff or mid-level power; (3) high ambient temperature (high OAT) reduces available EGT rate and produces significant performance decline; (4) environmental operation of dusty-sandy-environment and erosive environments — including air-fu-saw, dust, industrial contamination, erosion of HPC blades, high blade distress from air-blocking of HPT/air-cooling-air holes, corrosion and oxidation; (5) high engine utilization — a disused-area set of parts experiences higher deterioration and repair rates. NASA also adds air temperature itself, for cruise SFC and durability-zone records, and beyond this, characteristic deterioration mechanisms (holder-case displacement due to flight air, hot roater reverberation, air-free FOD/erosion/surface roughness, thermal deflection). (Source: EngineMaintenanceConcepts.pdf S10.1-S10.3 p.21-24 chunks D1_c04, D1_c05, D1_c06, D1_c07, D1_c19; NASA TM-81552 chunks D4_c04, D4_c05, D4_c06, D4_c07.)",
+    "qwen_retrieved_chunk_ids": ["D1_c04", "D1_c05", "D1_c06", "D1_c07", "D1_c19", "D4_c04", "D4_c05", "D4_c06"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "AF06",
+    "qwen_answer": "The knowledge base identifies two classes of ingested material that constitute FOD/particulate distress. (1) Foreign-object debris: debris ingested in the air (birds, ice, hail, ash, etc.) and runway debris ingested during take-off or landing; the familiarization handbook additionally lists tire fragments, runway debris and animals as FOD sources. (2) Airborne particulate material: dust, sand and industrial emissions erode HPC blades and block HPT vane/blade cooling holes, contributing to the same blade-distress/erosion category. (Sources: EngineMaintenanceConcepts.pdf S8.4 p.20 chunk D1_c15, S10.2 p.23 chunks D1_c06-D1_c08; TurbofanEngineFamilization.pdf p.24 chunk D3_c28.)",
+    "qwen_retrieved_chunk_ids": ["D1_c15", "D3_c28", "D1_c06", "D1_c07", "D1_c08"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "FOD results from ingestion of foreign objects: debris ingested in the air (birds, ice, hail, ash, etc.) as well as runway debris ingested during take-off or landing; the familiarization handbook additionally lists tire fragments and animals as FOD sources.",
+        "source_chunk_id": "D1_c15"
+      },
+      {
+        "step": 2,
+        "fact": "Airborne particulate material (dust, sand, industrial emissions) causes blade distress by eroding HPC blades and blocking HPT vane/blade cooling holes.",
+        "source_chunk_id": "D1_c07"
+      }
+    ]
+  },
+  {
+    "id": "DA01",
+    "qwen_answer": "On EPR alone the two have opposite signatures. Compressor surge is engine operational instability, which may cause rapid EPR fluctuations (notebook example: EPR fluctuating between 1.6 and 1.3, typically with a very loud bang, yaw and vibration). Flameout instead produces a sustained drop in EPR: combustion has stopped, so EGT, engine core speed and EPR all drop, and the engine runs down rather than fluctuating. So rapid EPR fluctuation points to surge/instability, and a steady low EPR with a drooping EGT points to flameout. Note the knowledge base also warns that a single low EPR reading can be caused by engine rollback, flameout, or internal damage (LP turbine failure); surge can also end in non-recoverable form with a fast continuous EPR drop (about 0.34/sec over 8 seconds; the single bang plus power decay to zero resembles fuel chopped). (Sources: TurbofanEngineFamilization.pdf Ch3 EPR p.14 chunks D3_c13-D3_c14; Ch4 p.18-21.)",
+    "qwen_retrieved_chunk_ids": ["D3_c14", "D3_c10", "D3_c05"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "DA02",
+    "qwen_answer": "The oil filter bypass indication can arise from contamination by foreign material or debris from a bearing failure, and the knowledge base tells you to cross-check the other oil/system indications: if it is accompanied by an increase in oil temperature, indicated vibration, audible noises, and filter clog messages (with low oil quantity and pressure as it progresses to severe engine damage), the bypass points to catastrophic mechanical failure (bearing failure); oil-system contamination (carbon deposits, cotton waste, improper fluids) generally leads only to an oil filter clog / impending bypass indication without that temperature/vibration signature. The chip detectors also directly confirm bearing compartment distress by collecting bearing compartment particles (they can trigger a flight deck indication or be read during line maintenance). (Sources: TurbofanEngineFamilization.pdf Ch3 Oil Filter Bypass p.16 chunk D3_c20; Ch2 p.10 chip-detector bullet (chunk D3_c18); Ch4 p.26-24 severerreading chunks D3_c17, D3_c19, D3_c31.)",
+    "qwen_retrieved_chunk_ids": ["D3_c20", "D3_c17", "D3_c31", "D3_c18"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "DA03",
+    "qwen_answer": "Flameout and hot start move EGT in opposite directions. In flameout, combustion stops, so the EGT indication drops (accompanied by a drop in engine core speed and EPR, plus low oil pressure warnings and generators dropping offline below idle). In hot start, EGT rises rapidly: during sub-idle operation the normal engine cooling flows are not effective, so turbine temperatures appear relatively high while the engine hangs; the AFM defines an acceptable time/temperature limit for EGT during a hot start (if acceleration toward idle stops completely it is a hung start). Thus: EGT falling = flameout, EGT during start rises sharply or stays high at sub-idle core speed = hot start. (Sources: TurbofanEngineFamilization.pdf Ch4 Flameout p.21 chunk D3_c10; hot start p.23 chunk D3_c25.)",
+    "qwen_retrieved_chunk_ids": ["D3_c25", "D3_c10"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "DA04",
+    "qwen_answer": "Immediate difference: nacelle (engine) fire versus tailpipe fire use completely different detection and immediate response. Nacelle fire: the fire near the engine is annunciated by a fire warning in the operation, so immediately turn off fuel to that engine (via the fire handle) to discharge the explosion agent; since the explosion agent that the fire handle discharged is directed to a region between the casing and the cowling, it is effective. Tailpipe fire: since it burns within the turbine casing and exhaust nozzle, and usually no fire gear is announced, the immediate intervention is to motor the engine to extinguish the fire. If one suspects fire has gone too far, then continue directly as well, and quickly rescue as an option if it will not extinguish. Nacelle fire: cut fuel, pilot with alarm according to procedures. Tailpipe fire: since the fire handle cannot extinguish a fire inside a tailpipe, and pulling the handle could also make the dry motor impossible, forbid further rescue by the handle. (Sources: TurbofanEngineFamilization.pdf Ch2 p.22 and p.23 chunks D3_c21-D3_c24; see D7 AMT handbook extinguisher bullet D7_c02.)",
+    "qwen_retrieved_chunk_ids": ["D3_c21", "D3_c22", "D3_c24"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "DA05",
+    "qwen_answer": "On-condition monitoring (on-wing): routine monitoring/inspection to keep the engine running until its own operational limits, without a premature and non-recoverable 'hard-time' acquisition. It (a) periodically performs detailed measurements of the engine's operational speed, temperature, pressure, fuel flow, and vibration levels, and (b) uses the borescope (an easily-handled, viewable device, display-linear fiber-optic instrument) to confirm internal defects such as cracks, heat damage, etc. The engine is removed only when the internal parts reach their own operational limits, or when the performance measurement reveals that the engine is operating outside the manufacturer's recommended parameters. Shop (maintenance/repaired) overhaul: the primary purpose is on-repair, returning it to operation, replacing the worn/warned engine parts; the engine is damaged, the parts are inspected, balanced, and repaired/replaced as needed (with the full serviceability inspection attaching personal service life wherever possible). In other words, monitoring keeps a reliable engine running (watch only), during a shop the engine is repaired/restored. (Sources: EngineMaintenanceConcepts.pdf S7.2-7.3 chunks D1_c11-D1_c13; D7 chunks D7_c01-D7_c02.)",
+    "qwen_retrieved_chunk_ids": ["D1_c11", "D1_c12", "D1_c13", "D7_c01"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "DA06",
+    "qwen_answer": "Two mechanisms: (1) LLP (life-limited part) expiration: parts held to a fatigue (strength and motor)-based flight-cycle limit, not to a calendar period. On simple ticket adjustments, where motors accumulate immediately, then once an LLP reaches its own cancellation-level life it must absolutely be acquired and replaced (acquisitions/refurbishments are not allowed); removal = to reach an LLP's operational-life limit, due to the simplicity of motor adjustments. (2) Performance (EGT margin) degradation: a deterioration with measurable fluctuations and regenerability, gradually reducing EGT margin and increasing SFC (mostly from increased clearance between turbine blade tips and surrounding still-air heads). In other words, performance degradation (unlike LLP expiration) is partially recoverable; the source explicitly compares market-rate engine acquisitions: if PLLs do not need to be replaced, the amount may be lowered. (Sources: EngineMaintenanceConcepts.pdf S6 LLPs, S8.1 p.17-18 chunks D1_c01, D1_c03, S8.2 p.19 chunks D1_c16-D1_c17, S7.4 PMA.)",
+    "qwen_retrieved_chunk_ids": ["D1_c16", "D1_c17", "D1_c01", "D1_c03"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS01",
+    "qwen_answer": "Malfunction: compressor surge at high output (takeoff) - it produces a very loud bang accompanied by yaw and vibration. Recovery: according to the very familiarized handbook, the pilot's desired action is to hold the thrust lever until the engine recovers, then gradually advance the thrust lever again; since a very loud bang was announced right after the thrust was pulled to its fastest, this fault matches a bomber surge recoverable after pilot/intervention action. (Sources: TurbofanEngineFamilization.pdf Ch4 Compressor Surge p.18, p.21; chunks D3_c03, D3_c06.)",
+    "qwen_retrieved_chunk_ids": ["D3_c03", "D3_c06"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS02",
+    "qwen_answer": "Cause: a tailpipe fire, ignited by fuel that collected in the turbine casing and exhaust near a normal aggregation. Flame from the nozzle without a flight-lift fire gear is the very signature - even a tailpipe fire will not generate a fire warning in the flight-lift because the fire burns inside the turbine casing/exhaust nozzle, and it is often first pointed out by ground personnel/cabin/air-traffic control. Immediate intervention: execute the tailpipe fire checklist, basically motor the engine to extinguish the fire (dry motor is fastest); do not pull the fire handle - it discharges the explosion agent into a space between the casing and cowl, is ineffective, and moreover may make it impossible to execute a dry motor. (Sources: TurbofanEngineFamilization.pdf Ch4 Tailpipe Fire p.22-23; chunks D3_c21, D3_c22.)",
+    "qwen_retrieved_chunk_ids": ["D3_c21", "D3_c22"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS03",
+    "qwen_answer": "A steadily decreasing oil quantity indicates an oil-system leak. The knowledge base states that leaks produce a sustained reduction in oil quantity, down to zero (the oil quantity indication, which monitors the amount of oil in the tank, is the monitor for this); a steady decrease in oil quantity may indicate an oil leak. There is likely to still be some usable oil in the tank even after the gauge reads zero, but the oil supply will be near exhaustion, and a low pressure indication will soon follow. Oil temperature and pressure can remain temporarily normal while the leak runs, so the slowly falling quantity is the early signature (the handbook advises crews to cross-check the other oil-system indications before acting, since oil-system parameters historically give false indications as frequently as genuine ones). (Sources: TurbofanEngineFamilization.pdf Ch2 Lubrication system p.10 chip-detector/oil-system bullets, Ch3 oil instrumentation p.15-16, Ch4 Oil leaks p.26 chunk D3_c19.)",
+    "qwen_retrieved_chunk_ids": ["D3_c19"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS04",
+    "qwen_answer": "The severe operational risk now present is the potential for multiple-engine flameout. The failed fuel tank boost pump generates debris which is swept downstream and clogs the fuel filter; fuel filter clogging is usually seen at high power settings, and once the filter actually bypasses, the contaminant goes straight into the engine fuel system, so the engine fuel control may no longer operate as intended — creating the potential for multiple-engine flameout. The Airplane Flight/Operating Manual provides the necessary guidance for this situation. (Sources: TurbofanEngineFamilization.pdf Ch4 Fuel filter Clogging p.26; chunks D3_c29, D3_c30.)",
+    "qwen_retrieved_chunk_ids": ["D3_c29", "D3_c30"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS05",
+    "qwen_answer": "Particulate contamination and erosion of the compressor airfoils. Engines operated heavily in dusty/sandy (desert) environments ingest dust and sand, which erodes HPC blades (airborne particulate material such as dust, sand or industrial emissions erodes HPC blades and blocks HPT vane/blade cooling holes), producing higher blade distress and greater performance deterioration. With no cracks on the borescope, the physical condition is deposited/eroded compressor airfoils (contamination), and the source notes this contamination-driven performance deterioration can be restored by regular engine wash — an on-wing water wash pumping water and cleansing additives into the intake to clean the airfoil surfaces, recovering compressor efficiency and EGT margin. (Sources: EngineMaintenanceConcepts.pdf S10.2 p.23 chunks D1_c06-D1_c08; S8.1 Water Washing p.19 chunks D1_c09-D1_c10.)",
+    "qwen_retrieved_chunk_ids": ["D1_c06", "D1_c07", "D1_c10", "D1_c09"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS06",
+    "qwen_answer": "This is a hot start (or, if the engine completely stops accelerating toward idle while the core speed hangs at a sub-idle condition, a hung start). The temperature spikes because normal engine cooling flows are not effective during sub-idle operation, so turbine temperatures appear relatively high while insufficient airflow carries away the heat of combustion at that low core speed. The AFM indicates acceptable time/temperature limits for EGT during a hot start; more recent FADEC-controlled engines may incorporate autostart logic to detect and manage a hot start. (Sources: TurbofanEngineFamilization.pdf Ch4 Hot starts p.23 chunk D3_c25 and surrounding Hot starts section.)",
+    "qwen_retrieved_chunk_ids": ["D3_c25"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "OS07",
+    "qwen_answer": "Blade tip rubs increasing the blade tip clearances. NASA TM-81552 shows that deflections produced by aircraft-induced flight loads occurring during take-off rotation, flight maneuvers, landing (and reverse-thrust) produce rotor/case interferences; those interferences make the rotor blades rub against the case/outer shrouds, opening up the blade tip clearances. The increased leakage clearance reduces overall engine efficiency and raises specific fuel consumption — leaving the engine with a permanent increase in the cruise SFC after the harsh maneuver and hard landing. (Sources: PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf NASA TM-81552 Historical Data p.4-5 chunks D4_c04, D4_c01; EngineMaintenanceConcepts.pdf S8.1 chunk D1_c02.)",
+    "qwen_retrieved_chunk_ids": ["D4_c04", "D4_c01", "D1_c02"],
+    "qwen_reasoning_chain": [
+      {
+        "step": 1,
+        "fact": "A depletion produced by aircraft-induced flight loads—with gentle maneuvers, and on the contrary, cruise or general wear—occurs during take-off rotation, producing rotor/case interference.",
+        "source_chunk_id": "D4_c04"
+      },
+      {
+        "step": 2,
+        "fact": "Rotor/case interference at the external wheels/rear wheels marks the blade tips, causing the flow clearances to increase.",
+        "source_chunk_id": "D4_c01"
+      },
+      {
+        "step": 3,
+        "fact": "The increased clearances produce leakages, reducing the overall efficiency of the engine and raising the consumption of specific power—demonstrating the permanent increase in cruise SFC.",
+        "source_chunk_id": "D1_c02"
+      }
+    ]
+  },
+  {
+    "id": "OS08",
+    "qwen_answer": "An engine flameout. With continuous ignition, combustion will restart automatically, often without the pilot even noticing — so the brief EPR and EGT fluctuations mark a transient extinction event (for example from inclement weather or rapidly-changing conditions) that the automatic continuous ignition system suppressed by re-lighting the combustor. (Had it not relit, a flameout would have occurred, accompanied by a drop in EGT, engine core speed and EPR.) (Sources: TurbofanEngineFamilization.pdf Ch2 Ignition system p.11 chunk D3_c12; Ch4 Flameout p.21 chunk D3_c10.)",
+    "qwen_retrieved_chunk_ids": ["D3_c12", "D3_c10"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "PR01",
+    "qwen_answer": "Over 90 percent of the total short-term performance deterioration. NASA TM-81552 (examination of the CF6-6D data) states that high pressure turbine clearance increases contribute over 90 percent of the total short-term performance deterioration — the clearance increases are produced by rotor/case interferences from hot rotor reburst events. (Sources: PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf, Historical Data section, NASA TM-81552 p.5; chunk D4_c09.)",
+    "qwen_retrieved_chunk_ids": ["D4_c09"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "PR02",
+    "qwen_answer": "Approximately 0.2 percent of cruise SFC. NASA TM-81552 states that not all performance deterioration is restored at each repair, there being a residual of approximately 0.2 percent cruise SFC deterioration remaining after each repair — even though the HPT repair could potentially restore 0.8 (JT9D) to 0.9 (CF6-6D) percent of the loss. (Sources: PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf, Results and Discussion section, NASA TM-81552 p.6; chunk D4_c11.)",
+    "qwen_retrieved_chunk_ids": ["D4_c11"],
+    "qwen_reasoning_chain": []
+  },
+  {
+    "id": "PR03",
+    "qwen_answer": "The concluding remarks of NASA TM-81552 state that long-term performance deterioration is about 2.5 to 3.0 percent cruise SFC. (Sources: PERFORMANCE_DETERIORATION_of_turbofan_engines.pdf, Concluding Remarks, NASA TM-81552 p.13; chunk D4_c10.)",
+    "qwen_retrieved_chunk_ids": ["D4_c10"],
+    "qwen_reasoning_chain": []
+  }
+]

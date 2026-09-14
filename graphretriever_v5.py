@@ -26,6 +26,9 @@ import os
 from typing import Any, Dict, List, Optional
 
 from neo4j import GraphDatabase
+from langsmith import traceable
+
+import tracing_setup  # noqa: F401 -- populates LANGCHAIN_* env vars before use
 
 
 class GraphRetriever:
@@ -49,7 +52,16 @@ class GraphRetriever:
     # the budget was widened enough (12 -> 16) that a plain sequential
     # walk gives every correctly-ranked top-4 row genuine room. Verified
     # against CD01, AF06, and CD04 together (see graphretriever notes).
-    MAX_RECALL_CHUNKS = 16    # cap chunks sent to the LLM on this path
+    #
+    # EXPERIMENT (this session): trimmed 16 -> 10 to test whether a
+    # smaller context materially cuts GraphRAG generation latency
+    # (generation was measured as the dominant cost, ~5.5s mean, vs
+    # ~2.8s retrieval). CD01, AF06, and CD04 are the specific items the
+    # 12->16 raise was fixing regressions for -- they're the ones to
+    # check first if this trim reintroduces a quality regression.
+    MAX_RECALL_CHUNKS = 10    # cap chunks sent to the LLM on this path --
+    # second half of a fresh back-to-back A/B (16 just run, 10 now,
+    # minutes apart) so both readings share the same OpenRouter conditions.
 
     # Fixed 2026-08-30: retrieve_path()'s shortestPath used to match ANY
     # relationship type, including MENTIONED_IN/HAS_CHUNK (structural
@@ -1047,6 +1059,7 @@ class GraphRetriever:
     # MAIN DISPATCH (v3: handles all node-type prefixes)
     # ------------------------------------------------------------------
 
+    @traceable(name="graph_retrieve", run_type="retriever")
     def retrieve(self, entity_or_plan: Any) -> Dict[str, Any]:
         """
         Backward-compatible entrypoint.

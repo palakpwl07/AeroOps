@@ -1,0 +1,5 @@
+{
+  "system_a": "naive",
+  "system_b": "graphrag",
+  "system_c": "agentic"
+}
