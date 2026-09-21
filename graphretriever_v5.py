@@ -773,7 +773,7 @@ class GraphRetriever:
         rows: list[dict] = []
         for eid in [id_a, id_b]:
             try:
-                result = self.retrieve(eid)
+                result = self._retrieve_base(eid)
                 rows.extend(result.get("results", []))
             except ValueError:
                 continue
@@ -890,7 +890,7 @@ class GraphRetriever:
                 extra_rows: list[dict] = []
                 for eid in entity_ids[2:]:
                     try:
-                        r = self.retrieve(eid)
+                        r = self._retrieve_base(eid)
                         extra_rows.extend(r.get("results", []))
                     except ValueError:
                         continue
@@ -1009,7 +1009,7 @@ class GraphRetriever:
 
         for entity_id in entity_ids:
             try:
-                result = self.retrieve(entity_id)
+                result = self._retrieve_base(entity_id)
                 rows.extend(result.get("results", []))
             except ValueError:
                 continue
@@ -1059,10 +1059,114 @@ class GraphRetriever:
     # MAIN DISPATCH (v3: handles all node-type prefixes)
     # ------------------------------------------------------------------
 
+    # Edge types the FailureMode "star" (_STAR_MATCHES) already reads. Any
+    # claim-bearing edge of a type NOT in this list is invisible to every
+    # star route, so it is fetched separately by fetch_anchor_relations().
+    _STAR_EDGE_TYPES = [
+        "MANIFESTS_AS", "CAUSES", "INFLUENCES", "LEADS_TO", "MITIGATES",
+        "AFFECTS", "DEGRADES", "RESTORES", "INDICATES", "DETECTS",
+    ]
+
+    def fetch_anchor_relations(self, entity_ids: List[str]) -> List[Dict[str, Any]]:
+        """
+        Fixed 2026-09-21 (smoke-test query #7, N-CMAPSS): every retrieval
+        route returns FailureMode-anchored "stars", and the star only
+        reads the edge types in _STAR_EDGE_TYPES. Five claim-bearing edges
+        in the graph use other types (MODELS x2, ENABLES x2, SUPPORTS x1;
+        the other unread types -- PART_OF, MEASURED_BY, IS_A -- carry no
+        claim_id and are structural). "N-CMAPSS -MODELS-> Hardware
+        deterioration" (CL071, chunk D2_c05, the ONLY chunk that mentions
+        N-CMAPSS) was therefore never retrieved: the entity matched, the
+        hardware-deterioration star came back, and the one chunk that
+        answers the question never reached the generator -- which then
+        said "no information" on about a third of identical requests
+        (temperature 0.1) and otherwise paraphrased an unrelated
+        ANN-Flux chunk as if it were about N-CMAPSS.
+
+        Returns the matched entities' own direct, claim-bearing edges of
+        the types the star does not read, in either direction.
+        """
+        ids = [e for e in dict.fromkeys(entity_ids or []) if e]
+        if not ids:
+            return []
+        cypher = """
+        MATCH (a) WHERE a.id IN $ids
+        MATCH (a)-[r]-(o)
+        WHERE r.claim_id IS NOT NULL AND NOT type(r) IN $star_types
+        RETURN DISTINCT
+            a.id AS anchor_id, a.name AS anchor_name,
+            (startNode(r) = a) AS outgoing,
+            type(r) AS rel,
+            o.id AS other_id, o.name AS other_name,
+            r.claim_id AS claim_id,
+            r.confidence AS confidence,
+            r.source_chunk_ids AS chunks
+        """
+        rows = self._run(cypher, {"ids": ids, "star_types": self._STAR_EDGE_TYPES})
+        out: List[Dict[str, Any]] = []
+        seen = set()
+        for r in rows:
+            if r["outgoing"]:
+                src_id, src, tgt_id, tgt = r["anchor_id"], r["anchor_name"], r["other_id"], r["other_name"]
+            else:
+                src_id, src, tgt_id, tgt = r["other_id"], r["other_name"], r["anchor_id"], r["anchor_name"]
+            key = (src_id, r["rel"], tgt_id, r["claim_id"])
+            if key in seen:  # both endpoints matched -> same edge seen twice
+                continue
+            seen.add(key)
+            out.append({
+                "source_id": src_id, "source": src, "rel": r["rel"],
+                "target_id": tgt_id, "target": tgt,
+                "claim_id": r["claim_id"], "confidence": r["confidence"],
+                "chunks": list(r["chunks"] or []),
+            })
+        return out
+
+    def _anchor_ids(self, entity_or_plan: Any) -> List[str]:
+        if isinstance(entity_or_plan, dict):
+            return list(entity_or_plan.get("entity_ids") or [])
+        if isinstance(entity_or_plan, str):
+            if entity_or_plan.startswith(self.PLAN_PREFIX):
+                return list(self._decode_plan(entity_or_plan).get("entity_ids") or [])
+            return [entity_or_plan]
+        return []
+
+    def _attach_anchor_relations(self, result: Dict[str, Any], entity_ids: List[str]) -> None:
+        # Retrieval must never fail because of this add-on: on any error
+        # the result is left exactly as the star routes produced it.
+        try:
+            rels = self.fetch_anchor_relations(entity_ids)
+        except Exception as exc:
+            result["anchor_relations_error"] = str(exc)
+            return
+        if not rels:
+            return
+        result["anchor_relations"] = rels
+        existing = list(result.get("chunk_ids") or [])
+        have = set(existing)
+        new = []
+        for rel in rels:
+            for cid in rel["chunks"]:
+                if cid not in have:
+                    new.append(cid)
+                    have.add(cid)
+        if new:
+            # Anchor evidence goes first and is not subject to the recall
+            # cap: it is a handful of chunks and is the direct answer
+            # material for the matched entity.
+            result["chunk_ids"] = new + existing
+            result["chunks"] = self.fetch_chunks(result["chunk_ids"])
+
     @traceable(name="graph_retrieve", run_type="retriever")
     def retrieve(self, entity_or_plan: Any) -> Dict[str, Any]:
+        result = self._retrieve_base(entity_or_plan)
+        self._attach_anchor_relations(result, self._anchor_ids(entity_or_plan))
+        return result
+
+    def _retrieve_base(self, entity_or_plan: Any) -> Dict[str, Any]:
         """
-        Backward-compatible entrypoint.
+        Backward-compatible entrypoint (star / path / plan routes only;
+        retrieve() adds the anchor relations on top).
 
         Accepts:
         - 'SY_...'  -> symptom star

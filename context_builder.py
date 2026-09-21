@@ -74,6 +74,19 @@ class ContextBuilder:
         return " ".join(parts)
 
     @staticmethod
+    def _fmt_relation(rel: Dict[str, Any]) -> str:
+        """
+        Format an anchor relation (a matched entity's own claim-bearing edge
+        of a type the FailureMode star does not read, e.g. MODELS/ENABLES/
+        SUPPORTS) as "Source --[TYPE]--> Target [D2_c05]". These always carry
+        a claim_id (the retriever filters on it), so unlike a chain hop they
+        are never co-occurrence.
+        """
+        chunks = rel.get("chunks") or []
+        tag = " [" + ", ".join(str(c) for c in chunks) + "]" if chunks else ""
+        return f"{rel.get('source', '?')} --[{rel.get('rel', '?')}]--> {rel.get('target', '?')}{tag}"
+
+    @staticmethod
     def _fmt_leads_to(item: Dict[str, Any]) -> str:
         """Format a LEADS_TO downstream consequence with provenance."""
         name = item.get("failure_mode", "Unknown")
@@ -246,6 +259,9 @@ class ContextBuilder:
         return {
             "question": question,
             "graph_facts": graph_facts,
+            "direct_relations": [
+                self._fmt_relation(r) for r in graph_result.get("anchor_relations") or []
+            ],
             "evidence_chunks": chunk_texts,
             "citations": sorted(set(citations)),
         }

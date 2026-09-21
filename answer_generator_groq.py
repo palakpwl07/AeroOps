@@ -219,6 +219,18 @@ class AnswerGenerator:
 
             sections.append("\n".join(parts))
 
+        # Direct relations of the matched entities whose edge types the
+        # failure-mode sections above cannot express (MODELS / ENABLES /
+        # SUPPORTS). Without this block the generator never sees them and
+        # may wrongly state the graph has no information (smoke query #7).
+        direct = context.get("direct_relations") or []
+        if direct:
+            sections.insert(
+                0,
+                "Direct relationships of the matched entities (stated claims):\n"
+                + "\n".join(f"  - {d}" for d in direct),
+            )
+
         facts_block = "\n\n".join(sections) if sections else "(no graph facts retrieved)"
 
         evidence_lines = [
