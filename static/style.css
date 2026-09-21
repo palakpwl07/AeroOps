@@ -558,3 +558,45 @@ details.sources summary {
 }
 
 .scope-notice strong { display: block; margin-bottom: 2px; }
+
+/* --- Sample-question shuffle --- */
+
+.empty-state-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.empty-state-header .empty-state-label { margin: 0; }
+
+.shuffle-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted-foreground);
+  font-family: inherit;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.shuffle-btn:hover { border-color: var(--color-graphrag); color: var(--color-foreground); }
+.shuffle-btn:focus-visible { outline: 2px solid var(--color-ring); outline-offset: 2px; }
+
+.sample-chip { display: flex; flex-direction: column; gap: 4px; }
+
+.sample-chip-category {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-graphrag);
+}
