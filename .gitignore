@@ -45,3 +45,14 @@ requirements
 run_eval.py
 tests.py
 Ragas_eval*.py
+# Experiment / tool output (untracked 2026-09; kept locally, not project content)
+graphify-out/
+mech_scoring_orig/
+mech_scoring_trimmed/
+mech_fresh_cap10/
+mech_fresh_cap16/
+ragas_outputs_graphrag/
+graphrag_cap10_ragas_inputs.json
+graphrag_cap16_ragas_inputs.json
+graphrag_trimmed_ragas_inputs.json
+agentic_rag_ragas_inputs.json
