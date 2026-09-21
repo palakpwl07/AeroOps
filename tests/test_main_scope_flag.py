@@ -65,3 +65,12 @@ def test_standard_refusal_is_reported_separately(client):
     b = _ask(client, answer="The graph facts do not contain any information about X.",
              matched_entities=[{"id": "a"}, {"id": "b"}])
     assert (b["scope_flag"], b["answer_type"]) == ("STANDARD", "refusal")
+
+
+@pytest.mark.parametrize("blank", [None, "", "  
+"])
+def test_empty_llm_answer_is_degraded_not_500(client, blank):
+    b = _ask(client, answer=blank, matched_entities=[{"id": "x"}])
+    assert b["degraded"] is True and "generation_error" in b["degraded_fields"]
+    assert (b["scope_flag"], b["answer_type"]) == ("LOW", "empty")
+    assert b["answer"]

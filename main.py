@@ -183,15 +183,20 @@ def query(request: QueryRequest) -> QueryResponse:
 
     degraded_fields = [k for k in DEGRADED_KEYS if result.get(k)]
     matched_entity_count = len(result.get("matched_entities") or [])
-    signals = assess(
-        matched_entity_count,
-        result.get("answer", ""),
-        degraded=bool(degraded_fields),
-    )
+    answer = result.get("answer")
+    if not answer or not str(answer).strip():
+        # The LLM occasionally returns null/blank content (seen ~3% of
+        # requests). `answer: str` used to fail response validation and
+        # surface as a bare 500; report it as a degraded response instead.
+        degraded_fields = list(dict.fromkeys(degraded_fields + ["generation_error"]))
+        signals = assess(matched_entity_count, "", degraded=True)
+        answer = "The model returned an empty answer. Please try again."
+    else:
+        signals = assess(matched_entity_count, answer, degraded=bool(degraded_fields))
 
     return QueryResponse(
         query=request.question,
-        answer=result.get("answer", ""),
+        answer=answer,
         retrieval_time=result.get("retrieval_time"),
         generation_time=result.get("generation_time"),
         sources=result.get("sources") or [],
