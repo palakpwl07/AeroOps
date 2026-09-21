@@ -50,6 +50,14 @@
     <section id="agentic-view"></section>
   </div>
 
+  <!-- Persistent by design: not collapsible, not dismissible, fixed to the
+       viewport so it is on screen alongside every answer. This -- not the
+       scope flag -- is the guardrail for answer correctness. -->
+  <aside class="disclaimer" role="note" aria-label="Usage disclaimer">
+    <strong>AeroOps is a decision-support tool.</strong>
+    Verify outputs against approved maintenance documentation before any maintenance action.
+  </aside>
+
   <script src="/static/app.js?v={{ static_version }}"></script>
 </body>
 </html>

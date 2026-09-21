@@ -73,6 +73,7 @@ from pydantic import BaseModel, Field
 import logging
 
 from graph_rag import graph_rag, _get_pipeline as _get_graphrag_pipeline
+from confidence_tier import assess
 
 logger = logging.getLogger("aeroops.main")
 
@@ -152,6 +153,17 @@ class QueryResponse(BaseModel):
     # varies between otherwise-similar queries. None under the same
     # conditions as estimated_cost_usd being None.
     provider: Optional[str] = None
+    # Scope detection ONLY -- these say nothing about whether the answer is
+    # correct. scope_flag is "LOW" when the router matched zero known
+    # entities or retrieval failed/degraded (the question is probably
+    # outside what this knowledge graph covers), else "STANDARD" -- and
+    # "STANDARD" is NOT a verification. answer_type is a string-pattern
+    # check on the output: "refusal" (opens with a denial such as "the graph
+    # does not contain..."), "empty", or "substantive". See
+    # confidence_tier.py and evaluation/confidence_tier.md.
+    scope_flag: str
+    answer_type: str
+    matched_entity_count: int
 
 
 @app.post("/query", response_model=QueryResponse)
@@ -170,6 +182,12 @@ def query(request: QueryRequest) -> QueryResponse:
         ) from exc
 
     degraded_fields = [k for k in DEGRADED_KEYS if result.get(k)]
+    matched_entity_count = len(result.get("matched_entities") or [])
+    signals = assess(
+        matched_entity_count,
+        result.get("answer", ""),
+        degraded=bool(degraded_fields),
+    )
 
     return QueryResponse(
         query=request.question,
@@ -183,6 +201,9 @@ def query(request: QueryRequest) -> QueryResponse:
         completion_tokens=result.get("completion_tokens"),
         estimated_cost_usd=result.get("estimated_cost_usd"),
         provider=result.get("provider"),
+        scope_flag=signals["tier"],
+        answer_type=signals["answer_type"],
+        matched_entity_count=matched_entity_count,
     )
 
 

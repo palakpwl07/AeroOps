@@ -1,0 +1,142 @@
+[
+ {
+  "n": 1,
+  "category": "in-KG single",
+  "question": "What does a steady drop in oil quantity usually point to?",
+  "answer": "A steady drop in oil quantity usually indicates an oil leak or oil loss. [D3_c19]",
+  "degraded": false
+ },
+ {
+  "n": 2,
+  "category": "in-KG vague",
+  "question": "Why might a high-bypass turbofan see its fuel burn creep up over the years?",
+  "answer": "A high‑bypass turbofan can experience a gradual rise in fuel burn because of several aging‑related mechanisms:\n\n- Blade‑tip clearance increases as the turbine blades wear, and this clearance increase degrades compressor efficiency and raises specific fuel consumption (SFC) during cruise. The evidence shows that clearance increases are a major factor in engine efficiency loss and that they directly affect SFC [D4_c03, D4_c10, D1_c01, D1_c03, D4_c02].\n\n- Deterioration of the EGT margin, which can be driven by higher outside air temperature, longer flight or sector length, higher thrust rating, and blade‑tip clearance increase, leads to higher EGT and consequently higher SFC. The graph notes that EGT margin deterioration produces rising EGT and is linked to increased fuel burn [D1_c21, D1_c02, D1_c19, D1_c18].\n\n- General hardware deterioration and blade distress that accompany engine age or the transition from first‑run to mature engines also degrade performance and raise fuel burn. The graph associates engine age with hardware deterioration and notes that this contributes to performance loss [D1_c20, D4_c09].\n\nMitigations such as engine wash can restore EGT margin and reduce fuel burn, but the underlying aging mechanisms still drive the long‑term creep in fuel consumption [D1_c09, D1_c10].",
+  "degraded": false
+ },
+ {
+  "n": 3,
+  "category": "in-KG multi",
+  "question": "How does dust ingestion affect the hot section, and what can operators do about it?",
+  "answer": "Dust ingestion can block the high‑pressure turbine (HPT) cooling holes, which can impair cooling of the hot section [D1_c08].  It can also erode high‑pressure compressor (HPC) blades, increasing surface roughness and blade distress [D1_c07].  \n\nThe graph does not list any specific mitigations that operators can apply to counter these effects.",
+  "degraded": false
+ },
+ {
+  "n": 4,
+  "category": "in-KG multi",
+  "question": "Which cracks or chips on compressor blades come from foreign objects, and how would you find them?",
+  "answer": "Cracks or chips on compressor blades that originate from foreign objects are fractures or chips caused by bird ingestion. These can be identified by inspecting the fan blades for bending, fractures, or visible chips, as shown in the evidence that bird ingestion can fracture or bend fan blades. [D3_c27] [D3_c28]",
+  "degraded": false
+ },
+ {
+  "n": 5,
+  "category": "in-KG pair",
+  "question": "Explain the link between bearing distress and oil filter bypass indications.",
+  "answer": "Oil filter bypass indications are a symptom that points to bearing failure, which in turn is caused by bearing distress. The filter becomes clogged with debris that originates from a failing bearing, so the bypass alarm is triggered when the bearing is in distress. This relationship is shown in the reasoning chain: an oil filter bypass indication indicates bearing failure, and bearing failure causes bearing distress. The evidence notes that debris from a bearing failure can clog the filter [D3_c20] and that chip detectors can collect particles indicating bearing compartment distress [D3_c18].",
+  "degraded": false
+ },
+ {
+  "n": 6,
+  "category": "in-KG single",
+  "question": "What is the purpose of active clearance control?",
+  "answer": "Active clearance control directs compressor‑extracted air onto the engine case to keep the clearance between the rotor blade tips and the case wall within acceptable limits, thereby preventing the clearance increase that degrades EGT margin and specific fuel consumption. [D3_c32]",
+  "degraded": false
+ },
+ {
+  "n": 7,
+  "category": "in-KG method",
+  "question": "How is the N-CMAPSS dataset used for engine prognostics?",
+  "answer": "The graph facts do not contain any information about how the N‑CMAPSS dataset is used for engine prognostics.",
+  "degraded": false
+ },
+ {
+  "n": 8,
+  "category": "in-KG compare",
+  "question": "Compare borescope inspection with NDT inspection for finding blade damage.",
+  "answer": "Borescope inspection is a visual method that is used to inspect the internal parts of the engine for defects such as cracks, stress fractures and corrosion [D1_c12].  \nNon‑destructive testing (NDT) inspection is a broader NDT method that can also detect blade cracking or chipping [D7_c02].  \n\nBoth inspections are capable of finding blade damage, but the borescope provides a direct visual look inside the engine, whereas NDT is a general non‑destructive technique that also identifies such damage.",
+  "degraded": false
+ },
+ {
+  "n": 9,
+  "category": "in-KG factor",
+  "question": "How does EGT margin differ between a first-run engine and a mature engine?",
+  "answer": "The graph facts do not provide any evidence that the EGT margin differs between a first‑run engine and a mature engine.",
+  "degraded": false
+ },
+ {
+  "n": 10,
+  "category": "in-KG factor",
+  "question": "Does short-haul flying wear engines out faster than long-haul, and why?",
+  "answer": "Short‑haul, high‑cycle operation causes engines to reach life‑limited part (LLP) expiry sooner than long‑haul flight, because the higher number of flight cycles accelerates wear on the parts that are limited by cycle life [D1_c16]. Long‑haul flights, with fewer cycles per flight, therefore tend to wear engines more slowly.",
+  "degraded": false
+ },
+ {
+  "n": 11,
+  "category": "in-KG fire",
+  "question": "What maintenance actions follow an engine fire warning?",
+  "answer": "Engine shutdown is the maintenance action that follows an engine fire warning. [D3_c24]",
+  "degraded": false
+ },
+ {
+  "n": 12,
+  "category": "in-KG method",
+  "question": "What role does the FADEC play in protecting the engine during a hot start?",
+  "answer": "The graph facts do not provide any information about a role for the FADEC in protecting the engine during a hot start.",
+  "degraded": false
+ },
+ {
+  "n": 13,
+  "category": "random",
+  "question": "What's the best way to bake sourdough bread?",
+  "answer": "I’m sorry, but I don’t have any information on that.",
+  "degraded": false
+ },
+ {
+  "n": 14,
+  "category": "random",
+  "question": "Who won the 2018 FIFA World Cup?",
+  "answer": "Information not available.",
+  "degraded": false
+ },
+ {
+  "n": 15,
+  "category": "adjacent",
+  "question": "How do I fix a misfiring piston engine in a Cessna 172?",
+  "answer": "Information is missing.",
+  "degraded": false
+ },
+ {
+  "n": 16,
+  "category": "adjacent",
+  "question": "What are the common failure modes of a turboprop propeller gearbox?",
+  "answer": "The graph does not provide any failure modes that are specific to a turboprop propeller gearbox. The only failure modes listed in the graph are:\n\n- Hardware deterioration / blade distress, which is caused by engine age or phase [D1_c20] and can be mitigated by engine overhaul or a performance restoration shop visit [D7_c01, D1_c11] and detected by ANN‑Flux [D2_c02].\n- Severe engine damage, caused by compressor surge or stall [D3_c07], mitigated by predictive maintenance [D2_c04], and indicated by high vibration [D3_c31] and EGT red‑line exceedance [D3_c15].\n- Fan unbalance, caused by foreign object or bird ingestion [D3_c26], with no mitigation listed, and indicated by high vibration [D3_c16].\n\nThese are the only failure modes present in the provided graph facts.",
+  "degraded": false
+ },
+ {
+  "n": 17,
+  "category": "adjacent",
+  "question": "How long does a lithium-ion battery last in an electric aircraft?",
+  "answer": "The graph does not provide any information about the lifespan of a lithium‑ion battery in an electric aircraft.",
+  "degraded": false
+ },
+ {
+  "n": 18,
+  "category": "bare",
+  "question": "EGT",
+  "answer": "High or rising EGT is a symptom of a compressor surge or stall, which can lead to severe engine damage and flameout.  \nEGT redline exceedance is an indicator of severe engine damage.  \nInstruments may show high EGT together with high EPR or rotor‑speed changes.",
+  "degraded": false
+ },
+ {
+  "n": 19,
+  "category": "sloppy",
+  "question": "engine bad noise what do",
+  "answer": "I’m sorry, but I don’t have any information on that.",
+  "degraded": false
+ },
+ {
+  "n": 20,
+  "category": "broad",
+  "question": "Tell me everything about turbofan engines.",
+  "answer": "Blade‑tip clearance increase is a moderate‑severity failure mode in turbofan engines.  \nIt is caused by blade‑tip wear and blade‑tip rub, which raise the clearance between turbine blade tips and the surrounding static seals or shrouds [D1_c03, D4_c02].  \nThe increased clearance degrades engine efficiency by raising the EGT margin and the specific fuel consumption (SFC) during cruise [D1_c01, D4_c03].  \nSymptoms include a rise in cruise SFC, leading to higher fuel burn [D4_c10].  \nActive clearance control, such as directing compressor bleed air onto the engine cases to manage rotor‑blade‑tip clearance, mitigates the problem [D3_c32].  \nRestoration of performance is achieved by improving the EGT margin and reducing SFC, which can be enhanced by engine wash that increases EGT margin and compressor efficiency, thereby reducing fuel burn [D1_c09, D4_c11].",
+  "degraded": false
+ }
+]

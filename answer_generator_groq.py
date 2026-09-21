@@ -274,6 +274,20 @@ class AnswerGenerator:
                             valid_ids.add(cid)
         valid_ids_block = ", ".join(sorted(valid_ids)) if valid_ids else "(none)"
 
+        direct_reminder = ""
+        if direct:
+            direct_reminder = (
+                "\n\nFINAL REMINDER (rule 16): the \"Direct relationships\" lines are stated "
+                "claims. Write each as one plain sentence -- A, the relationship verb, B, that "
+                "line's own chunk -- with NOTHING added about what A or B is used for, predicts, "
+                "or leads to, even if another chunk describes it. If the question asks for more "
+                "than the line states, add: \"The provided facts do not describe [the part asked "
+                "about].\" and stop. A chunk may support a statement about A or B ONLY if it is "
+                "that line's own cited chunk or its text itself names A or B; a chunk that never "
+                "names A or B (for example one that just says \"predict the health state\") must "
+                "not be used to say what A or B does, even when the question's wording invites it."
+            )
+
         return f"""QUESTION:
 {context.get("question")}
 
@@ -283,7 +297,7 @@ GRAPH FACTS:
 EVIDENCE CHUNKS:
 {evidence_block}
 
-VALID CITATION IDS (the only IDs you are allowed to cite): {valid_ids_block}"""
+VALID CITATION IDS (the only IDs you are allowed to cite): {valid_ids_block}{direct_reminder}"""
 
     # ------------------------------------------------------------------
     # Build the prompt
@@ -311,6 +325,7 @@ Rules:
 13. Preserve the evidence's own direction of statement, and write every claim as a COMPLETE sentence naming the failure mode/entity as the grammatical subject -- never a bare noun-phrase fragment or bulleted label with no verb (e.g. not "- High EGT", but "A compressor surge can produce high EGT readings"). This matters most for "what are the signs/indications of X" questions: if the evidence says "X can produce/be accompanied by Y" (X -> Y), write it that way -- do not invert it into "Y indicates/means X is occurring" (Y -> X), and do not leave it as an unstated fragment that reads as an inversion by implication. A list is fine; every item in it must still be its own complete X -> Y sentence in the evidence's own direction.
 14. Do not add evaluative, prescriptive, or hedging words -- "recommended," "primary," "main," "best," "most effective," "most likely," "probably," "likely due to" -- unless that exact word or an equivalent judgment appears in the graph facts or evidence chunks. State only what the evidence itself asserts, not your own framing of its significance or your own confidence about an unstated cause.
 15. If the question's scenario describes a specific triggering event (e.g. "a hard landing," "bird ingestion") and no graph fact or evidence chunk connects that specific event to the mechanism you are about to describe, do not mention the named event's causal role at all -- not even hedged ("likely caused by," "consistent with"), and do not add commentary about what the graph does or doesn't establish either, since that is itself a claim the evidence doesn't state. Simply describe the graph-backed mechanism on its own, omitting any link to the scenario's named trigger.
+16. The block "Direct relationships of the matched entities (stated claims)" lists lines of the form `A --[TYPE]--> B [chunk]`. Each line is a complete, self-contained claim. State it in ONE sentence of the form "A <models/enables/supports> B [that line's own chunk]", citing only that line's own chunk. Nothing else may be attached to that sentence: do NOT say what A or B does, achieves, predicts, protects, or is used for, and do NOT connect it to any other fact or chunk with "which", "in turn", "allowing", "enabling", "thereby", "so that", "helps", or similar -- even if another chunk in the evidence describes A's or B's purpose, that chunk is about a different claim and must not be presented as the consequence or use of this one. Example: for `PCA orthogonalization --[SUPPORTS]--> ANN-Flux [D2_c03]` write only "PCA orthogonalization supports ANN-Flux [D2_c03]." -- not "...which improves the model's predictions". If the question asks for more than the line states (for example how A is "used", or what role A plays in a specific scenario), then after that one sentence add the single sentence "The provided facts do not describe [the part asked about]." and stop; do not fill the gap with any neighbouring chunk's content.
 
 {skeleton}"""
 

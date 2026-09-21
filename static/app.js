@@ -274,6 +274,17 @@
       card.appendChild(degradedBanner(payload.degraded_fields));
     }
 
+    // Scope detection only (zero matched entities / failed retrieval); says
+    // nothing about whether the answer is correct.
+    if (payload.scope_flag === "LOW") {
+      card.appendChild(
+        el("div", { className: "scope-notice", attrs: { role: "status" } }, [
+          el("strong", { text: "Possibly outside AeroOps' scope" }),
+          el("span", { text: "No known engine entities were matched in this question, so the answer may not be grounded in the maintenance corpus." }),
+        ])
+      );
+    }
+
     const { node: answerNode, keyToNumber } = renderAnswerText(payload.answer, payload.sources);
     card.appendChild(answerNode);
 

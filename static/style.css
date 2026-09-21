@@ -524,3 +524,37 @@ details.sources summary {
 }
 
 .error-banner svg { width: 20px; height: 20px; flex: none; color: var(--color-destructive); }
+
+/* Persistent usage disclaimer: fixed to the viewport bottom so it is always
+   visible with the answer; page gets matching bottom padding so it never
+   covers content. */
+.disclaimer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: var(--color-card);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.disclaimer strong { font-weight: 600; }
+
+.page { padding-bottom: calc(var(--space-6) + 4.5rem); }
+
+.scope-notice {
+  background: var(--color-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  font-size: 0.88rem;
+}
+
+.scope-notice strong { display: block; margin-bottom: 2px; }

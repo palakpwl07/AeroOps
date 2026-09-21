@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py graph_rag.py graphretriever_v5.py \
      context_builder.py answer_generator_groq.py \
-     query_understanding_v3.py tracing_setup.py ./
+     query_understanding_v3.py tracing_setup.py confidence_tier.py ./
 COPY static/ ./static/
 COPY templates/ ./templates/
 
