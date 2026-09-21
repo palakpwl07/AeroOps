@@ -49,6 +49,8 @@ def test_tier_rules():
     "Information is missing.",
     "I\u2019m sorry, but I don\u2019t have any information on that.",
     "I'm sorry, but I don't have any information on that.",
+    "The provided facts do not describe the winner of the 2018 FIFA World Cup.",
+    "The provided facts do not describe how to bake sourdough bread.",
 ])
 def test_refusal_detected(answer):
     assert classify_answer(answer) == REFUSAL
@@ -58,6 +60,7 @@ def test_refusal_detected(answer):
     "A steady drop in oil quantity indicates an oil leak. [D3_c19]",
     "Dust blocks cooling holes [D1_c08]. The graph does not list any mitigations.",
     "In a flameout the EGT does not rise; EPR is low [D3_c13].",
+    "FADEC enables on-condition / trend monitoring [D5_c01]. The provided facts do not describe how this protects the engine.",
 ])
 def test_substantive_not_refusal(answer):
     assert classify_answer(answer) == SUBSTANTIVE

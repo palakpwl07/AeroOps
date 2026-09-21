@@ -28,7 +28,7 @@ EMPTY = "empty"
 _DENIAL_PATTERNS = [
     # "The graph (facts) does not contain/provide/list ..."
     r"\b(graph|graph facts|facts|evidence|context|documents?|sources?|knowledge base)\b[^.\n]{0,40}"
-    r"\b(does not|do not|doesn't|don't|cannot|can't)\s+(contain|provide|list|include|specify|mention|have|offer|support)\b",
+    r"\b(does not|do not|doesn't|don't|cannot|can't)\s+(contain|provide|list|include|specify|mention|have|offer|support|describe|address|state)\b",
     # "It does not provide ..." after a substantive first sentence
     r"\b(it|this|that)\s+(does not|doesn't)\s+(provide|contain|specify|list|mention)\b",
     r"\bno (relevant |specific )?(information|evidence|data)\b",
